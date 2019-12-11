@@ -1,5 +1,5 @@
 body {
-    color: red;
+    color: #373D3F;
     font-family: 'Work Sans', sans-serif;
 }
 
@@ -9,11 +9,43 @@ body {
 }
 
 #welcome-section{
-    background-color: black;
+    /* background-color: black; */
     height: 100vh;
+    /* background-image: linear-gradient(0deg, gray, ivory ); */
+    text-align: center;
+    padding: 50px;
 }
 
 #projects{
     background-color: green;
-    height: 100px;
+    height: 7000px;
+    /* background-color: black; */
+   
+    
+}
+
+.w3-card{
+    background-color: white;
+}
+
+
+.project-grid{ 
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 30px 100px 30px 100px ;
+}
+    
+#markdown-previewer1 { 
+background-color: teal; }
+    
+#random-quote-machine{ 
+background-color: violet;}
+    
+#technical-documentation-page {
+background-color: tomato; }
+
+img{
+    max-width: 100%;
+    height: auto;
 }
