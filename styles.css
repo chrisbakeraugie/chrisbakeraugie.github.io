@@ -99,7 +99,7 @@ html{
 .project-grid{ 
     background-color: var(--main-darkblue);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     padding: 30px 100px 30px 100px ;
     grid-gap: 25px;
 }
