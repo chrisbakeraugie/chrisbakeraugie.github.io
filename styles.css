@@ -21,7 +21,6 @@ body {
 
 html{
     scroll-behavior: smooth;
-    background-color: black;
 }
 
 #navbar-div{
@@ -122,4 +121,16 @@ a{
     padding-bottom: 10px;
     background-color: var(--main-lightGray);
     color: var(--main-darkestGray);
+}
+
+#contact-links{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.contact-item{
+    margin: 10px;
+    padding: 5px;
 }
