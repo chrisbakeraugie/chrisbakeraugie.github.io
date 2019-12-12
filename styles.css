@@ -40,7 +40,7 @@ html{
     margin: 15px 0 0 0;
 }
 
-@media(max-width:760px){
+@media only screen and (max-width:808px){
     #navbar{
         position: fixed;
         margin: 0;
@@ -50,7 +50,7 @@ html{
         box-shadow: none;
         justify-content: center;
     }
-    
+
 }
 
 #navbar-list{
