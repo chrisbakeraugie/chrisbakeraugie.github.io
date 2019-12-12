@@ -41,7 +41,9 @@ html{
 }
 
 @media only screen and (max-width:808px){
-    #navbar{
+   
+   /* Temporary comment so that I can modify sizing for iphone and mobile*/
+    /* #navbar{
         position: fixed;
         margin: 0;
         padding:0;
@@ -49,7 +51,7 @@ html{
         height:50px;
         box-shadow: none;
         justify-content: center;
-    }
+    } */
 
 }
 
