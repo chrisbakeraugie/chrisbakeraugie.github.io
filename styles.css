@@ -48,6 +48,11 @@ html{
 
 .navbar-item{
     margin: 10px 15px 10px 15px;
+    transition: .4s;
+}
+
+.navbar-item:hover{
+    color: ivory;
 }
 
 .navbar-link{
@@ -83,6 +88,11 @@ html{
     background-color: var(--main-lightGray);
     padding: 0;
     text-align: center;
+    transition: 0.4s;
+}
+
+.w3-card:hover{
+    box-shadow: 10px 10px 1px rgba(0,0,0,0.4);
 }
 
 
@@ -123,6 +133,19 @@ a{
     color: var(--main-darkestGray);
 }
 
+#contact{
+    background-image: linear-gradient(to bottom, var(--main-darkblue), var(--main-beige));
+    padding-top: 100px;
+    min-height: 400px;
+}
+#contact-section-header{
+    margin: 0;
+    padding: 0;
+    color: var(--main-darkestGray);
+    text-align: center;
+    font-size: 40px;
+
+}
 #contact-links{
     list-style: none;
     display: flex;
@@ -133,4 +156,10 @@ a{
 .contact-item{
     margin: 10px;
     padding: 5px;
+    font-size: 40px;
+    transition: .4s;
+}
+
+.contact-item:hover{
+    color: ivory;
 }
