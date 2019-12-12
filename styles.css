@@ -4,10 +4,11 @@
     --main-lightBlue:#7395AE;
     --main-darkblue:#547A98;
     --main-beige:#B0A295;
+    --main-darkestGray: #373D3F;
 }
 
 body {
-    color: #373D3F;
+    color: var(--main-darkestGray);
     font-family: 'Work Sans', sans-serif;
     /*  */
 }
@@ -15,6 +16,10 @@ body {
 * {
     margin: 0;
     padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 #navbar-div{
@@ -55,22 +60,28 @@ body {
     padding: 50px;
 }
 
-h1{
+#welcome-section-header{
     font-size: 60px;
     color: ivory;
+    padding-top: 30vh;
 
 }
 
-#project-section{
-    background-color: green;
-    height: 7000px;
-    /* background-color: black; */
+#projects-section-header{
+    color: ivory;
+    background: var(--main-darkblue);
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    padding:0;
    
     
 }
 
 .w3-card{
-    background-color: white;
+    background-color: var(--main-lightGray);
+    padding: 0;
+    text-align: center;
 }
 
 
@@ -79,19 +90,34 @@ h1{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 30px 100px 30px 100px ;
+    grid-gap: 25px;
 }
     
 #markdown-previewer1 { 
-background-color: teal; }
+/* background-color: teal;  */
+}
     
 #random-quote-machine{ 
-background-color: violet;}
+/* background-color: violet; */
+}
     
 #technical-documentation-page {
-background-color: tomato; }
+/* background-color: tomato;  */
+}
 
 img{
     max-width: 100%;
     height: auto;
 }
 
+a{
+    text-decoration: none;
+}
+
+.project-title{
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--main-lightGray);
+    color: var(--main-darkestGray);
+}
