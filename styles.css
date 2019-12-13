@@ -203,6 +203,11 @@ footer{
 
 /* ------------------------------------------------------------------------Media Q------------------------------------------------------------------------*/
 @media only screen and (max-width:808px){
+
+    html{
+        scroll-behavior: smooth;
+    }
+    
     #navbar{
         margin:0;
         padding-top: 7vh;
@@ -254,10 +259,6 @@ footer{
     #basic-product-landing-page{ 
         grid-area: 4 / 1 / 5 / 2;  
         margin: 10px 20px 10px 20px;
-    }
-
-    #contact{
-        
     }
 
     #contact-section-header{
