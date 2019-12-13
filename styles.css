@@ -45,7 +45,8 @@ html{
 #navbar-list{
     list-style: none;
     display: flex;
-    font-size: large;
+    flex-wrap: nowrap;
+    font-size: 20px;
 }
 
 .navbar-item{
