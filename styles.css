@@ -160,7 +160,7 @@ a{
     list-style: none;
     display: flex;
     justify-content: center;
-
+    flex-direction: row;
 }
 
 .contact-item{
@@ -222,6 +222,13 @@ footer{
     #basic-product-landing-page{ 
         grid-area: 5 / 1 / 6 / 2;  
         margin: 10px 20px 10px 20px;
+    }
+
+    #contact-links{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
     }
 
 
