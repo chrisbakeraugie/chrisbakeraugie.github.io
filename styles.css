@@ -86,9 +86,9 @@ html{
     color: ivory;
     background: var(--main-darkblue);
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     margin: 0;
-    padding:0;
+    padding-top:40px;
    
     
 }
@@ -112,11 +112,7 @@ html{
     grid-template-rows: repeat(6, 1fr);
     grid-gap: 25px; 
 }
-    
-#markdown-previewer { 
-    grid-area: 2 / 2 / 4 / 4;
-}
-    
+      
 #random-quote-machine{ 
     grid-area: 2 / 4 / 4 / 6; 
 }
@@ -126,6 +122,10 @@ html{
 }
 
 #basic-product-landing-page{
+    grid-area: 2 / 2 / 4 / 4;
+}
+
+#markdown-previewer { 
     grid-area: 4 / 4 / 6 / 6;
 }
 
@@ -185,9 +185,26 @@ a{
 
 /* --------------------------------About Me Section--------------------------------*/
 #about-me{
-    min-height: 500px;
+    min-height: 650px;
     background-color: var(--main-beige);
+    text-align: center;
 }
+
+#about-me-section-header{
+    margin: 0;
+    padding: 10px;
+    font-size: 40px;
+}
+
+#about-me-section-body{
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+
+}
+
+
+
 
 /* --------------------------------About Me Section--------------------------------*/
 
@@ -207,7 +224,7 @@ footer{
     html{
         scroll-behavior: smooth;
     }
-    
+
     #navbar{
         margin:0;
         padding-top: 7vh;
@@ -233,6 +250,7 @@ footer{
     }
 
     #projects-section-header{
+        padding-top: 8vh;
         font-size: 6.5vw;
     }
 
@@ -242,6 +260,7 @@ footer{
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
+        
     }
 
     #markdown-previewer{ 
@@ -276,7 +295,17 @@ footer{
     }
 
     .contact-item{
-        font-size: 7vw;
+        font-size: 5vh;
+    }
+
+    #about-me-section-header{
+        padding-top: 8vh;
+    }
+
+
+    #about-me-section-body{
+        padding-bottom: 80px;
+        font-size: 20px;
     }
 
     
