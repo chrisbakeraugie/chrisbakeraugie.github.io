@@ -188,7 +188,10 @@ footer{
 }
 
 @media only screen and (max-width:808px){
-   
+    
+    body{
+        padding-top: 10px;
+    }
      #navbar{
          position: fixed;
          margin: 0;
