@@ -180,6 +180,21 @@ a{
 .contact-item:hover{
     color: ivory;
 }
+
+#copy-email-button{
+    background-color: transparent;
+    border: none;
+    color: var(--main-darkestGray);
+    transition: .4s;
+}
+
+#copy-email-button:hover{
+    color: ivory;
+ }
+
+#copy-email-button:focus{
+   outline: none;
+}
 /* --------------------------------Contacts Section--------------------------------*/
 
 
