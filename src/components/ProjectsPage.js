@@ -1,13 +1,13 @@
 import React from "react";
-import Project from './Project';
+// import Project from './Project';
 import CardDeck from 'react-bootstrap/CardDeck'
 import Card from 'react-bootstrap/Card';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 
-function Projects() {
+function ProjectsPage() {
 
   return (
 
@@ -73,4 +73,4 @@ function Projects() {
   )
 }
 
-export default Projects;
+export default ProjectsPage;
