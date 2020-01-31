@@ -1,0 +1,83 @@
+body,html{
+    height: 100%;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
+
+.content{
+    margin-top: 56px
+    
+}
+
+.hero-image{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/Background.jpg");
+
+
+
+ /* Position and center the image to scale nicely on all screens */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ position: relative;
+
+}
+
+.hero-text{
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+}
+
+.project-card{
+    margin: 10px;
+    min-width: 250px;
+}
+
+.subtitle-link{
+    text-align: center;
+    justify-content: center;
+    line-height: normal;
+    font-size: large;
+    color: #6D757D;
+    background-color: #F7F7F7;
+    transition: .4s;
+
+}
+
+.subtitle-link:hover{
+    text-decoration: none;
+    color: #F7F7F7;
+    background-color: #6D757D;
+    border-radius: 0px 0px 2px 2px;
+
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+
+
+
+@media only screen and (max-width: 550px) {
+
+    .hero-image{
+        background-image: linear-gradient( to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5)), url("./images/Background.jpg");
+
+    }
+
+    .navbar{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  }
