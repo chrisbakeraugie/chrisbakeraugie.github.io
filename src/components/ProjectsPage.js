@@ -2,7 +2,7 @@ import React from "react";
 import Project from './Project';
 import CardDeck from 'react-bootstrap/CardDeck'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faCodepen }  from '@fortawesome/free-brands-svg-icons';
+import { faCodepen } from '@fortawesome/free-brands-svg-icons';
 // import Button from 'react-bootstrap/Button';
 
 
@@ -51,12 +51,25 @@ function ProjectsPage() {
           altDesc="The USA GDP bargraph"
           cardTitle="D3.js graph of the US GDP"
           cardDesc="This is a bar graph representing the US GDP by quarter. It uses D3.js and a data fetch, which will automatically update when data is added."
-          codeLink="https://github.com/chrisbakeraugie/react-drum-machine"
+          codeLink="https://codepen.io/christopherbaker15/pen/OJPLGeO"
           icon={faCodepen}
-          />
+        />
+       
+        <Project
+          projectLink="https://codepen.io/christopherbaker15/full/Poowrjp"
+          imageSource="https://i.imgur.com/ses3dxm.png"
+          altDesc="Basic product landing page for a fake trumpet service"
+          cardTitle="Basic product landing page"
+          cardDesc="This is an early work, desiging a landing page for a fake trumpet seller. It uses plain HTML and CSS, and no javascript."
+          codeLink="https://codepen.io/christopherbaker15/pen/Poowrjp"
+          icon={faCodepen}
+        />
+
+
+
       </CardDeck>
     </div>
-      )
-    }
-    
+  )
+}
+
 export default ProjectsPage;
