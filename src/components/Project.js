@@ -9,7 +9,6 @@ const Project = (props) => {
         <Card className="project-card">
           <a className="project-card-link" href={props.projectLink} target="_blank" rel="noopener noreferrer">
             <Card.Img className="card-image" varient="top" src={props.imageSource} alt={props.altDesc}></Card.Img>
-            
           <Card.Body>
             <Card.Title>{props.cardTitle}</Card.Title>
             <Card.Text>
