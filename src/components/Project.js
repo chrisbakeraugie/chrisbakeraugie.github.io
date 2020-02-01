@@ -1,6 +1,5 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Project = (props) => {
@@ -16,9 +15,9 @@ const Project = (props) => {
             </Card.Text>
           </Card.Body>
           </a>
-          <a href={props.githubLink} target="_blank" rel="noopener noreferrer">
+          <a href={props.codeLink} target="_blank" rel="noopener noreferrer">
             <Card.Footer className="subtitle-link">
-              Find the code on github  <FontAwesomeIcon icon={faGithub} size="1x"></FontAwesomeIcon>
+              Find the code here  <FontAwesomeIcon icon={props.icon} size="1x"></FontAwesomeIcon>
             </Card.Footer>
           </a>
         </Card>
