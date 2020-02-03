@@ -32,16 +32,6 @@ function ProjectsPage() {
           codeLink="https://github.com/chrisbakeraugie/js-calc"
           icon={faGithub}
         />
-
-        <Project
-          projectLink="https://chrisbakeraugie.github.io/react-drum-machine/"
-          imageSource="https://i.imgur.com/qEqQvPO.png"
-          altDesc="An image of my drum machine"
-          cardTitle="Javascript/React drum machine"
-          cardDesc="This drum machine listens plays sounds with interaction. Listens for both keystrokes and clicks, and displays name of sound being played."
-          codeLink="https://github.com/chrisbakeraugie/react-drum-machine"
-          icon={faGithub}
-        />
       </CardDeck>
 
       <CardDeck>
@@ -54,7 +44,7 @@ function ProjectsPage() {
           codeLink="https://codepen.io/christopherbaker15/pen/OJPLGeO"
           icon={faCodepen}
         />
-       
+
         <Project
           projectLink="https://codepen.io/christopherbaker15/full/Poowrjp"
           imageSource="https://i.imgur.com/ses3dxm.png"
@@ -65,8 +55,27 @@ function ProjectsPage() {
           icon={faCodepen}
         />
 
+        <Project
+          projectLink="https://chrisbakeraugie.github.io/react-drum-machine/"
+          imageSource="https://i.imgur.com/qEqQvPO.png"
+          altDesc="An image of my drum machine"
+          cardTitle="Javascript/React drum machine"
+          cardDesc="This drum machine listens plays sounds with interaction. Listens for both keystrokes and clicks, and displays name of sound being played."
+          codeLink="https://github.com/chrisbakeraugie/react-drum-machine"
+          icon={faGithub}
+        />
 
-
+      </CardDeck>
+      <CardDeck>
+        <Project
+          projectLink="https://codepen.io/christopherbaker15/full/OJPbGMR"
+          imageSource="https://i.imgur.com/HcXxEEo.png"
+          altDesc="An image of my D3.js scatterplot"
+          cardTitle="D3.js scatterplot of Doping in Professional Cycling"
+          cardDesc="This page uses Data Driven Documents to create a scatterplot of the fastest times in cycling and labelling those aligned with doping allegations."
+          codeLink="https://codepen.io/christopherbaker15/pen/OJPbGMR"
+          icon={faCodepen}
+        />
       </CardDeck>
     </div>
   )
