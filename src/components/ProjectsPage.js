@@ -1,7 +1,7 @@
 import React from "react";
 import Project from './Project';
-import CardDeck from 'react-bootstrap/CardDeck'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import CardDeck from 'react-bootstrap/CardDeck';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCodepen } from '@fortawesome/free-brands-svg-icons';
 // import Button from 'react-bootstrap/Button';
 
@@ -26,9 +26,9 @@ function ProjectsPage() {
         <Project
           projectLink="https://chrisbakeraugie.github.io/js-calc/"
           imageSource="https://i.imgur.com/EHYUP00.png"
-          altDesc="A random quote machine image"
-          cardTitle="Random Quote Machine"
-          cardDesc="This random quote machine displays a quote and an author by fetching from an array of quote objects at random. That quote can then be tweeted easily."
+          altDesc="An image of my Javascript calculator"
+          cardTitle="React calculator"
+          cardDesc='This calculator enables the user to "build" an equation, and then have that equation evaluated using correct order of operations.'
           codeLink="https://github.com/chrisbakeraugie/js-calc"
           icon={faGithub}
         />

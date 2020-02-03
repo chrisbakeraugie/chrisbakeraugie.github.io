@@ -26,21 +26,23 @@ class App extends React.Component {
             <Nav.Link href="#projects" className="nav-link">Projects</Nav.Link>
             <Nav.Link href="#contact" className="nav-link">Contact</Nav.Link>
           </Navbar>
-          <div className="content">
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/about">
-            <AboutMe />
-            </Route>
-            <Route path="/projects">
-            <ProjectsPage />
-            </Route>
-            <Route path="/contact">
-            <Contact />
-            </Route>
+
+            <div className="content">
+              <Route exact path="/">
+                <Home />
+              </Route>
+
+              <Route path="/about">
+                <AboutMe />
+              </Route>
+              <Route path="/projects">
+                <ProjectsPage />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+            </div>
           </div>
-        </div>
 
       </HashRouter>
 

@@ -4,7 +4,11 @@ body, html {
 }
 
 .page-div{
-    padding: 50px
+    padding: 50px;
+    background-color: rgb(211, 211, 211, .7);
+    min-height: 100vh;
+    color: white;
+    
 }
 
 .nav-link {
@@ -13,7 +17,7 @@ body, html {
 }
 
 .content {
-    margin-top: 56px
+    margin-top: 56px;
 }
 
 .hero-image {
@@ -24,6 +28,7 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    background-attachment: fixed;
 }
 
 .hero-text {
@@ -34,6 +39,42 @@ body, html {
     transform: translate(-50%, -50%);
     color: white;
 }
+
+.info-card{
+    padding: 10px;
+    margin: 10px;
+    color: black;
+    min-width: 300px;
+    
+    
+}
+
+#school{
+    background-image:  url("./images/AugustanaLogo.jpg");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    position: relative;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
+#skills-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+#skills-card{
+    margin: 20px;
+    /* color: white; */
+    border: none;
+    /* background-color: transparent; */
+    border-radius: 40px;
+    text-align: center;
+    min-width: 300px;
+}
+
 
 .project-card {
     margin: 10px;
@@ -70,6 +111,16 @@ body, html {
 
 a:hover {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 785px){
+    #skills-card{
+        margin: 0;
+        min-width: fit-content;
+        background: transparent;
+        border-radius: none;
+
+    }
 }
 
 @media only screen and (max-width: 550px) {

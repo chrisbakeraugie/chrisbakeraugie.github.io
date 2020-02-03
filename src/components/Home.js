@@ -4,10 +4,9 @@ import React from "react";
 function Home() {
 
     return (
-        <div>
-            <div className="hero-image" >
+        <div className="hero-image">
+        
                 <div className="hero-text">
-
                     <h1>
                         Hello, I'm Chris
                     <br />
@@ -15,7 +14,6 @@ function Home() {
                     </h1>
                 </div>
             </div>
-        </div>
     )
 }
 
