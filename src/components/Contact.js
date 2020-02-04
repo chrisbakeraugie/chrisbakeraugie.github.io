@@ -5,9 +5,12 @@ function Contact() {
 
 
     return (
-        <div className="page-div">
+        <div className="page-div contact-page">
             <div id="contact-div">
                 <h1 id="contact-header">Interested in working together? Let me know</h1>
+
+                <br/>
+                <br/>
                 <SubmitForm />
 
 

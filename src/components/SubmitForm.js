@@ -4,7 +4,6 @@
  */
 import React from "react";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button"
 
 
 class SubmitForm extends React.Component {
@@ -44,10 +43,17 @@ class SubmitForm extends React.Component {
                 method="POST">
 
         <Form.Label>Send me a message, I read them everyday.</Form.Label>
-        <Form.Control type="email" placeholder="christopherbaker15@augustana.edu" name="email" />
-        <Form.Control type="textarea" placeholder="I have some projects you might be interested in... Find me on LinkedIn or at 123-456-7890" name="message"/>
-            {status === "SUCCESS" ? <p>Thanks!</p> : <button id="form-button">Submit</button>}
-            {status === "ERROR" && <p>Ooops! There was an error.</p>}
+        <Form.Control type="email" placeholder="ChrisBakerDev@gmail.com" name="email" />
+        <Form.Control type="textarea" 
+                        placeholder="I have some projects you might be interested in... Find me on LinkedIn or at 123-456-7890" 
+                        name="message"
+                        rows="2"
+                        cols="50"
+
+                        
+            />
+            {status === "SUCCESS" ? <p>Thanks! I'll respond to you soon.</p> : <button id="form-button">Submit</button>}
+            {status === "ERROR" && <p>Ooops! There was an error. Feel free to send me an email at ChrisBakerDev@gmail.com</p>}
     </Form>
     
     );
