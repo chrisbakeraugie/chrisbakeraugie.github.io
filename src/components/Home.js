@@ -5,15 +5,18 @@ function Home() {
 
     return (
         <div className="hero-image">
-        
-                <div className="hero-text">
-                    <h1>
-                        Hello, I'm Chris
+
+            <div className="hero-text">
+                <h1>
+                    <strong>Hello.</strong>
                     <br />
-                        A recent graduate and fullstack developer
+                    <br />
+                    My name is Chris,
+                    <br />
+                    and I'm a full stack developer.
                     </h1>
-                </div>
             </div>
+        </div>
     )
 }
 

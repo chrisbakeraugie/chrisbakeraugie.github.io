@@ -23,7 +23,7 @@ class App extends React.Component {
       <HashRouter>
         <div className="App">
           <Navbar bg="dark" variant="dark" fixed="top" className="navbar">
-            <Navbar.Brand href="#">Chris Baker</Navbar.Brand>
+            <Navbar.Brand href="#">Welcome</Navbar.Brand>
             <Nav.Link href="#about" className="nav-link">About Me</Nav.Link>
             <Nav.Link href="#projects" className="nav-link">Projects</Nav.Link>
             <Nav.Link href="#contact" className="nav-link">Contact</Nav.Link>
@@ -46,6 +46,7 @@ class App extends React.Component {
             </div>
           </div>
 
+          <footer>© 2020 Chris Baker<a href="/#/projects" id="footer-link">Information about this site</a></footer>
       </HashRouter>
 
     );
