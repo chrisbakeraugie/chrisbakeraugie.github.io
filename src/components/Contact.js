@@ -1,12 +1,21 @@
 import React from "react";
+import SubmitForm from "./SubmitForm";
 
 function Contact() {
 
+
     return (
         <div className="page-div">
-            <h1>This is my contact page</h1>
+            <div id="contact-div">
+                <h1 id="contact-header">Interested in working together? Let me know</h1>
+                <SubmitForm />
+
+
+            </div>
+
         </div>
     )
 }
+
 
 export default Contact;

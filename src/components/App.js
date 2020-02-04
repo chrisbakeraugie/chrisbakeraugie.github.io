@@ -1,14 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
-import HashRouter from 'react-router-dom/HashRouter'
-import Route from 'react-router-dom/Route'
+// import HashRouter from 'react-router-dom/HashRouter'
+//import Route from 'react-router-dom/Route'
 import Home from './Home'
 import AboutMe from './AboutMe'
 import ProjectsPage from './ProjectsPage'
 import Contact from './Contact'
 import '../App.css'
 import Nav from 'react-bootstrap/Nav'
+var HashRouter = require("react-router-dom").HashRouter;
+var Route = require("react-router-dom").Route;
 
 
 

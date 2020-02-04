@@ -7,6 +7,7 @@ body, html {
     padding: 50px;
     background-color: rgb(211, 211, 211, .7);
     /* background-image: linear-gradient(to bottom, rgb(211, 211, 211, .7),rgba(63, 48, 95, 0.767)) ; */
+    /* VVVV----------- Photo by Markus Spiske on Unsplash ------------VVVVV */
     /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 90%, rgba(0, 0, 0, 0.9)),  url("./images/pagebackground.jpg"); */
     background-position: center;
     background-size: cover;
@@ -141,6 +142,12 @@ a:hover {
         border-radius: none;
 
     }
+}
+
+#form-button{
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width: 550px) {
