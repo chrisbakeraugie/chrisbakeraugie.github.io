@@ -41,7 +41,7 @@ function AboutMe() {
                     id="skills-card"
                     positionTitle="JavaScript"
                     icon={faJs}
-                    iconStyle={{color: "yellow", opacity: "1"}}
+                    iconStyle={{color: "rgb(235,235,0)", opacity: "1"}}
                     />
                 <InfoCard
                     id="skills-card"
