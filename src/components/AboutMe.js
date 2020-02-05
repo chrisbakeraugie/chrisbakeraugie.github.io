@@ -1,10 +1,9 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
 
 import CardDeck from 'react-bootstrap/CardDeck'
 import InfoCard from "./InfoCard";
 import { faFreeCodeCamp, faJava, faReact, faJs, faHtml5, faCss3, faNodeJs } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faCode, faChartLine, faLaptopCode, faCircle, faCircleNotch } from "@fortawesome/free-solid-svg-icons"
+import { faDatabase, faCode, faChartLine, faLaptopCode, faCircleNotch } from "@fortawesome/free-solid-svg-icons"
 
 
 function AboutMe() {
@@ -21,7 +20,7 @@ function AboutMe() {
                 description="Completed an 11 week course developing a program which could be used to track the movement of chickens in a video file, 
                 which the psychology department could use to measure chicken responses to stimulation. 
                 Delivered program that could track objects on screen and could export the results in the form of Comma Separated Values. Gained experience in:
-                Agile methodology/scrum team framework Java Github"
+                Agile methodology/scrum team framework, Java, and Github."
             />
 
             <InfoCard
@@ -160,16 +159,5 @@ function AboutMe() {
         </div>
     )
 }
-
-// <Card className="info-card">
-// <h2>Education</h2>
-//     <Card.Body>
-//         <Card.Title>Augustana College</Card.Title>
-//         <Card.Subtitle className="mb-2 text-muted"><p></p>Engineering Physics - Class of 2019</Card.Subtitle>
-//         <Card.Subtitle className="mb-2 text-muted"><p></p>2014-2019</Card.Subtitle>
-//         <Card.Link href="#">Link</Card.Link>
-//         <Card.Link href="#">Link</Card.Link>
-//     </Card.Body>
-// </Card>
 
 export default AboutMe;
