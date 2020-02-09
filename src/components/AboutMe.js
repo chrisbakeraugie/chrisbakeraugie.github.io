@@ -42,12 +42,14 @@ function AboutMe() {
                     icon={faJs}
                     iconStyle={{color: "rgb(235,235,0)", opacity: "1"}}
                     />
-                <InfoCard
-                    id="skills-card"
-                    positionTitle="Java"
-                    icon={faJava}
-                    iconStyle={{color: "blue", opacity: "0.5"}}
-                    />
+
+                    <InfoCard
+                        id="skills-card"
+                        positionTitle="Java"
+                        icon={faJava}
+                        iconStyle={{color: "blue", opacity: "0.5"}}
+                        />
+                    
 
                     
                 <InfoCard

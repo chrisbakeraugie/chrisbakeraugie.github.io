@@ -78,6 +78,7 @@ function ProjectsPage() {
         />
 
         <Project
+
           projectLink="https://github.com/AugustanaCSC285Fall18/CurlewRepo"
           imageSource="https://i.imgur.com/4pfBf59.png"
           altDesc='An image of my "Chicken Tracker" program'

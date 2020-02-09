@@ -1,8 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
-// import HashRouter from 'react-router-dom/HashRouter'
-//import Route from 'react-router-dom/Route'
 import Home from './Home'
 import AboutMe from './AboutMe'
 import ProjectsPage from './ProjectsPage'
@@ -15,8 +13,6 @@ var Route = require("react-router-dom").Route;
 
 
 class App extends React.Component {
-
-
 
   render() {
     return (
@@ -46,7 +42,7 @@ class App extends React.Component {
             </div>
           </div>
 
-          <footer><p>© 2020 Chris Baker<a href="/#/projects" id="footer-link">Information about this site</a></p></footer>
+          <footer><p>© 2020 Chris Baker <a href="/#/projects" id="footer-link">Information about this site</a></p></footer>
       </HashRouter>
 
     );
