@@ -46,7 +46,7 @@ class App extends React.Component {
             </div>
           </div>
 
-          <footer>© 2020 Chris Baker<a href="/#/projects" id="footer-link">Information about this site</a></footer>
+          <footer><p>© 2020 Chris Baker<a href="/#/projects" id="footer-link">Information about this site</a></p></footer>
       </HashRouter>
 
     );

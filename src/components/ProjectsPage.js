@@ -76,6 +76,17 @@ function ProjectsPage() {
           codeLink="https://codepen.io/christopherbaker15/pen/OJPbGMR"
           icon={faCodepen}
         />
+
+        <Project
+          projectLink="https://github.com/AugustanaCSC285Fall18/CurlewRepo"
+          imageSource="https://i.imgur.com/4pfBf59.png"
+          altDesc='An image of my "Chicken Tracker" program'
+          cardTitle="Java Chicken Tracker"
+          cardDesc="A program designed to track position of chickens in a video, then export the data in the form of a CSV file. (No deployed version available)"
+          codeLink="https://github.com/AugustanaCSC285Fall18/CurlewRepo"
+          icon={faGithub}
+        />
+
       </CardDeck>
     </div>
   )
