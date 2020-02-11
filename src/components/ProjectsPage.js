@@ -3,6 +3,7 @@ import Project from './Project';
 import CardDeck from 'react-bootstrap/CardDeck';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCodepen } from '@fortawesome/free-brands-svg-icons';
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 // import Button from 'react-bootstrap/Button';
 
 
@@ -78,7 +79,6 @@ function ProjectsPage() {
         />
 
         <Project
-
           projectLink="https://github.com/AugustanaCSC285Fall18/CurlewRepo"
           imageSource="https://i.imgur.com/4pfBf59.png"
           altDesc='An image of my "Chicken Tracker" program'
@@ -89,6 +89,34 @@ function ProjectsPage() {
         />
 
       </CardDeck>
+
+      <CardDeck>
+        <Project
+          projectLink="https://chrisbakeraugie-fcc-api1.glitch.me/"
+          imageSource="https://i.imgur.com/pDuKpyO.png"
+          altDesc="An image of my timestamp service"
+          cardTitle="Express and HTML Timestamp Service"
+          cardDesc="My timestamp service, an early project using Express and HTML. Add a route to the address bar, and recieve a timestamp in return."
+          codeLink="https://glitch.com/edit/#!/chrisbakeraugie-fcc-api1?path=README.md:1:0"
+          icon={faCode}
+        />
+
+        <Project
+          projectLink="https://who-am-i-api-project.glitch.me/"
+          imageSource="https://i.imgur.com/tikMykl.png"
+          altDesc="An image of my first express api"
+          cardTitle="Express and HTML 'Who am I' service"
+          cardDesc="My first express service. Add one of the two routes to the end of the address and get a greeting or display information of your computer"
+          codeLink="https://glitch.com/edit/#!/who-am-i-api-project?path=views/index.html:58:10"
+          icon={faCode}
+        />
+
+
+
+      </CardDeck>
+
+      <br/>
+      <h2>...And more coming</h2>
     </div>
   )
 }
