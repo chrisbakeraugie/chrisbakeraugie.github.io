@@ -1,16 +1,26 @@
 import React from "react";
-
-import CardDeck from "react-bootstrap/CardDeck";
-import InfoCard from "./InfoCard";
-import { faFreeCodeCamp, faJava, faReact, faJs, faHtml5, faCss3, faNodeJs } from "@fortawesome/free-brands-svg-icons";
-import { faDatabase, faCode, faChartLine, faLaptopCode, faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
+import StyledHeroCard from "./StyledHeroCard";
+// import CardDeck from "react-bootstrap/CardDeck";
+// import InfoCard from "./InfoCard";
+// import { faFreeCodeCamp, faJava, faReact, faJs, faHtml5, faCss3, faNodeJs } from "@fortawesome/free-brands-svg-icons";
+// import { faDatabase, faCode, faChartLine, faLaptopCode, faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 
 function AboutMe() {
+    const StyledAboutDiv = styled.div`
+    margin: 15px;
+    text-align: center;
+    `;
 
     return (
-        <div className="page-div">
-
+        <StyledAboutDiv>
+            <StyledHeroCard />
+            <StyledHeroCard />
+        </StyledAboutDiv>
+    );
+    /**
+     * 
         <h1>Work Experience</h1>
         <CardDeck>
             <InfoCard
@@ -158,8 +168,7 @@ function AboutMe() {
                 />
             </CardDeck>
 
-        </div>
-    );
+     */
 }
 
 export default AboutMe;

@@ -1,11 +1,14 @@
 body, html {
     height: 95%;
-    background-color: black;
     font-family: 'Comfortaa', cursive;
     font-weight: 700;
 }
 
-.page-div{
+.App{
+    padding-top: 20px;
+}
+
+.page-div {
     padding: 50px;
     text-align: center;
     background-color: rgb(211, 211, 211, .7);
@@ -17,7 +20,40 @@ body, html {
     position: relative;
     min-height: 100vh;
     color: white;
-    
+}
+
+#top, #bottom, #left, #right {
+    background: #888888;
+    position: fixed;
+}
+
+#left, #right {
+    top: 0;
+    bottom: 0;
+    width: 15px;
+}
+
+#left {
+    left: 0;
+}
+
+#right {
+    right: 0;
+}
+
+#top, #bottom {
+    left: 0;
+    right: 0;
+    height: 15px;
+}
+
+#top {
+    top: 5.9vh;
+}
+
+#bottom {
+    bottom: 0;
+    text-align: center;
 }
 
 .nav-link {
@@ -49,16 +85,14 @@ body, html {
     color: white;
 }
 
-.info-card{
+.info-card {
     padding: 10px;
     margin: 10px;
     color: black;
     min-width: 300px;
-
-    
 }
 
-#school{
+#school {
     /* background-image:  url("./images/AugustanaLogo.jpg"); */
     background-repeat: no-repeat;
     background-size: 100px;
@@ -67,14 +101,13 @@ body, html {
     background-position-y: bottom;
 }
 
-#skills-section{
+#skills-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
 }
 
-#skills-card{
+#skills-card {
     margin: 20px;
     /* color: white; */
     border: none;
@@ -84,21 +117,21 @@ body, html {
     min-width: 300px;
 }
 
-
 .project-card {
     margin: 10px;
     min-width: 250px;
 }
 
-.project-card-link{
+.project-card-link {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    color: rgb(32,36,41);
+    color: rgb(32, 36, 41);
 }
-.project-card-link:hover{
+
+.project-card-link:hover {
     text-decoration: none;
-    color:rgb(32,36,41)
+    color: rgb(32, 36, 41)
 }
 
 .subtitle-link {
@@ -122,13 +155,13 @@ a:hover {
     text-decoration: none;
 }
 
-#form-button{
+#form-button {
     border: none;
     outline: none;
     border-radius: 5px;
 }
 
-#contact-div{
+#contact-div {
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
@@ -142,78 +175,69 @@ a:hover {
     text-align: center;
 }
 
-#contact-header{
+#contact-header {
     text-align: center;
 }
 
-#contact-links{
+#contact-links {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-#contact-link{
+#contact-link {
     color: black;
     text-decoration: none;
 }
 
-#form-email{
+#form-email {
     margin-top: 2px;
     margin-bottom: 2px;
     border: none;
 }
 
-
-#form-text{
+#form-text {
     margin-top: 2px;
     margin-bottom: 2px;
     border: none;
 }
 
-#form-button{
+#form-button {
     margin: 10px;
     border: none;
-    
 }
 
-footer{
+/* footer {
     color: white;
     font-size: smaller;
     text-align: center;
+} */
+
+#footer-link {
+    color: rgba(0, 174, 255, 0.568);
 }
 
-#footer-link{
-    color:rgba(0, 174, 255, 0.568);
-}
-@media only screen and (max-width: 785px){
-
-    
-    .page-div{
+@media only screen and (max-width: 785px) {
+    .page-div {
         padding: 10px;
         padding-top: 50px;
         background-color: rgb(211, 211, 211, .7);
-        background-image:  none;
+        background-image: none;
         background-position: center;
         background-size: cover;
         position: relative;
         min-height: 100vh;
         color: white;
-
     }
-    #skills-card{
+    #skills-card {
         padding: 0;
         margin: 0;
         min-width: fit-content;
         background: transparent;
         border-radius: none;
-
     }
-    
-
-  
 }
-
 
 @media only screen and (max-width: 550px) {
     .hero-image {
@@ -224,12 +248,10 @@ footer{
         flex-wrap: wrap;
         justify-content: center;
     }
-
-    #form-email{
+    #form-email {
         font-size: small;
     }
-
-    #form-text{
+    #form-text {
         font-size: smaller;
     }
 }
