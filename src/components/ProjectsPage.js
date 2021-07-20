@@ -1,8 +1,8 @@
 import React from "react";
-import Project from './Project';
-import CardDeck from 'react-bootstrap/CardDeck';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faCodepen } from '@fortawesome/free-brands-svg-icons';
+import Project from "./Project";
+import CardDeck from "react-bootstrap/CardDeck";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faCodepen } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 // import Button from 'react-bootstrap/Button';
 
@@ -118,7 +118,7 @@ function ProjectsPage() {
       <br/>
       <h2>...And more coming</h2>
     </div>
-  )
+  );
 }
 
 export default ProjectsPage;

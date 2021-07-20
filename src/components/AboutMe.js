@@ -1,9 +1,9 @@
 import React from "react";
 
-import CardDeck from 'react-bootstrap/CardDeck'
+import CardDeck from "react-bootstrap/CardDeck";
 import InfoCard from "./InfoCard";
-import { faFreeCodeCamp, faJava, faReact, faJs, faHtml5, faCss3, faNodeJs } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faCode, faChartLine, faLaptopCode, faCircleNotch } from "@fortawesome/free-solid-svg-icons"
+import { faFreeCodeCamp, faJava, faReact, faJs, faHtml5, faCss3, faNodeJs } from "@fortawesome/free-brands-svg-icons";
+import { faDatabase, faCode, faChartLine, faLaptopCode, faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 
 function AboutMe() {
@@ -159,7 +159,7 @@ function AboutMe() {
             </CardDeck>
 
         </div>
-    )
+    );
 }
 
 export default AboutMe;

@@ -1,16 +1,14 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Home from './Home'
-import AboutMe from './AboutMe'
-import ProjectsPage from './ProjectsPage'
-import Contact from './Contact'
-import '../App.css'
-import Nav from 'react-bootstrap/Nav'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "react-bootstrap/Navbar";
+import Home from "./Home";
+import AboutMe from "./AboutMe";
+import ProjectsPage from "./ProjectsPage";
+import Contact from "./Contact";
+import "../App.css";
+import Nav from "react-bootstrap/Nav";
 var HashRouter = require("react-router-dom").HashRouter;
 var Route = require("react-router-dom").Route;
-
-
 
 class App extends React.Component {
 

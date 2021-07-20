@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import Card from 'react-bootstrap/Card';
+import Card from "react-bootstrap/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -22,7 +23,7 @@ const Project = (props) => {
             </Card.Footer>
           </a>
         </Card>
-    )
-}
+    );
+};
 
 export default Project;

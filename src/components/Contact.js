@@ -51,7 +51,7 @@ function Contact() {
             </div>
 
         </div>
-    )
+    );
 }
 
 

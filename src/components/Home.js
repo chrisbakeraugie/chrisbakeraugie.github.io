@@ -13,11 +13,11 @@ function Home() {
                     <br />
                     My name is Chris,
                     <br />
-                    and I'm a full stack developer.
+                    and I&apos;m a full stack developer.
                     </h1>
             </div>
         </div>
-    )
+    );
 }
 
 export default Home;

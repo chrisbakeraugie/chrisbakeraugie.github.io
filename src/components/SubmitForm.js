@@ -58,7 +58,7 @@ class SubmitForm extends React.Component {
 
 
                 />
-                {status === "SUCCESS" ? <p>Thanks! I'll respond to you soon.</p> : <button id="form-button" >Submit</button>}
+                {status === "SUCCESS" ? <p>Thanks! I&apos;ll respond to you soon.</p> : <button id="form-button" >Submit</button>}
                 {status === "ERROR" && <p>Ooops! There was an error. Feel free to send me an email at ChrisBakerDev@gmail.com</p>}
             </Form>
 
