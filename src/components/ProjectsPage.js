@@ -1,19 +1,73 @@
-import React from "react";
-import Project from "./Project";
-import CardDeck from "react-bootstrap/CardDeck";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faCodepen } from "@fortawesome/free-brands-svg-icons";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect } from "react";
+// import Project from "./Project";
+// import CardDeck from "react-bootstrap/CardDeck";
+// import { faGithub } from "@fortawesome/free-brands-svg-icons";
+// import { faCodepen } from "@fortawesome/free-brands-svg-icons";
+// import { faCode } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
+import StyledHeroCard from "./StyledHeroCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 // import Button from 'react-bootstrap/Button';
 
 
-function ProjectsPage() {
+const ProjectsPage = () => {
+  useEffect(() => {
+    AOS.init({
+      delay: 600,
+      duration: 1500
+    });
+    AOS.refresh();
+  }, []);
+
+  const StyledProjectsDiv = styled.div`
+  margin:15px;
+  max-width:100vw;
+
+  `;
 
   return (
 
     //Just using inline styling temporarily. Remove later in the process
-    <div className="page-div">
+    <StyledProjectsDiv>
+      <StyledHeroCard
+        txtAlgn="left"
+        dataAOS="zoom-out"
+        bgColor="rgba(255, 166, 0, 0.6)"
+        title="Beer Near V1"
+        subTitle2="Node.JS, React.JS, Bootstrap, Google Maps API"
+        desc="A mobile-focused web app which uses your location, or an address you choose, to find the 20 beers closest to you!
+        The name, address, website, and phone number are provided for each brewery. A map displays the location of the breweries relative to you.
+        Try it out, and go get yourself a drink!"
+        imgSrc="https://i.imgur.com/SNBpsim.png"
+      />
+      <StyledHeroCard
+      txtAlgn="right"
+      dataAOS="zoom-out"
+      bgColor="rgba(179, 142, 114, 0.5)"
+      title="skriftr"
+      subTitle2="MongoDB, Express.JS, Embedded JS, Node.JS, Bootstrap, D3.JS, Passport.JS authentication"
+      desc='A web app which encourages users to journal their progress during a project or learning experience. Designed to tackle the issue
+      of feeling of "no progress is being made", users track their daily accomplishments and their level of confidence. After multiple journal entires, users
+      have access to a graph detailing the progress they have made and journal entries they can reference in the future.'
+      imgSrc="https://i.imgur.com/8kccxG9.png"
+    />
+      <StyledHeroCard
+      txtAlgn="right"
+      dataAOS="zoom-out"
+      bgColor="rgba(127, 255, 212, 0.5)"
+      title="Random Quote Generator"
+      subTitle2="Node, React"
+      desc="This random quote machine displays a quote and an author by fetching from an array of quote objects at random. 
+      That quote can then be tweeted easily."
+      imgSrc="https://i.imgur.com/FSaQ1xt.png"
+    />
+    </StyledProjectsDiv>
+  );
+  /**
+   * <div className="page-div">
       <CardDeck>
+
         <Project
           projectLink="https://chrisbakeraugie.github.io/random-quote-generator/"
           imageSource="https://i.imgur.com/FSaQ1xt.png"
@@ -118,7 +172,7 @@ function ProjectsPage() {
       <br/>
       <h2>...And more coming</h2>
     </div>
-  );
+   */
 }
 
 export default ProjectsPage;
