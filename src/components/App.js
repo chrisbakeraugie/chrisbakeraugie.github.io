@@ -7,14 +7,11 @@ import ProjectsPage from "./ProjectsPage";
 import Contact from "./Contact";
 import "../App.css";
 import Nav from "react-bootstrap/Nav";
-import AOS from 'aos';
+// import AOS from 'aos';
 var HashRouter = require("react-router-dom").HashRouter;
 var Route = require("react-router-dom").Route;
 
 class App extends React.Component {
-  componentDidMount(){
-    AOS.init();
-  }
   render() {
     return (
       <div>
