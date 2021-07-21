@@ -17,9 +17,12 @@ const Contact = () => {
     }, []);
 
     const StyledContactDiv = styled.div`
-    width: 100vw;
-    height: 100vh;
-      margin 15px;
+    position: absolute;
+    top:8vh;
+    left:2vw;
+    height:90vh;
+    width:
+    96vw;
       display: grid; 
     grid-template-columns: 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr; 

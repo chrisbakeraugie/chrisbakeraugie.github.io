@@ -40,6 +40,8 @@ body, html {
 }
 
 #home-container {
+    position: absolute;
+    top: 8vh;
     height: 90vh;
     width: 100vw;
     display: grid;
@@ -234,14 +236,14 @@ body, html {
 }
 
 #top, #bottom, #left, #right {
-    background: #888888;
+    background: rgb(102, 169, 185);
     position: fixed;
 }
 
 #left, #right {
     top: 0;
     bottom: 0;
-    width: 15px;
+    width: 1vw;
 }
 
 #left {
@@ -255,11 +257,11 @@ body, html {
 #top, #bottom {
     left: 0;
     right: 0;
-    height: 15px;
+    height: 2vh;
 }
 
 #top {
-    top: 5.9vh;
+    top: 6vh;
 }
 
 #bottom {

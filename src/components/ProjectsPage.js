@@ -21,8 +21,11 @@ const ProjectsPage = () => {
   }, []);
 
   const StyledProjectsDiv = styled.div`
-  margin:15px;
-  max-width:100vw;
+  position: absolute;
+  top:8vh;
+  left:2vw;
+  height:90vh;
+  width:96vw;
 
   `;
 

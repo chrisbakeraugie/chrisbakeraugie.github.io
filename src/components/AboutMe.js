@@ -18,7 +18,11 @@ const AboutMe = () => {
         AOS.refresh();
       },[]);
     const StyledAboutDiv = styled.div`
-    margin: 15px;
+    position: absolute;
+    top:8vh;
+    left:2vw;
+    height:90vh;
+    width:96vw;
     text-align: left;
     `;
     const StyledH1 = styled.h1`

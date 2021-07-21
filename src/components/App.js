@@ -7,24 +7,43 @@ import ProjectsPage from "./ProjectsPage";
 import Contact from "./Contact";
 import "../App.css";
 import Nav from "react-bootstrap/Nav";
+import styled from "styled-components";
 // import AOS from 'aos';
-var HashRouter = require("react-router-dom").HashRouter;
-var Route = require("react-router-dom").Route;
+import {
+  BrowserRouter as Router,
+  Switch,
+  Link,
+  Route
+} from "react-router-dom";
 
 class App extends React.Component {
+
+  StyledNavbar = styled(Navbar)`
+  height:6vh;
+  `;
+
+  StyledLink = styled(Link)`
+  text-decoration: none;
+  padding: 10px;
+  margin:auto;
+  color:black;
+  &:hover{
+    color:rgb(102, 169, 185);
+  }`;
+
   render() {
     return (
       <div>
-        <HashRouter>
+        <Router>
           <div className="App">
-            <Navbar bg="light" variant="light" fixed="top" className="navbar">
-              <Navbar.Brand href="#">Welcome</Navbar.Brand>
-              <Nav.Link href="#about" className="nav-link">About Me</Nav.Link>
-              <Nav.Link href="#projects" className="nav-link">Projects</Nav.Link>
-              <Nav.Link href="#contact" className="nav-link">Contact</Nav.Link>
-            </Navbar>
+            <this.StyledNavbar bg="light" variant="dark" fixed="top" className="navbar">
+              <Navbar.Brand><this.StyledLink to="/">Welcome</this.StyledLink></Navbar.Brand>
+              <Nav.Link className="nav-link"><this.StyledLink to="/about">About Me</this.StyledLink></Nav.Link>
+              <Nav.Link className="nav-link"><this.StyledLink to="/projects">Projects</this.StyledLink></Nav.Link>
+              <Nav.Link className="nav-link"><this.StyledLink to="/contact">Contact</this.StyledLink></Nav.Link>
+            </this.StyledNavbar>
             <div id="framed-div">
-              <div className="content">
+              <Switch className="content">
                 <Route exact path="/">
                   <Home />
                 </Route>
@@ -38,10 +57,10 @@ class App extends React.Component {
                 <Route path="/contact">
                   <Contact />
                 </Route>
-              </div>
+              </Switch>
             </div>
           </div>
-        </HashRouter>
+        </Router>
         <div id="left"></div>
         <div id="right"></div>
         <div id="top"></div>
