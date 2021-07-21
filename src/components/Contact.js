@@ -1,14 +1,51 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SubmitForm from "./SubmitForm";
 import "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub, faFacebook, faCodepen } from "@fortawesome/free-brands-svg-icons";
+import styled from "styled-components";
+import AOS from "aos";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faLinkedin, faGithub, faFacebook, faCodepen } from "@fortawesome/free-brands-svg-icons";
 
-function Contact() {
+
+const Contact = () => {
+    useEffect(() => {
+        AOS.init({
+            delay: 600,
+            duration: 1500
+        });
+        AOS.refresh();
+    }, []);
+
+    const StyledContactDiv = styled.div`
+    width: 100vw;
+    height: 100vh;
+      margin 15px;
+      display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    ". . ."
+    ". SubmitForm ."
+    ". . ."; 
+      `;
+
+    const StyledFormDiv = styled.div`
+    margin:0;
+    padding:0;
+    grid-area: SubmitForm
+      `;
 
 
     return (
-        <div className="page-div contact-page">
+        <StyledContactDiv>
+            <StyledFormDiv>
+                <SubmitForm />
+            </StyledFormDiv>
+        </StyledContactDiv>
+    );
+    /**
+     *  <div className="page-div contact-page">
             <div id="contact-div">
                 <h1 id="contact-header">Interested in working together? <br />Let me know</h1>
 
@@ -51,7 +88,7 @@ function Contact() {
             </div>
 
         </div>
-    );
+     */
 }
 
 
