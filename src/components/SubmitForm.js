@@ -85,33 +85,10 @@ class SubmitForm extends React.Component {
                     name="message"
                     rows="4"
                 ></this.StyledFormDescription>
-                {status === "SUCCESS" ? <p>Thanks! I&apos;ll respond to you soon.</p> : <this.StyledFormSubmit>Submit</this.StyledFormSubmit>}
+                {status === "SUCCESS" ? <p>Thanks! I&apos;ll respond to you soon.</p> : <this.StyledFormSubmit className="btn btn-dark">Submit</this.StyledFormSubmit>}
                 {status === "ERROR" && <p>Oops! There was an error. Feel free to send me an email at ChrisBakerDev@gmail.com</p>}
             </this.StyledForm>
-
-
         );
-        /**
-         *  <Form onSubmit={this.submitForm}
-                action="https://formspree.io/xgekkjeo"
-                method="POST">
-
-                <Form.Label>Send me a message, I read them everyday.</Form.Label>
-                <Form.Control id="form-email"
-                    type="email"
-                    placeholder="Your email"
-                    name="email"
-                />
-                <Form.Control id="form-text"
-                    as="textarea"
-                    placeholder="Tell me about your project, and maybe leave some contact information :)"
-                    name="message"
-                    rows="4"
-                />
-                {status === "SUCCESS" ? <p>Thanks! I&apos;ll respond to you soon.</p> : <button id="form-button" >Submit</button>}
-                {status === "ERROR" && <p>Oops! There was an error. Feel free to send me an email at ChrisBakerDev@gmail.com</p>}
-            </Form>
-         */
     }
 
 

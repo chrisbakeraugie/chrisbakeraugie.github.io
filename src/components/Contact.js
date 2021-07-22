@@ -8,30 +8,36 @@ import AOS from "aos";
 
 
 const Contact = () => {
-    useEffect(() => {
-        AOS.init({
-            delay: 600,
-            duration: 1500
-        });
-        AOS.refresh();
-    }, []);
+    // useEffect(() => {
+    //     AOS.init({
+    //         delay: 600,
+    //         duration: 1500
+    //     });
+    //     AOS.refresh();
+    // }, []);
 
     const StyledContactDiv = styled.div`
     position: absolute;
     top:8vh;
     left:2vw;
     height:90vh;
+    text-align: center;
     width:
     96vw;
       display: grid; 
     grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 2fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
     ". . ."
     ". SubmitForm ."
     ". . ."; 
-      `;
+    @media(max-width:500px){
+        top:12.5vh;
+        grid-template-columns: 1fr 10fr 1fr; 
+        grid-template-rows: 1fr 10fr 1fr; 
+    }
+    `;
 
     const StyledFormDiv = styled.div`
     margin:0;
