@@ -27,6 +27,9 @@ const ProjectsPage = () => {
   left:2vw;
   height:90vh;
   width:96vw;
+  @media (max-width:500px) {
+    top:12.5vh;
+  }
   `;
   const StyledH3 = styled.h3`
   padding:10px;

@@ -53,7 +53,20 @@ const StyledProjectCard = (props) => {
     "Sub Sub Image"
     "Desc Desc Image"; `
     }
-  
+    @media (max-width:500px){
+      max-height:60vh;
+      text-align:center;
+      display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: .5fr .1fr .1fr .1fr .1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "."
+    "Title"
+    "Link"
+    "Sub"
+    "Desc"; 
+    }
   `;
   const StyledTitle = styled.h2`
   grid-area: Title;
@@ -62,7 +75,15 @@ const StyledProjectCard = (props) => {
   `;
   const StyledLink = styled.a`
   grid-area: Link;
-  color: black;
+  color: white;
+  max-width: 100px;
+  @media(max-width:500px){
+    justify-self:center;
+  }
+  ${props.txtAlgn === "right" ?
+      "justify-self: end" :
+      "justify-self: start"
+    }
   `;
   const StyledSub = styled.p`
   grid-area: Sub;
@@ -75,23 +96,30 @@ const StyledProjectCard = (props) => {
   const StyledImage = styled.img`
   grid-area: Image;
   border-radius:5mm;
-  object-fit: cover;
+  object-fit: scale-down;
   width: 100%;
   height: 100%;
+  @media (max-width:500px){
+    visibility:hidden;
+    position:absolute;
+  }
   `;
   const StyledIconLink = styled.a`
   position: absolute;
   top: 9%;
-  left: 5mm;
   max-width: 36px;
   max-height:37px;
   border-radius:50%;
   ${props.txtAlgn === "right" ?
-  `top: 3%;
+      `top: 3%;
   left: 96%;`
-  :
-  ` top: 3%;
+      :
+      ` top: 3%;
   left: 1.5%;`
+    }
+@media (max-width:500px){
+  left:42vw
+
 }
 
   `;
@@ -99,11 +127,11 @@ const StyledProjectCard = (props) => {
   return (
     <StyledInfoDiv data-aos={props.dataAOS}>
       <StyledTitle>{props.title}</StyledTitle>
-      <StyledLink href={`https://${props.link}`} target="_blank" rel="noreferrer" >{props.link}</StyledLink>
-      <StyledIconLink href={props.iconLink}  target="_blank" rel="noreferrer"><FontAwesomeIcon icon={props.icon} size="2x" color="black"></FontAwesomeIcon></StyledIconLink>
+      <StyledLink href={`https://${props.link}`} target="_blank" rel="noreferrer" className="btn btn-dark">Website</StyledLink>
+      <StyledIconLink href={props.iconLink} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={props.icon} size="2x" color="black"></FontAwesomeIcon></StyledIconLink>
       <StyledSub>{props.subTitle}</StyledSub>
       <StyledDesc>{props.desc}</StyledDesc>
-      {props.imgSrc ?
+      {props.imgSrc && window.innerWidth > 500 ?
         <StyledImage src={props.imgSrc}></StyledImage> :
         <div></div>
       }
