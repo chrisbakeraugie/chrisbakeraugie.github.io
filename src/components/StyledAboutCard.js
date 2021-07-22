@@ -49,7 +49,22 @@ const StyledAboutCard = (props) => {
     "Sub2 Sub2 Image"
     "Desc Desc Image"; `
     }
-  
+    @media (max-width:500px) {
+      padding:10px;
+      margin:20px;
+      height:50vh;
+      display: grid; 
+      grid-template-columns: 1fr; 
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        "Image"
+        "Title"
+        "Sub1"
+        "Sub2"
+        "Desc"; 
+    }
+    text-align:center;
   `;
   const StyledTitle = styled.h2`
   grid-area: Title;

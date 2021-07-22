@@ -24,6 +24,9 @@ const AboutMe = () => {
     height:90vh;
     width:96vw;
     text-align: left;
+    @media (max-width:500px) {
+        top:12.5vh;
+      }
     `;
     const StyledH1 = styled.h1`
     padding: 20px;
@@ -35,8 +38,8 @@ const AboutMe = () => {
             <StyledHeroCard
                 dataAOS="fade-right"
                 txtAlgn="left"
-                title="Cyient"
-                subTitle1="Software developer / IT"
+                title="Software Developer / IT"
+                subTitle1="Cyient - Hartford, CT"
                 subTitle2="March 2020 - May 2021"
                 desc="Create, update, and maintain applications for Pratt & Whitney. 
                 Deliverables include full web applications, bug fixes and patches, macros, scripts, and workflows.
@@ -46,7 +49,7 @@ const AboutMe = () => {
                 dataAOS="fade-left"
                 txtAlgn="right"
                 title="Student, Product Development at John Deere Seeding"
-                subTitle1="John Deere, Moline, IL"
+                subTitle1="John Deere - Moline, IL"
                 subTitle2="November 2017- August 2019"
                 desc="Ran experiments, recorded data, and presented that data to improve the efficiency and accuracy of planting machines and crop yields. 
                 Additionally supported team by managing weekly meetings, travel, and events, 
@@ -56,7 +59,7 @@ const AboutMe = () => {
                 dataAOS="fade-right"
                 txtAlgn="left"
                 title="Software development"
-                subTitle1="Augustana College, Rock Island, IL"
+                subTitle1="Augustana College - Rock Island, IL"
                 subTitle2="August 2018 - November 2018"
                 desc="Completed an 11 week course developing a program which could be used to track the movement of chickens in a video file, 
                 which the psychology department could use to measure chicken responses to stimulation. 
