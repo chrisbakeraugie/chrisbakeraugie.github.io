@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import StyledHeroCard from "./StyledHeroCard";
+import StyledHeroCard from "./StyledAboutCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import CardDeck from "react-bootstrap/CardDeck";

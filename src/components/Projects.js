@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 // import Project from "./Project";
 // import CardDeck from "react-bootstrap/CardDeck";
-// import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faCodepen } from "@fortawesome/free-brands-svg-icons";
 // import { faCodepen } from "@fortawesome/free-brands-svg-icons";
 // import { faCode } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import StyledHeroCard from "./StyledHeroCard";
+import StyledProjectCard from "./StyledProjectCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import Button from 'react-bootstrap/Button';
@@ -22,49 +22,102 @@ const ProjectsPage = () => {
 
   const StyledProjectsDiv = styled.div`
   position: absolute;
+  text-align:center;
   top:8vh;
   left:2vw;
   height:90vh;
   width:96vw;
-
+  `;
+  const StyledH3 = styled.h3`
+  padding:10px;
+  `;
+  const StyledBottomText = styled.h5`
+  margin-bottom:50px;
   `;
 
   return (
 
     //Just using inline styling temporarily. Remove later in the process
     <StyledProjectsDiv>
-      <StyledHeroCard
+    <StyledH3>Recent Work</StyledH3>
+      <StyledProjectCard
         txtAlgn="left"
         dataAOS="zoom-out"
         bgColor="rgba(255, 166, 0, 0.6)"
         title="Beer Near V1"
-        subTitle2="Node.JS, React.JS, Bootstrap, Google Maps API"
+        link="BrNear.com"
+        subTitle="Node.JS, React.JS, Bootstrap, Google Maps API"
         desc="A mobile-focused web app which uses your location, or an address you choose, to find the 20 beers closest to you!
         The name, address, website, and phone number are provided for each brewery. A map displays the location of the breweries relative to you.
         Try it out, and go get yourself a drink!"
-        imgSrc="https://i.imgur.com/SNBpsim.png"
+        imgSrc="https://i.imgur.com/ZXpFg8o.png"
+        iconLink="https://github.com/chrisbakeraugie/beer-near"
+        icon={faGithub}
       />
-      <StyledHeroCard
+      <StyledProjectCard
       txtAlgn="right"
       dataAOS="zoom-out"
       bgColor="rgba(179, 142, 114, 0.5)"
       title="skriftr"
-      subTitle2="MongoDB, Express.JS, Embedded JS, Node.JS, Bootstrap, D3.JS, Passport.JS authentication"
+      link="skriftr.com"
+      subTitle="MongoDB, Express.JS, Embedded JS, Node.JS, Bootstrap, D3.JS, Passport.JS authentication"
       desc='A web app which encourages users to journal their progress during a project or learning experience. Designed to tackle the issue
       of feeling of "no progress is being made", users track their daily accomplishments and their level of confidence. After multiple journal entires, users
       have access to a graph detailing the progress they have made and journal entries they can reference in the future.'
-      imgSrc="https://i.imgur.com/8kccxG9.png"
+      imgSrc="https://i.imgur.com/Z3EkvCt.png"
+      iconLink="https://github.com/chrisbakeraugie/beer-near"
+      icon={faGithub}
     />
-      <StyledHeroCard
+    <StyledH3>Older/Practice Projects</StyledH3>
+    <StyledProjectCard 
+      txtAlgn="left"
+      dataAOS="zoom-out"
+      bgColor="rgba(128, 128, 128, 0.5)"
+      title="Chicken Tracker"
+      subtitle="Java"
+      desc="A desktop app completed in 2018 which tracks the movement of chickens in a video. A specific request from Augustana College,
+      users upload a video of chickens responding to various stimuli and track their movements on a 2D plane. They can then export data in
+      the form of a .CSV file."
+      imgSrc="https://i.imgur.com/JmMQXqF.png"
+      iconLink="https://github.com/AugustanaCSC285Fall18/CurlewRepo"
+      icon={faGithub}
+      />
+    <StyledProjectCard
       txtAlgn="right"
       dataAOS="zoom-out"
       bgColor="rgba(127, 255, 212, 0.5)"
-      title="Random Quote Generator"
-      subTitle2="Node, React"
+      title="A practice project - Random Quote Generator"
+      link="chrisbakeraugie.github.io/random-quote-generator/"
+      subTitle="React"
       desc="This random quote machine displays a quote and an author by fetching from an array of quote objects at random. 
       That quote can then be tweeted easily."
-      imgSrc="https://i.imgur.com/FSaQ1xt.png"
+      imgSrc="https://i.imgur.com/MIU7jlp.png"
+      iconLink="https://github.com/chrisbakeraugie/random-quote-generator"
+      icon={faGithub}
     />
+    <StyledProjectCard
+      txtAlgn="left" 
+      dataAOS="zoom-out"
+      title="A practice project - React Calculator"
+      link="chrisbakeraugie.github.io/js-calc/"
+      subTitle="Node, React"
+      desc="Building a calculator with React"
+      imgSrc="https://i.imgur.com/EHYUP00.png"
+      iconLink="https://github.com/chrisbakeraugie/js-calc"
+      icon={faGithub}
+      />
+      <StyledProjectCard
+        txtAlgn="right"
+        dataAOS="zoom-out"
+        title="A practice project - USA GDP bargraph" 
+        link="codepen.io/christopherbaker15/full/OJPLGeO"
+        subTitle="D3.JS"
+        desc="A practice graph made with D3.JS, which tracks the USA GDP"
+        imgSrc="https://i.imgur.com/4K3wWIK.png"
+        iconLink="https://codepen.io/christopherbaker15/pen/OJPLGeO"
+        icon={faCodepen}
+        />
+      <a href="https://github.com/chrisbakeraugie"><StyledBottomText className="btn btn-dark">Still looking? Try my GitHub</StyledBottomText></a>
     </StyledProjectsDiv>
   );
   /**
