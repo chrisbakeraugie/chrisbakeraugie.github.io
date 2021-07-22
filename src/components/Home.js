@@ -10,6 +10,11 @@ const Home = () => {
     top:35vh;
     left:35vw;
     text-align:center;
+    @media (max-width:500px) {
+        top:25vh;
+        left:27.5vw
+        width:45vw;
+      }
     `;
 
     return (

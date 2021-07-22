@@ -20,6 +20,12 @@ class App extends React.Component {
 
   StyledNavbar = styled(Navbar)`
   height:6vh;
+  @media (max-width:500px) {
+    height:12vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   `;
 
   StyledLink = styled(Link)`
@@ -42,7 +48,7 @@ class App extends React.Component {
               <Nav.Link className="nav-link"><this.StyledLink to="/projects">Projects</this.StyledLink></Nav.Link>
               <Nav.Link className="nav-link"><this.StyledLink to="/contact">Contact</this.StyledLink></Nav.Link>
             </this.StyledNavbar>
-            <div id="framed-div">
+            <div>
               <Switch className="content">
                 <Route exact path="/">
                   <Home />

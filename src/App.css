@@ -2,6 +2,8 @@ body, html {
     height: 95%;
     font-family: 'Comfortaa', cursive;
     font-weight: 700;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .App {
@@ -202,7 +204,6 @@ body, html {
     z-index: 1;
     animation: sundown 3.0s ease 4s 1 forwards;
     visibility: hidden;
-
 }
 
 /* #trapezoid-1 {
@@ -431,6 +432,7 @@ a:hover {
     color: rgba(0, 174, 255, 0.568);
 }
 
+/* 
 @media only screen and (max-width: 785px) {
     .page-div {
         padding: 10px;
@@ -451,20 +453,102 @@ a:hover {
         border-radius: none;
     }
 }
+*/
 
-@media only screen and (max-width: 550px) {
-    .hero-image {
+@media (max-width: 500px) {
+    #top {
+        top: 12vh;
+        height: .5vh;
+    }
+    #bottom {
+        height: 3vh;
+    }
+    /* ----------------------------Homepage----------------------------------------- */
+    #home-container {
+        height: 80vh;
+    }
+    #rectangle1 {
+        height: 41.25%;
+        animation: unset;
+        visibility: visible;
+    }
+    #rectangle2 {
+        height: 31.25%;
+        animation: unset;
+        visibility: visible;
+    }
+    #trapez3 {
+        border-bottom: 50vh solid rgb(102, 169, 185);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        height: 0;
+        width: 1f;
+        animation: unset;
+        visibility: visible;
+    }
+    #rectangle4 {
+        height: 33.75%;
+        animation: unset;
+        visibility: visible;
+    }
+    #trapez5 {
+        border-bottom: 40vh solid rgb(201, 201, 201);
+        border-left: 25px solid rgb(201, 201, 201);
+        border-right: 5px solid transparent;
+        height: 0;
+        width: 1f;
+        visibility: visible;
+        animation: unset;
+    }
+    #rectangle6 {
+        height: 41.25%;
+        animation: unset;
+        visibility: visible;
+    }
+    #rectangle7 {
+        height: 18.75%;
+        animation: unset;
+        visibility: visible;
+    }
+    #rectangle8 {
+        height: 43.75%;
+        visibility: visible;
+        animation: unset;
+    }
+    #rectangle9 {
+        height: 37.5%;
+        animation: unset;
+        visibility: visible;
+    }
+    #rectangle10 {
+        animation: unset;
+        visibility: hidden;
+    }
+    #rectangle12 {
+        height: 45%;
+        animation: unset;
+        visibility: visible;
+    }
+    #rectangle11 {
+        height: 36.25%;
+        animation: unset;
+        visibility: visible;
+    }
+    #the-sun {
+        animation: unset;
+        visibility: visible;
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    /* .hero-image {
         background-image: linear-gradient( to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5)), url("./images/Background.jpg");
-    }
+    } */
     .navbar {
-        display: flex;
+        /* display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-    }
-    #form-email {
-        font-size: small;
-    }
-    #form-text {
-        font-size: smaller;
+        justify-content: center; */
     }
 }
