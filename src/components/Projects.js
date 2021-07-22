@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect } from "react";
 // import Project from "./Project";
 // import CardDeck from "react-bootstrap/CardDeck";
@@ -101,11 +102,12 @@ const ProjectsPage = () => {
     <StyledProjectCard
       txtAlgn="left" 
       dataAOS="zoom-out"
+      bgColor=" rgba(47, 79, 79, 0.5)"
       title="A practice project - React Calculator"
       link="chrisbakeraugie.github.io/js-calc/"
       subTitle="Node, React"
       desc="Building a calculator with React"
-      imgSrc="https://i.imgur.com/EHYUP00.png"
+      imgSrc="https://i.imgur.com/h9Z1cKs.png"
       iconLink="https://github.com/chrisbakeraugie/js-calc"
       icon={faGithub}
       />

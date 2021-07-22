@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import StyledHeroCard from "./StyledAboutCard";
+import StyledAboutCard from "./StyledAboutCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import CardDeck from "react-bootstrap/CardDeck";
@@ -26,6 +27,7 @@ const AboutMe = () => {
     text-align: left;
     @media (max-width:500px) {
         top:12.5vh;
+        text-align:center;
       }
     `;
     const StyledH1 = styled.h1`
@@ -35,7 +37,7 @@ const AboutMe = () => {
     return (
         <StyledAboutDiv>
             <StyledH1>Past work</StyledH1>
-            <StyledHeroCard
+            <StyledAboutCard
                 dataAOS="fade-right"
                 txtAlgn="left"
                 title="Software Developer / IT"
@@ -45,7 +47,7 @@ const AboutMe = () => {
                 Deliverables include full web applications, bug fixes and patches, macros, scripts, and workflows.
                 Technologies used include HTML/CSS, Bootstrap, Visual Basic, SharePoint, and Nintex Workflows."
                 />
-            <StyledHeroCard
+            <StyledAboutCard
                 dataAOS="fade-left"
                 txtAlgn="right"
                 title="Student, Product Development at John Deere Seeding"
@@ -55,7 +57,7 @@ const AboutMe = () => {
                 Additionally supported team by managing weekly meetings, travel, and events, 
                 as well as editing and publishing a monthly newsletter documenting achievements of the planting department."
                 />
-            <StyledHeroCard
+            <StyledAboutCard
                 dataAOS="fade-right"
                 txtAlgn="left"
                 title="Software development"
@@ -67,7 +69,7 @@ const AboutMe = () => {
                 Agile methodology/scrum team framework, Java, and Github."
                 />
             <StyledH1>Education</StyledH1>
-            <StyledHeroCard
+            <StyledAboutCard
                 dataAOS="fade-right"
                 txtAlgn="left"
                 title="Augustana College"

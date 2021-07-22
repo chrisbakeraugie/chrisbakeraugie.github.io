@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /**
  * This code has been taken from https://formspree.io/forms/xgekkjeo/integration for React
  * This uses formspree to submit forms to my email

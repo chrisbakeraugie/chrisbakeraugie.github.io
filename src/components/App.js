@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "react-bootstrap/Navbar";
@@ -70,12 +71,10 @@ class App extends React.Component {
         <div id="left"></div>
         <div id="right"></div>
         <div id="top"></div>
-        <div id="bottom"><p>© 2021 Chris Baker <a href="/#/projects" id="footer-link">Information about this site</a></p></div>
+        <div id="bottom"><p>© 2021 Chris Baker</p></div>
       </div>
     );
-
   }
-
 }
 
 export default App;

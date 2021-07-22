@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import styled from "styled-components";
 
@@ -34,7 +35,7 @@ const Home = () => {
             <div id="rectangle12"></div>
             <StyledWelcomeDiv>
                 <h1>Hi, my name is Chris.
-            I'm a software developer</h1>
+            I&apos;m a software developer</h1>
             </StyledWelcomeDiv>
 
 

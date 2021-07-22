@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+/* eslint-disable react/prop-types */
+import React from "react";
 import SubmitForm from "./SubmitForm";
 import "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
-import AOS from "aos";
+// import AOS from "aos";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faLinkedin, faGithub, faFacebook, faCodepen } from "@fortawesome/free-brands-svg-icons";
 
