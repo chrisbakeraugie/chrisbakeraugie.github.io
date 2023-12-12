@@ -8,15 +8,15 @@ import parseRGBA from './parseRGBA'
 // 	100: { r: 121, g: 235, b: 255, a: 1 }, // Noon - 100%
 // }
 
-function getIntermediateColor(percentage, themeColors) {
+function getIntermediateColor(percentage, themeColors, fieldName) {
 	let startColorPercentage = 0
 	let endColorPercentage = 100
 
 	const colorStops = {
-		0: parseRGBA(themeColors.midnight.background),
-		40: parseRGBA(themeColors.midnight.background),
-		70: parseRGBA(themeColors.morning.background),
-		100: parseRGBA(themeColors.noon.background),
+		0: parseRGBA(themeColors.midnight[fieldName]),
+		33: parseRGBA(themeColors.midnight[fieldName]),
+		80: parseRGBA(themeColors.morning[fieldName]),
+		100: parseRGBA(themeColors.noon[fieldName]),
 	}
 
 	for (let stop in colorStops) {

@@ -32,14 +32,14 @@ const PositionedRightGraphic = styled(Box)(({ theme }) => ({
 }))
 
 const GraphicsContainer = () => {
-	const { backgroundColor } = useContext(AppContext)
+	const { backgroundColor, strokeColor } = useContext(AppContext)
 	return (
 		<StyledGraphicsContainer color={backgroundColor}>
 			<PositionedLeftGraphic>
-				<LeftGraphicsSVG fill={backgroundColor} stroke="white" />
+				<LeftGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedLeftGraphic>
 			<PositionedRightGraphic>
-				<RightGraphicsSVG fill={backgroundColor} stroke="white" />
+				<RightGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedRightGraphic>
 		</StyledGraphicsContainer>
 	)

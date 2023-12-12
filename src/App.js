@@ -11,6 +11,7 @@ import { AppContext } from './context'
 import { useTheme } from '@emotion/react'
 import { styled } from '@mui/material/styles'
 
+// eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
 	width: '100vw',
 	height: '100vh',
@@ -26,20 +27,42 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-	const { setBackgroundColor, backgroundColor } = useContext(AppContext)
+	const {
+		setBackgroundColor,
+		backgroundColor,
+		setStrokeColor,
+		setDistanceFromNoon,
+	} = useContext(AppContext)
 	const theme = useTheme()
 
 	useEffect(() => {
-		const distanceFromNoon = getDistanceFromNoon(amountOfDayComplete())
+		const calculatedDistanceFromNoon = getDistanceFromNoon(
+			amountOfDayComplete()
+		)
+		setDistanceFromNoon(calculatedDistanceFromNoon)
 		setBackgroundColor(
-			getIntermediateColor(distanceFromNoon, theme.customValues)
+			getIntermediateColor(
+				calculatedDistanceFromNoon,
+				theme.customValues,
+				'background'
+			)
+		)
+		setStrokeColor(
+			getIntermediateColor(
+				calculatedDistanceFromNoon,
+				theme.customValues,
+				'stroke'
+			)
 		)
 	}, [])
 
 	const handleHourChange = (event, newValue) => {
 		const distanceFromNoon = getDistanceFromNoon(newValue)
 		setBackgroundColor(
-			getIntermediateColor(distanceFromNoon, theme.customValues)
+			getIntermediateColor(distanceFromNoon, theme.customValues, 'background')
+		)
+		setStrokeColor(
+			getIntermediateColor(distanceFromNoon, theme.customValues, 'stroke')
 		)
 	}
 	return (
@@ -47,7 +70,10 @@ function App() {
 			<CssBaseline />
 			<GraphicsContainer />
 			<header className="App-header"></header>
-			<Slider onChange={handleHourChange} defaultValue={50} />
+			<Slider
+				onChange={handleHourChange}
+				defaultValue={amountOfDayComplete()}
+			/>
 			<RouterProvider router={router} />
 		</AppContainer>
 	)
