@@ -1,13 +1,6 @@
 import interpolateColor from './interpolateColor'
 import parseRGBA from './parseRGBA'
 
-// const colorStops = {
-// 	0: { r: 10, g: 25, b: 47, a: 1 }, // Midnight - 0%
-// 	40: { r: 10, g: 25, b: 47, a: 1 }, // Still Midnight - 40%
-// 	70: { r: 25, g: 55, b: 255, a: 1 }, // Morning - 70%
-// 	100: { r: 121, g: 235, b: 255, a: 1 }, // Noon - 100%
-// }
-
 function getIntermediateColor(percentage, themeColors, fieldName) {
 	let startColorPercentage = 0
 	let endColorPercentage = 100

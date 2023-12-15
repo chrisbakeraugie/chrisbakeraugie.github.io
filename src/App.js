@@ -10,6 +10,7 @@ import getDistanceFromNoon from './js/getDistanceFromNoon'
 import { AppContext } from './context'
 import { useTheme } from '@emotion/react'
 import { styled } from '@mui/material/styles'
+import getWeatherDescription from './js/getWeatherDescription'
 
 // eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
@@ -26,12 +27,39 @@ const router = createBrowserRouter([
 	// { path: '/contact', element: <ContactPage />, errorElement: <ErrorPage /> },
 ])
 
+const fetchWeatherAndSetState = async (setWeatherState) => {
+	const currentTime = Math.floor(Date.now() / 1000)
+	let weatherCodeIndex = null
+	try {
+		const weatherResponse = await fetch(
+			'https://api.open-meteo.com/v1/forecast?latitude=40.6782&longitude=-73.9442&hourly=weather_code&timeformat=unixtime&forecast_days=1'
+		)
+		const weatherData = await weatherResponse.json()
+		const timeArray = weatherData.hourly.time
+		for (let i = 0; i < timeArray.length - 1; i++) {
+			if (currentTime >= timeArray[i] && currentTime < timeArray[i + 1]) {
+				weatherCodeIndex = i
+			}
+		}
+		if (!weatherCodeIndex)
+			throw new Error('Error parsing returned weather times')
+		const currentWeather = getWeatherDescription(
+			weatherData.hourly.weather_code[weatherCodeIndex]
+		)
+		setWeatherState(currentWeather)
+	} catch (err) {
+		console.error('Weather data failed to load:', JSON.stringify(err))
+	}
+}
+
 function App() {
 	const {
 		setBackgroundColor,
 		backgroundColor,
 		setStrokeColor,
 		setDistanceFromNoon,
+		setWeatherData,
+		weatherData,
 	} = useContext(AppContext)
 	const theme = useTheme()
 
@@ -54,6 +82,7 @@ function App() {
 				'stroke'
 			)
 		)
+		fetchWeatherAndSetState(setWeatherData)
 	}, [])
 
 	const handleHourChange = (event, newValue) => {
@@ -74,6 +103,7 @@ function App() {
 				onChange={handleHourChange}
 				defaultValue={amountOfDayComplete()}
 			/>
+			{weatherData}
 			<RouterProvider router={router} />
 		</AppContainer>
 	)
