@@ -9,6 +9,15 @@ const theme = createTheme({
 			main: '#19857b',
 		},
 	},
+	breakpoints: {
+		values: {
+			xs: 0,
+			sm: 600,
+			md: 900,
+			lg: 1285,
+			xl: 1536,
+		},
+	},
 	customValues: {
 		midnight: {
 			background: 'rgba(10,25,47,1)',

@@ -1,8 +1,7 @@
-import { Box, CssBaseline, Slider } from '@mui/material'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Box, CssBaseline } from '@mui/material'
 import ErrorPage from './pages/Error/ErrorPage'
 import HomePage from './pages/Home/HomePage'
-import GraphicsContainer from './graphics/GraphicsContainer'
+import GraphicsContainer from './graphics/desktop/GraphicsContainer'
 import amountOfDayComplete from './js/amountOfDayComplete'
 import { useContext, useEffect } from 'react'
 import getIntermediateColor from './js/getIntermediateColor'
@@ -11,6 +10,12 @@ import { AppContext } from './context'
 import { useTheme } from '@emotion/react'
 import { styled } from '@mui/material/styles'
 import getWeatherDescription from './js/getWeatherDescription'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import StyledSlider from './components/StyledSlider'
+import Navigation from './components/Navigation'
+import AboutPage from './pages/About/AboutPage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import InformationContainer from './components/InformationContainer'
 
 // eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
@@ -19,13 +24,6 @@ const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
 	overflow: 'hidden',
 	backgroundColor,
 }))
-
-const router = createBrowserRouter([
-	{ path: '/', element: <HomePage />, errorElement: <ErrorPage /> },
-	// { path: '/about', element: <AboutPage />, errorElement: <ErrorPage /> },
-	// { path: '/experience', element: <ExperiencePage />, errorElement: <ErrorPage /> },
-	// { path: '/contact', element: <ContactPage />, errorElement: <ErrorPage /> },
-])
 
 const fetchWeatherAndSetState = async (setWeatherState) => {
 	const currentTime = Math.floor(Date.now() / 1000)
@@ -59,13 +57,21 @@ function App() {
 		setStrokeColor,
 		setDistanceFromNoon,
 		setWeatherData,
-		weatherData,
+		setFontColor,
 	} = useContext(AppContext)
 	const theme = useTheme()
+	const isDesktop = useMediaQuery(theme.breakpoints.up('lg')) // Large screens
+	const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'lg')) // Medium screens
+	const isMobile = useMediaQuery(theme.breakpoints.down('sm')) // Small screens
 
 	useEffect(() => {
 		const calculatedDistanceFromNoon = getDistanceFromNoon(
 			amountOfDayComplete()
+		)
+		const strokeColor = getIntermediateColor(
+			calculatedDistanceFromNoon,
+			theme.customValues,
+			'stroke'
 		)
 		setDistanceFromNoon(calculatedDistanceFromNoon)
 		setBackgroundColor(
@@ -75,37 +81,62 @@ function App() {
 				'background'
 			)
 		)
-		setStrokeColor(
-			getIntermediateColor(
-				calculatedDistanceFromNoon,
-				theme.customValues,
-				'stroke'
-			)
-		)
+		setStrokeColor(strokeColor)
+		setFontColor(strokeColor)
 		fetchWeatherAndSetState(setWeatherData)
 	}, [])
 
 	const handleHourChange = (event, newValue) => {
 		const distanceFromNoon = getDistanceFromNoon(newValue)
+		const strokeColor = getIntermediateColor(
+			distanceFromNoon,
+			theme.customValues,
+			'stroke'
+		)
+
 		setBackgroundColor(
 			getIntermediateColor(distanceFromNoon, theme.customValues, 'background')
 		)
-		setStrokeColor(
-			getIntermediateColor(distanceFromNoon, theme.customValues, 'stroke')
-		)
+		setStrokeColor(strokeColor)
+		setFontColor(strokeColor)
 	}
+
+	const renderLayout = () => {
+		if (isDesktop) {
+			return <GraphicsContainer />
+			// Make Desktop version
+		} else if (isTablet) {
+			// return <TabletLayout />
+		} else if (isMobile) {
+			// return <MobileLayout />
+		}
+	}
+
 	return (
-		<AppContainer className="App" backgroundColor={backgroundColor}>
-			<CssBaseline />
-			<GraphicsContainer />
-			<header className="App-header"></header>
-			<Slider
-				onChange={handleHourChange}
-				defaultValue={amountOfDayComplete()}
-			/>
-			{weatherData}
-			<RouterProvider router={router} />
-		</AppContainer>
+		<Router>
+			<AppContainer className="App" backgroundColor={backgroundColor}>
+				<CssBaseline />
+				{renderLayout()}
+				<Navigation />
+				<StyledSlider
+					onChange={handleHourChange}
+					defaultValue={amountOfDayComplete()}
+				/>
+				<InformationContainer
+					isDesktop={isDesktop}
+					isMobile={isMobile}
+					isTablet={isTablet}
+				>
+					<Routes>
+						<Route path="/" element={<HomePage />} />
+						<Route path="/about" element={<AboutPage />} />
+						{/* <Route path="/experience" element={<ExperiencePage />} />{' '} */}
+						{/* Assuming you have an ExperiencePage component */}
+						<Route path="*" element={<ErrorPage />} />
+					</Routes>
+				</InformationContainer>
+			</AppContainer>
+		</Router>
 	)
 }
 

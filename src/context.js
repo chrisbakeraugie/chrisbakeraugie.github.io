@@ -13,6 +13,8 @@ export const AppContext = createContext({
 	setDistanceFromNoon: () => {},
 	weatherData: '',
 	setWeatherData: () => {},
+	fontColor: '',
+	setFontColor: () => {},
 })
 
 export const AppProvider = ({ children }) => {
@@ -22,6 +24,7 @@ export const AppProvider = ({ children }) => {
 	const [strokeColor, setStrokeColor] = useState('rgba(185,180,44,1)')
 	const [distanceFromNoon, setDistanceFromNoon] = useState(0)
 	const [weatherData, setWeatherData] = useState('')
+	const [fontColor, setFontColor] = useState('')
 
 	return (
 		<AppContext.Provider
@@ -38,6 +41,8 @@ export const AppProvider = ({ children }) => {
 				setDistanceFromNoon,
 				weatherData,
 				setWeatherData,
+				fontColor,
+				setFontColor,
 			}}
 		>
 			{children}

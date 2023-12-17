@@ -1,9 +1,9 @@
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import LeftGraphicsSVG from './LeftGraphicsSVG'
-import RightGraphicsSVG from './RightGraphicsSVG'
+import LeftGraphicsSVG from '../LeftGraphicsSVG'
+import RightGraphicsSVG from '../RightGraphicsSVG'
 import { useContext } from 'react'
-import { AppContext } from '../context'
+import { AppContext } from '../../context'
 
 const StyledGraphicsContainer = styled(Box)(({ theme, color }) => ({
 	width: '100vw',
@@ -31,7 +31,7 @@ const PositionedRightGraphic = styled(Box)(({ theme }) => ({
 	zIndex: -1,
 }))
 
-const GraphicsContainer = () => {
+const DesktopGraphicsContainer = () => {
 	const { backgroundColor, strokeColor } = useContext(AppContext)
 	return (
 		<StyledGraphicsContainer color={backgroundColor}>
@@ -45,4 +45,4 @@ const GraphicsContainer = () => {
 	)
 }
 
-export default GraphicsContainer
+export default DesktopGraphicsContainer
