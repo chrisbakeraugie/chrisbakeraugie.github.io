@@ -5,7 +5,7 @@ import RightGraphicsSVG from '../RightGraphicsSVG'
 import { useContext } from 'react'
 import { AppContext } from '../../context'
 
-const StyledGraphicsContainer = styled(Box)(({ theme, color }) => ({
+const StyledGraphicsContainer = styled(Box)(({ color }) => ({
 	width: '100vw',
 	maxWidth: '1440px',
 	height: '100vh',
@@ -18,13 +18,13 @@ const StyledGraphicsContainer = styled(Box)(({ theme, color }) => ({
 	backgroundColor: color,
 }))
 
-const PositionedLeftGraphic = styled(Box)(({ theme }) => ({
+const PositionedLeftGraphic = styled(Box)(() => ({
 	position: 'absolute',
 	bottom: 0,
 	left: 0,
 }))
 
-const PositionedRightGraphic = styled(Box)(({ theme }) => ({
+const PositionedRightGraphic = styled(Box)(() => ({
 	position: 'absolute',
 	bottom: 'calc(0px + 77px)',
 	right: 0,

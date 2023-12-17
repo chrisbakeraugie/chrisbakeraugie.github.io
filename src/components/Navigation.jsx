@@ -23,7 +23,7 @@ const StyledButton = styled(Button)(({ theme, fontColor }) => ({
 const Navigation = () => {
 	const { fontColor } = useContext(AppContext)
 	return (
-		<StyledNavigationBox fontColor={fontColor}>
+		<StyledNavigationBox>
 			<Link to={'/'}>
 				<StyledButton fontColor={fontColor}>Home</StyledButton>
 			</Link>

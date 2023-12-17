@@ -1,14 +1,14 @@
-import { Box, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
+import { useContext } from 'react'
+import { AppContext } from '../../context'
 
 const HomePage = () => {
+	const { fontColor } = useContext(AppContext)
 	return (
 		<>
-			<Typography>Chris Baker - Full-stack developer</Typography>
-			<Box>
-				<Typography>Test</Typography>
-				<Typography>Test</Typography>
-				<Typography>Test</Typography>
-			</Box>
+			<Typography variant="h2" fontWeight="light" color={fontColor}>
+				Chris Baker - Full-stack Developer
+			</Typography>
 		</>
 	)
 }

@@ -58,6 +58,9 @@ function App() {
 		setDistanceFromNoon,
 		setWeatherData,
 		setFontColor,
+		setIsDesktop,
+		setIsMobile,
+		setIsTablet,
 	} = useContext(AppContext)
 	const theme = useTheme()
 	const isDesktop = useMediaQuery(theme.breakpoints.up('lg')) // Large screens
@@ -73,18 +76,23 @@ function App() {
 			theme.customValues,
 			'stroke'
 		)
-		setDistanceFromNoon(calculatedDistanceFromNoon)
-		setBackgroundColor(
-			getIntermediateColor(
-				calculatedDistanceFromNoon,
-				theme.customValues,
-				'background'
-			)
+		const backgroundColorToSet = getIntermediateColor(
+			calculatedDistanceFromNoon,
+			theme.customValues,
+			'background'
 		)
+		setDistanceFromNoon(calculatedDistanceFromNoon)
+		setBackgroundColor(backgroundColorToSet)
 		setStrokeColor(strokeColor)
 		setFontColor(strokeColor)
 		fetchWeatherAndSetState(setWeatherData)
 	}, [])
+
+	useEffect(() => {
+		setIsDesktop(isDesktop)
+		setIsMobile(isMobile)
+		setIsTablet(isTablet)
+	}, [isDesktop, isMobile, isTablet])
 
 	const handleHourChange = (event, newValue) => {
 		const distanceFromNoon = getDistanceFromNoon(newValue)
@@ -122,11 +130,7 @@ function App() {
 					onChange={handleHourChange}
 					defaultValue={amountOfDayComplete()}
 				/>
-				<InformationContainer
-					isDesktop={isDesktop}
-					isMobile={isMobile}
-					isTablet={isTablet}
-				>
+				<InformationContainer>
 					<Routes>
 						<Route path="/" element={<HomePage />} />
 						<Route path="/about" element={<AboutPage />} />

@@ -15,6 +15,12 @@ export const AppContext = createContext({
 	setWeatherData: () => {},
 	fontColor: '',
 	setFontColor: () => {},
+	isDesktop: false,
+	setIsDesktop: () => {},
+	isTablet: false,
+	setIsTablet: () => {},
+	isMobile: false,
+	setIsMobile: () => {},
 })
 
 export const AppProvider = ({ children }) => {
@@ -25,6 +31,9 @@ export const AppProvider = ({ children }) => {
 	const [distanceFromNoon, setDistanceFromNoon] = useState(0)
 	const [weatherData, setWeatherData] = useState('')
 	const [fontColor, setFontColor] = useState('')
+	const [isDesktop, setIsDesktop] = useState('')
+	const [isMobile, setIsMobile] = useState('')
+	const [isTablet, setIsTablet] = useState('')
 
 	return (
 		<AppContext.Provider
@@ -43,6 +52,12 @@ export const AppProvider = ({ children }) => {
 				setWeatherData,
 				fontColor,
 				setFontColor,
+				isDesktop,
+				setIsDesktop,
+				isTablet,
+				setIsTablet,
+				isMobile,
+				setIsMobile,
 			}}
 		>
 			{children}

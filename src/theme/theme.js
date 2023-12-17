@@ -28,9 +28,12 @@ const theme = createTheme({
 			stroke: 'rgba(255,255,255,1)',
 		},
 		noon: {
-			background: 'rgba(121,235,255,1)',
+			background: 'rgba(0,217,255,1)',
 			stroke: 'rgba(255,255,255,1)',
 		},
+	},
+	typography: {
+		fontFamily: 'Poppins, sans-serif',
 	},
 })
 
