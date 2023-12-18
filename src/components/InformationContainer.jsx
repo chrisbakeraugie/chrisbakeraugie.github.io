@@ -3,19 +3,20 @@ import { styled } from '@mui/material/styles'
 import { useContext } from 'react'
 import { AppContext } from '../context'
 
-const DesktopContainer = styled(Box)(() => ({
+const DesktopContainer = styled(Box)(({ theme }) => ({
 	position: 'absolute',
 	left: '50%',
 	transform: 'translateX(-50%)',
 	top: 60,
-	width: '75%',
+	width: '70%',
 	maxWidth: 1100,
-	minHeight: 500,
+	minHeight: 350,
 	display: 'flex',
 	flexDirection: 'column',
 	justifyContent: 'center',
 	alignItems: 'center',
 	textAlign: 'center',
+	gap: theme.spacing(2),
 }))
 
 const InformationContainer = ({ children }) => {

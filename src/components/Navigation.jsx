@@ -30,7 +30,9 @@ const Navigation = () => {
 			<Link to={'/about'}>
 				<StyledButton fontColor={fontColor}>About</StyledButton>
 			</Link>
-			<StyledButton fontColor={fontColor}>Experience</StyledButton>
+			<Link to="/experience">
+				<StyledButton fontColor={fontColor}>Experience</StyledButton>
+			</Link>
 			<StyledButton fontColor={fontColor}>Contact</StyledButton>
 		</StyledNavigationBox>
 	)

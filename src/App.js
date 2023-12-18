@@ -16,6 +16,7 @@ import Navigation from './components/Navigation'
 import AboutPage from './pages/About/AboutPage'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import InformationContainer from './components/InformationContainer'
+import ExperiencePage from './pages/Experience/ExperiencePage'
 
 // eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
@@ -134,7 +135,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<HomePage />} />
 						<Route path="/about" element={<AboutPage />} />
-						{/* <Route path="/experience" element={<ExperiencePage />} />{' '} */}
+						<Route path="/experience" element={<ExperiencePage />} />
 						{/* Assuming you have an ExperiencePage component */}
 						<Route path="*" element={<ErrorPage />} />
 					</Routes>
