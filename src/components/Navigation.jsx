@@ -1,8 +1,9 @@
-import { Box, Button } from '@mui/material'
+import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { useContext } from 'react'
 import { AppContext } from '../context'
 import { Link } from 'react-router-dom'
+import StyledButton from './StyledButton'
 
 const StyledNavigationBox = styled(Box)(({ theme }) => ({
 	position: 'absolute',
@@ -13,11 +14,6 @@ const StyledNavigationBox = styled(Box)(({ theme }) => ({
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'space-evenly',
-}))
-
-const StyledButton = styled(Button)(({ theme, fontColor }) => ({
-	color: fontColor ? fontColor : 'white',
-	fontWeight: theme.typography.fontWeightBold,
 }))
 
 const Navigation = () => {

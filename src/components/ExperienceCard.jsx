@@ -3,7 +3,7 @@ import { Typography, Card, CardMedia, CardContent } from '@mui/material'
 import { useContext } from 'react'
 import { AppContext } from '../context'
 
-const StyledExperienceCard = styled(Card)(({ theme, fontColor }) => ({
+const StyledExperienceCard = styled(Card)(({ fontColor }) => ({
 	display: 'flex',
 	width: '70%',
 	height: 70,
@@ -15,6 +15,7 @@ const StyledExperienceCard = styled(Card)(({ theme, fontColor }) => ({
 	transition: 'transform 0.3s ease-in-out',
 	'&:hover': {
 		transform: 'translateY(-4px)',
+		cursor: 'pointer',
 	},
 }))
 
@@ -32,11 +33,11 @@ const StyledCardContent = styled(CardContent)(() => ({
 	alignContent: 'center',
 }))
 
-const ExperienceCard = ({ imageSrc, organization, role }) => {
+const ExperienceCard = ({ imageSrc, organization, role, onClick }) => {
 	const { fontColor } = useContext(AppContext)
 
 	return (
-		<StyledExperienceCard fontColor={fontColor}>
+		<StyledExperienceCard fontColor={fontColor} onClick={onClick}>
 			<StyledCardMedia component={'img'} image={imageSrc} />
 			<StyledCardContent>
 				<Typography variant="h5" fontWeight="bold">
