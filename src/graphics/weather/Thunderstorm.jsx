@@ -2,10 +2,10 @@ import React from 'react'
 
 const ThunderstormSVG = ({ stroke = 'black', fill = 'none' }) => (
 	<svg
-		width="111"
+		fill={fill}
 		height="86"
 		viewBox="0 0 111 86"
-		fill={fill}
+		width="111"
 		xmlns="http://www.w3.org/2000/svg"
 	>
 		<path

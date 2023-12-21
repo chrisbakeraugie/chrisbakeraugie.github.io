@@ -57,10 +57,10 @@ const ExperiencePage = () => {
 		<>
 			{selectedItem ? (
 				<Experience
-					role={selectedItem.role}
-					organization={selectedItem.organization}
 					description={selectedItem.description}
 					imageSrc={selectedItem.imageSrc}
+					organization={selectedItem.organization}
+					role={selectedItem.role}
 					onButtonClick={handleCloseExperience}
 				/>
 			) : (

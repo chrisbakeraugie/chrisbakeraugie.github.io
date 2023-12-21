@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { AppContext } from '../context'
 import getWeatherIcon from '../js/getWeatherIcon'
 
-const StyledWeatherBoxContainer = styled(Box)(({ theme, fontColor }) => ({
+const StyledWeatherBoxContainer = styled(Box)(({ fontColor }) => ({
 	position: 'absolute',
 	bottom: 90,
 	left: '63%',
@@ -59,15 +59,14 @@ const WeatherBox = () => {
 			</StyledLocationBox>
 			<StyledCurrentWeatherBox>
 				<Typography>Current Weather</Typography>
-				{/* Format the stuff */}
-				{getWeatherIcon(weatherData)}
-				<Typography>{weatherData}</Typography>
+				{getWeatherIcon(weatherData.conditions)}
+				<Typography>{weatherData.conditions}</Typography>
 			</StyledCurrentWeatherBox>
 			<StyledTimeBox>
 				<Typography>NYC Time</Typography>
 				<Typography>8:00 pm</Typography>
-				<Typography>Slider Time</Typography>
-				<Typography>8:00 pm</Typography>
+				<Typography>Temperature</Typography>
+				<Typography>{weatherData.temperature + '°F'}</Typography>
 			</StyledTimeBox>
 		</StyledWeatherBoxContainer>
 	)

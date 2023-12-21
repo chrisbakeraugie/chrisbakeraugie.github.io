@@ -43,8 +43,8 @@ const Experience = ({
 		<StyledCard fontColor={fontColor}>
 			<StyledCardMediaDiv>
 				<img
-					src={imageSrc}
 					alt={organization}
+					src={imageSrc}
 					style={{ height: '100%', objectFit: 'contain' }}
 				/>
 				<CardActions>
@@ -54,10 +54,10 @@ const Experience = ({
 				</CardActions>
 			</StyledCardMediaDiv>
 			<CardContent>
-				<TitleTypography variant="h3" color={fontColor}>
+				<TitleTypography color={fontColor} variant="h3">
 					{role} at {organization}
 				</TitleTypography>
-				<ContentTypography variant="p" color={fontColor}>
+				<ContentTypography color={fontColor} variant="p">
 					{description}
 				</ContentTypography>
 			</CardContent>

@@ -2,10 +2,10 @@ import React from 'react'
 
 const LeftGraphicsSVG = ({ stroke = 'black', fill = 'white' }) => (
 	<svg
-		width="1020"
+		fill="none"
 		height="513"
 		viewBox="0 0 1020 513"
-		fill="none"
+		width="1020"
 		xmlns="http://www.w3.org/2000/svg"
 	>
 		<path
@@ -35,260 +35,260 @@ const LeftGraphicsSVG = ({ stroke = 'black', fill = 'white' }) => (
 		<path
 			d="M429.714 398.793H383.976V468.468H429.714V398.793Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M429.714 244.978H383.976V258.793H429.714V244.978Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M422.637 328.468H391.078V398.143H422.637V328.468Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M422.637 258.767H391.078V328.442H422.637V258.767Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M438.82 479.135H374.922V494.902H438.82V479.135Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M434.866 468.468H378.85V479.109H434.866V468.468Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M429.74 411.412H418.292"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M383.976 423.64H396.594"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M406.845 435.868H414.754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M418.292 455.59H429.74"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M374.922 237.875H438.794"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M777.23 398.793H731.465V468.468H777.23V398.793Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M777.23 244.978H731.465V258.793H777.23V244.978Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M770.127 328.468H738.568V398.143H770.127V328.468Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M770.127 258.767H738.568V328.442H770.127V258.767Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M786.284 479.135H722.385V494.902H786.284V479.135Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M782.355 468.468H726.339V479.109H782.355V468.468Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M777.204 411.412H765.782"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M731.465 423.64H744.083"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M754.334 435.868H762.218"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M765.782 455.59H777.204"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M722.385 237.875H786.284"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M176.122 455.59C219.909 419.113 287.347 398.793 348.878 398.793H820.991C876.616 398.793 948.789 413.181 1002.05 456.994"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M429.74 244.978C497.386 398.143 664.808 398.793 731.465 244.978"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M429.74 408.654H731.465"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M383.975 244.978C383.975 244.978 344.143 364.58 208.149 433.891"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M777.204 244.978C777.204 244.978 789.692 341.217 971.216 435.868"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M391.078 379.462H400.054"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M406.845 368.535H414.754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M406.845 344.261H412.777"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M391.078 336.586H400.054"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M414.754 314.679H422.637"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M404.79 297.533H412.777"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M392.353 285.982H400.054"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M410.799 271.204H422.637"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M738.568 382.22H747.232"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M762.218 369.602H770.127"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M749.209 352.248H758.289"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M738.568 315.98H753.736"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M763.805 302.529H770.127"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M750.796 289.936H758.289"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M738.568 276.928H747.232"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M763.805 266.286H770.127"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path d="M753.736 455.59H731.465" stroke={stroke} strokeMiterlimit="10" />
 		<path d="M768.384 435.738H777.204" stroke={stroke} strokeMiterlimit="10" />
@@ -338,777 +338,777 @@ const LeftGraphicsSVG = ({ stroke = 'black', fill = 'white' }) => (
 		<path
 			d="M281.1 387.75H224.91V494.76H281.1V387.75Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M273.35 344.63H232.66V387.74H273.35V344.63Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M266.57 311.69H239.44V344.63H266.57V311.69Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M263.17 286.5H242.83V311.69H263.17V286.5Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M256.88 276.91H249.13V286.51H256.88V276.91Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path d="M242.83 289.05H263.17" stroke={stroke} strokeMiterlimit="10" />
 		<path
 			d="M246.82 293.65V301.76"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.82 303.82V306.73"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M249.85 293.65V301.76"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M249.85 303.82V306.73"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M252.88 293.65V301.76"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M252.88 303.82V306.73"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.91 293.65V301.76"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.91 303.82V306.73"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.94 293.65V301.76"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.94 303.82V306.73"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M242.83 315.69H247.67"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.46 315.69H255.3"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.1 315.69H262.94"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M242.83 319.2H247.67"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.46 319.2H255.3"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.1 319.2H262.94"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M242.83 322.71H247.67"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.46 322.71H255.3"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.1 322.71H262.94"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M242.83 326.22H247.67"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.46 326.22H255.3"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.1 326.22H262.94"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M242.83 329.74H247.67"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.46 329.74H255.3"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.1 329.74H262.94"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M242.83 333.25H247.67"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.46 333.25H255.3"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.1 333.25H262.94"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M242.83 336.76H247.67"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.46 336.76H255.3"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.1 336.76H262.94"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M242.83 340.27H247.67"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.46 340.27H255.3"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M258.1 340.27H262.94"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M238.34 349.72V354.2"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M244.28 349.72V354.2"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.22 349.72V354.2"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M256.16 349.72V354.2"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M262.09 349.72V354.2"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.03 349.72V354.2"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M238.34 356.86V361.34"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M244.28 356.86V361.34"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.22 356.86V361.34"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M256.16 356.86V361.34"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M262.09 356.86V361.34"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.03 356.86V361.34"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M238.34 364.01V368.49"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M244.28 364.01V368.49"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.22 364.01V368.49"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M256.16 364.01V368.49"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M262.09 364.01V368.49"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.03 364.01V368.49"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M238.34 371.15V375.63"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M244.28 371.15V375.63"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.22 371.15V375.63"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M256.16 371.15V375.63"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M262.09 371.15V375.63"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.03 371.15V375.63"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M238.34 378.3V382.78"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M244.28 378.3V382.78"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M250.22 378.3V382.78"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M256.16 378.3V382.78"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M262.09 378.3V382.78"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.03 378.3V382.78"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 394.28H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 399.01H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 403.73H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 408.45H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 413.18H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 394.28H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 399.01H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 403.73H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 408.45H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 413.18H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 394.28H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 399.01H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 403.73H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 408.45H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 413.18H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 394.28H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 399.01H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 403.73H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 408.45H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 413.18H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 425.4H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 430.12H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 434.84H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 439.57H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 444.29H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 425.4H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 430.12H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 434.84H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 439.57H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 444.29H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 425.4H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 430.12H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 434.84H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 439.57H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 444.29H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 425.4H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 430.12H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 434.84H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 439.57H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 444.29H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 456.51H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 461.23H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 465.96H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 470.68H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M232.66 475.4H237.83"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 456.51H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 461.23H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 465.96H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 470.68H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M268.18 475.4H273.35"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 456.51H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 461.23H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 465.96H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 470.68H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M246.41 475.4H251.58"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 456.51H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 461.23H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 465.96H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 470.68H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M255.1 475.4H260.27"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M228.78 387.75H224.91V494.76H228.78V387.75Z"
@@ -1128,26 +1128,26 @@ const LeftGraphicsSVG = ({ stroke = 'black', fill = 'white' }) => (
 		<path
 			d="M237.83 480.87H232.66V494.75H237.83V480.87Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M251.58 480.87H246.41V494.75H251.58V480.87Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M260.27 480.87H255.1V494.75H260.27V480.87Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M273.35 480.87H268.18V494.75H273.35V480.87Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M254.53 276.91H251.47V286.51H254.53V276.91Z"
@@ -1199,1022 +1199,1022 @@ const LeftGraphicsSVG = ({ stroke = 'black', fill = 'white' }) => (
 		<path
 			d="M141.83 310.98C139.6 308.41 135.54 306.7 130.9 306.7C123.87 306.7 118.17 310.63 118.17 315.49V336.38H143.63V315.49C143.63 313.84 142.97 312.3 141.83 310.98Z"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M141.83 310.98V308.68C141.83 304.51 136.93 301.13 130.9 301.13C124.87 301.13 119.98 304.51 119.98 308.68V310.98"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M140.25 304.77V302.26C140.25 298.69 136.06 295.8 130.9 295.8C125.74 295.8 121.56 298.69 121.56 302.26V304.77"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M138.56 298.56V296.96C138.56 294.03 135.13 291.67 130.9 291.67C126.68 291.67 123.25 294.03 123.25 296.96V298.56"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M136.78 293.4V292.17C136.78 289.92 134.15 288.11 130.9 288.11C127.66 288.11 125.03 289.92 125.03 292.17V293.4"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M134.67 288.95V288.16C134.67 286.72 132.98 285.56 130.9 285.56C128.82 285.56 127.14 286.72 127.14 288.16V288.95"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M133.35 286.05V282.8C133.35 281.86 132.26 281.11 130.9 281.11C129.55 281.11 128.45 281.87 128.45 282.8V286.19"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M130.9 281.11V272.51"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M130.9 270.9V269"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M149.737 350.228V336.377H112.633V350.228H108.912V494.769H153.458V350.228H149.737Z"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M118.17 336.38H112.63V350.23H118.17V336.38Z"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M149.71 336.38H143.63V350.23H149.71V336.38Z"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 355.7H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 361.11H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 366.52H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 371.94H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 377.35H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 382.76H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 388.18H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 393.59H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 399H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 404.42H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 409.83H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 415.24H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 420.66H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 426.07H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 431.48H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 436.9H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 442.31H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 447.72H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 453.14H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 458.55H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 463.96H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 469.38H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 474.79H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 480.2H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M112.63 485.62H118.17"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 355.7H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 361.11H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 366.52H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 371.94H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 377.35H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 382.76H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 388.18H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 393.59H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 399H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 404.42H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 409.83H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 415.24H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 420.66H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 426.07H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 431.48H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 436.9H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 442.31H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 447.72H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 453.14H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 458.55H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 463.96H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 469.38H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 474.79H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 480.2H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M143.9 485.62H149.44"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 355.7H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 361.11H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 366.52H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 371.94H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 344.87H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 350.28H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 377.35H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 382.76H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 388.18H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 393.59H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 399H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 404.42H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 409.83H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 415.24H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 420.66H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 426.07H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 431.48H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 436.9H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 442.31H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 447.72H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 453.14H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 458.55H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 463.96H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 469.38H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 474.79H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 480.2H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M128.13 485.62H133.67"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M121.91 355.7H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 361.11H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 366.52H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 371.94H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 344.87H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 350.28H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 377.35H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 382.76H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 388.18H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 393.59H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 399H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 404.42H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 409.83H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 415.24H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 420.66H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 426.07H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 431.48H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 436.9H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 442.31H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 447.72H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 453.14H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 458.55H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 463.96H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 469.38H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 474.79H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 480.2H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M121.91 485.62H124.59"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 355.7H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 361.11H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 366.52H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 371.94H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 344.87H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 350.28H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 377.35H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 382.76H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 388.18H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 393.59H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 399H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 404.42H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 409.83H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 415.24H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 420.66H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 426.07H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 431.48H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 436.9H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 442.31H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 447.72H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 453.14H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 458.55H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 463.96H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 469.38H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 474.79H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 480.2H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M137.22 485.62H139.9"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M115.4 336.38V314.48"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M115.4 312.56V309.63"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M146.67 336.38V314.48"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M146.67 312.56V309.63"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M123.25 332.52H138.56"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M123.25 328.69H138.56"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M123.25 324.85H138.56"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M123.25 321.02H138.56"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M123.25 317.18H138.56"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M125.71 313.35H136.09"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M146.67 336.38V350.23"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M115.4 336.38V350.28"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M178 500.06C176.34 500.06 175 498.72 175 497.06V354C175 352.82 175.7 351.74 176.79 351.26C177.18 351.09 177.59 351 178 351C178.73 351 179.46 351.27 180.02 351.79L213.77 382.66C214.39 383.23 214.74 384.03 214.74 384.88V497.06C214.74 498.72 213.4 500.06 211.74 500.06H178Z"
@@ -2227,260 +2227,260 @@ const LeftGraphicsSVG = ({ stroke = 'black', fill = 'white' }) => (
 		<path
 			d="M210.751 385.314L178.989 356.259V496.064H210.751V385.314Z"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 484.24H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 484.24H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 484.24H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 477.02H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 477.02H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 477.02H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 469.81H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 469.81H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 469.81H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 462.6H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 462.6H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 462.6H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 455.39H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 455.39H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 455.39H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 448.18H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 448.18H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 448.18H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 440.97H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 440.97H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 440.97H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 433.76H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 433.76H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 433.76H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 426.55H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 426.55H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 426.55H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 419.34H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 419.34H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 419.34H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 412.13H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 412.13H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 412.13H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 404.91H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 404.91H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 404.91H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 397.7H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 397.7H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M201.15 397.7H206.81"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 390.49H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M192.04 390.49H197.7"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M182.93 383.28H188.59"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path d="M178.99 480.74H210.75" stroke={stroke} strokeMiterlimit="10" />
 		<path d="M178.99 487.33H210.75" stroke={stroke} strokeMiterlimit="10" />
@@ -2517,797 +2517,797 @@ const LeftGraphicsSVG = ({ stroke = 'black', fill = 'white' }) => (
 		<path
 			d="M91.2119 123.42L51 106.389L10.7884 123.42V496.77H91.2119V123.42Z"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M82.2242 119.629V101.421H19.7385V119.629"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M55.9682 71.1425H45.5607L44.1407 101.421H57.3882L55.9682 71.1425Z"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M50.7581 71.1363V15.7907"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M50.7581 9.87703V6.10098"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M91.2024 488.171H10.782V496.768H91.2024V488.171Z"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M10.7884 423.833L51 106.389L91.2119 423.833"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M10.782 423.838H91.218"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M10.782 412.478H91.218"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M13.6687 401.119H88.3314"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M15.1042 389.76H86.8958"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M16.5397 378.416H85.4603"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M18.4121 367.056H83.5879"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M20.0193 355.697H81.9808"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M21.3456 344.338H80.6544"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M22.7655 332.994H79.2345"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M24.357 321.635H77.6429"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M25.6053 310.275H76.3947"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M26.76 298.916H75.24"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M28.3516 287.572H73.6485"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M29.8651 276.213H72.135"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M31.4566 264.854H70.5434"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M32.8766 253.494H69.1235"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M34.4681 242.151H67.5319"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M35.9816 230.791H66.0183"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M37.4016 219.432H64.5984"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M38.7279 208.073H63.2722"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M40.2414 196.729H61.7586"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M41.3961 185.369H60.6039"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M42.6288 174.01H59.3713"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M44.2359 162.651H57.7641"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M45.2969 151.307H56.7031"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M46.9821 139.948H55.0179"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M48.6673 128.588H53.3327"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M19.7384 105.448H82.2304"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M18.4121 433.995H22.3754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M27.1657 433.995H31.129"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M35.9193 433.995H39.8825"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M44.6728 433.995H48.6361"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M53.4263 433.995H57.3896"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M62.1799 433.995H66.1432"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M70.9335 433.995H74.8968"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M79.687 433.995H83.6503"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M18.4121 441.095H22.3754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M27.1657 441.095H31.129"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M35.9193 441.095H39.8825"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M44.6728 441.095H48.6361"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M53.4263 441.095H57.3896"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M62.1799 441.095H66.1432"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M70.9335 441.095H74.8968"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M79.687 441.095H83.6503"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M18.4121 448.195H22.3754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M27.1657 448.195H31.129"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M35.9193 448.195H39.8825"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M44.6728 448.195H48.6361"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M53.4263 448.195H57.3896"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M62.1799 448.195H66.1432"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M70.9335 448.195H74.8968"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M79.687 448.195H83.6503"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M18.4121 455.294H22.3754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M27.1657 455.294H31.129"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M35.9193 455.294H39.8825"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M44.6728 455.294H48.6361"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M53.4263 455.294H57.3896"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M62.1799 455.294H66.1432"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M70.9335 455.294H74.8968"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M79.687 455.294H83.6503"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M18.4121 462.378H22.3754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M27.1657 462.378H31.129"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M35.9193 462.378H39.8825"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M44.6728 462.378H48.6361"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M53.4263 462.378H57.3896"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M62.1799 462.378H66.1432"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M70.9335 462.378H74.8968"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M79.687 462.378H83.6503"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M18.4121 469.478H22.3754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M27.1657 469.478H31.129"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M35.9193 469.478H39.8825"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M44.6728 469.478H48.6361"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M53.4263 469.478H57.3896"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M62.1799 469.478H66.1432"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M70.9335 469.478H74.8968"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M79.687 469.478H83.6503"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M18.4121 476.577H22.3754"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M27.1657 476.577H31.129"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M35.9193 476.577H39.8825"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M44.6728 476.577H48.6361"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M53.4263 476.577H57.3896"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M62.1799 476.577H66.1432"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M70.9335 476.577H74.8968"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M79.687 476.577H83.6503"
 			stroke={stroke}
-			strokeWidth="2"
 			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M86.8958 121.598V389.76"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M15.1042 121.598V389.76"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M11.4841 418.33H90.5158"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M12.9665 406.565H89.0179"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M15.1042 395.034H86.8958"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M15.8531 383.861H86.1469"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M17.2731 372.674H84.7269"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M18.6618 361.392H83.3383"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M20.659 349.908H81.341"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M21.5952 338.565H80.4048"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M23.0308 327.205H78.9693"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M24.357 315.971H77.6429"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M25.9174 304.377H76.0826"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M27.3217 293.252H74.6783"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M28.7728 281.783H73.2116"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M30.8325 270.44H71.1675"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M31.6595 259.08H70.3405"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M33.1106 247.612H68.8894"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M34.4681 236.486H67.5319"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M35.9504 225.127H66.0496"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M37.4016 213.659H64.5984"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M38.8527 202.299H63.1473"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M40.2882 190.956H61.7118"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M41.6925 179.83H60.3075"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M43.1281 168.486H58.872"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M44.5948 157.018H57.4053"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M45.9991 145.893H56.001"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M47.4346 134.533H54.5654"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M52.2515 71.1425H49.2774L48.8718 101.421H52.6572L52.2515 71.1425Z"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M10.782 492.477H91.218"
 			stroke={stroke}
-			strokeMiterlimit="10"
 			strokeLinecap="round"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
 		/>
 		<path
 			d="M999.45 495.98C998.62 495.98 997.95 495.31 997.95 494.48L997.97 487.29C994.77 486.26 992.49 483.23 992.5 479.78C992.5 479.55 992.96 473.3 994.01 467.05C995.6 457.55 997.52 453.49 1000.43 453.49C1003.34 453.5 1005.25 457.56 1006.81 467.07C1007.83 473.27 1008.28 479.57 1008.28 479.8C1008.27 483.25 1005.99 486.27 1002.78 487.3L1002.77 494.49C1002.77 494.89 1002.61 495.27 1002.33 495.55C1002.05 495.83 1001.67 495.99 1001.27 495.99L999.45 495.98Z"
@@ -3320,16 +3320,16 @@ const LeftGraphicsSVG = ({ stroke = 'black', fill = 'white' }) => (
 		<path
 			d="M1005.86 479.8C1005.86 482.83 1003.4 485.28 1000.38 485.28C997.35 485.27 994.9 482.81 994.91 479.79C994.91 476.76 997.4 455.9 1000.43 455.91C1003.45 455.91 1005.87 476.78 1005.86 479.8Z"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 		<path
 			d="M1000.38 485.28L1000.36 494.48"
 			stroke={stroke}
-			strokeWidth="2"
-			strokeMiterlimit="10"
 			strokeLinejoin="round"
+			strokeMiterlimit="10"
+			strokeWidth="2"
 		/>
 	</svg>
 )

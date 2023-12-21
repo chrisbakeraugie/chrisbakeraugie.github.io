@@ -40,7 +40,7 @@ const ExperienceCard = ({ imageSrc, organization, role, onClick }) => {
 		<StyledExperienceCard fontColor={fontColor} onClick={onClick}>
 			<StyledCardMedia component={'img'} image={imageSrc} />
 			<StyledCardContent>
-				<Typography variant="h5" fontWeight="bold">
+				<Typography fontWeight="bold" variant="h5">
 					{organization}
 				</Typography>
 				<Typography variant="p">{role}</Typography>

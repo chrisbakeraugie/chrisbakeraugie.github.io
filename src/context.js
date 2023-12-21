@@ -11,7 +11,7 @@ export const AppContext = createContext({
 	setStrokeColor: () => {},
 	distanceFromMidnight: 0,
 	setDistanceFromMidnight: () => {},
-	weatherData: '',
+	weatherData: {},
 	setWeatherData: () => {},
 	fontColor: '',
 	setFontColor: () => {},
@@ -31,7 +31,7 @@ export const AppProvider = ({ children }) => {
 	const [backgroundColor, setBackgroundColor] = useState('rgba(255,255,255,1)')
 	const [strokeColor, setStrokeColor] = useState('rgba(185,180,44,1)')
 	const [distanceFromMidnight, setDistanceFromMidnight] = useState(0)
-	const [weatherData, setWeatherData] = useState('')
+	const [weatherData, setWeatherData] = useState({})
 	const [fontColor, setFontColor] = useState('')
 	const [isDesktop, setIsDesktop] = useState('')
 	const [isMobile, setIsMobile] = useState('')

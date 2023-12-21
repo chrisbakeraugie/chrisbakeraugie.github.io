@@ -31,7 +31,7 @@ const fetchWeatherAndSetState = async (setWeatherState) => {
 	let weatherCodeIndex = null
 	try {
 		const weatherResponse = await fetch(
-			'https://api.open-meteo.com/v1/forecast?latitude=40.6782&longitude=-73.9442&hourly=weather_code&timeformat=unixtime&forecast_days=1'
+			'https://api.open-meteo.com/v1/forecast?latitude=40.6782&longitude=-73.9442&hourly=temperature_2m,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timeformat=unixtime&forecast_days=1'
 		)
 		const weatherData = await weatherResponse.json()
 		const timeArray = weatherData.hourly.time
@@ -42,9 +42,13 @@ const fetchWeatherAndSetState = async (setWeatherState) => {
 		}
 		if (!weatherCodeIndex)
 			throw new Error('Error parsing returned weather times')
-		const currentWeather = getWeatherDescription(
+		const currentWeather = {}
+		currentWeather.conditions = getWeatherDescription(
 			weatherData.hourly.weather_code[weatherCodeIndex]
 		)
+		currentWeather.temperature =
+			weatherData.hourly.temperature_2m[weatherCodeIndex]
+		console.log('heresky', currentWeather)
 		setWeatherState(currentWeather)
 	} catch (err) {
 		console.error('Weather data failed to load:', JSON.stringify(err))
@@ -128,21 +132,21 @@ function App() {
 
 	return (
 		<Router>
-			<AppContainer className="App" backgroundColor={backgroundColor}>
+			<AppContainer backgroundColor={backgroundColor} className="App">
 				<CssBaseline />
 				{renderLayout()}
 				<Navigation />
 				<StyledSlider
-					onChange={handleHourChange}
 					defaultValue={amountOfDayComplete()}
+					onChange={handleHourChange}
 				/>
 				<InformationContainer>
 					<Routes>
-						<Route path="/" element={<HomePage />} />
-						<Route path="/about" element={<AboutPage />} />
-						<Route path="/experience" element={<ExperiencePage />} />
+						<Route element={<HomePage />} path="/" />
+						<Route element={<AboutPage />} path="/about" />
+						<Route element={<ExperiencePage />} path="/experience" />
 						{/* Assuming you have an ExperiencePage component */}
-						<Route path="*" element={<ErrorPage />} />
+						<Route element={<ErrorPage />} path="*" />
 					</Routes>
 				</InformationContainer>
 			</AppContainer>

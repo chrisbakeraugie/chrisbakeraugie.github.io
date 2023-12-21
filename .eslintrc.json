@@ -14,6 +14,17 @@
 	},
 	"plugins": ["react"],
 	"rules": {
+		"react/jsx-sort-props": [
+			"error",
+			{
+				"ignoreCase": true,
+				"callbacksLast": true,
+				"shorthandFirst": true,
+				"shorthandLast": false,
+				"noSortAlphabetically": false,
+				"reservedFirst": true
+			}
+		],
 		"quotes": ["warn", "single"],
 		"semi": ["warn", "never"],
 		"no-unused-vars": "warn",

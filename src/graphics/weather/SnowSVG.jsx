@@ -2,10 +2,10 @@ import React from 'react'
 
 const SnowSVG = ({ stroke = 'black', fill = 'none' }) => (
 	<svg
-		width="78"
+		fill={fill}
 		height="93"
 		viewBox="0 0 78 93"
-		fill={fill}
+		width="78"
 		xmlns="http://www.w3.org/2000/svg"
 	>
 		<path
