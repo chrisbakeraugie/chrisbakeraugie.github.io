@@ -5,7 +5,6 @@ import GraphicsContainer from './graphics/desktop/GraphicsContainer'
 import amountOfDayComplete from './js/amountOfDayComplete'
 import { useContext, useEffect } from 'react'
 import getIntermediateColor from './js/getIntermediateColor'
-import getDistanceFromNoon from './js/getDistanceFromNoon'
 import { AppContext } from './context'
 import { useTheme } from '@emotion/react'
 import { styled } from '@mui/material/styles'
@@ -17,6 +16,7 @@ import AboutPage from './pages/About/AboutPage'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import InformationContainer from './components/InformationContainer'
 import ExperiencePage from './pages/Experience/ExperiencePage'
+import getDistanceFromMidnight from './js/getDistanceFromMidnight'
 
 // eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
@@ -56,7 +56,7 @@ function App() {
 		setBackgroundColor,
 		backgroundColor,
 		setStrokeColor,
-		setDistanceFromNoon,
+		setDistanceFromMidnight,
 		setWeatherData,
 		setFontColor,
 		setIsDesktop,
@@ -69,20 +69,20 @@ function App() {
 	const isMobile = useMediaQuery(theme.breakpoints.down('sm')) // Small screens
 
 	useEffect(() => {
-		const calculatedDistanceFromNoon = getDistanceFromNoon(
+		const calculatedDistanceFromMidnight = getDistanceFromMidnight(
 			amountOfDayComplete()
 		)
 		const strokeColor = getIntermediateColor(
-			calculatedDistanceFromNoon,
+			calculatedDistanceFromMidnight,
 			theme.customValues,
 			'stroke'
 		)
 		const backgroundColorToSet = getIntermediateColor(
-			calculatedDistanceFromNoon,
+			calculatedDistanceFromMidnight,
 			theme.customValues,
 			'background'
 		)
-		setDistanceFromNoon(calculatedDistanceFromNoon)
+		setDistanceFromMidnight(calculatedDistanceFromMidnight)
 		setBackgroundColor(backgroundColorToSet)
 		setStrokeColor(strokeColor)
 		setFontColor(strokeColor)
@@ -96,15 +96,20 @@ function App() {
 	}, [isDesktop, isMobile, isTablet])
 
 	const handleHourChange = (event, newValue) => {
-		const distanceFromNoon = getDistanceFromNoon(newValue)
+		const distanceFromMidnight = getDistanceFromMidnight(newValue)
+		console.log('distance from noon', distanceFromMidnight)
 		const strokeColor = getIntermediateColor(
-			distanceFromNoon,
+			distanceFromMidnight,
 			theme.customValues,
 			'stroke'
 		)
 
 		setBackgroundColor(
-			getIntermediateColor(distanceFromNoon, theme.customValues, 'background')
+			getIntermediateColor(
+				distanceFromMidnight,
+				theme.customValues,
+				'background'
+			)
 		)
 		setStrokeColor(strokeColor)
 		setFontColor(strokeColor)

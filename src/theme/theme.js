@@ -34,6 +34,9 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily: 'Poppins, sans-serif',
+		allVariants: {
+			fontWeight: 'light',
+		},
 	},
 })
 

@@ -1,4 +1,4 @@
-const getDistanceFromNoon = (sliderValue) => {
+const getDistanceFromMidnight = (sliderValue) => {
 	if (sliderValue < 50) {
 		const distanceFromMidpoint = Math.abs(50 - sliderValue)
 		return ((50 - distanceFromMidpoint) / 50) * 100
@@ -7,4 +7,4 @@ const getDistanceFromNoon = (sliderValue) => {
 		return ((50 - distanceFromMidpoint) / 50) * 100
 	}
 }
-export default getDistanceFromNoon
+export default getDistanceFromMidnight

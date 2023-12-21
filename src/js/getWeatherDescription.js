@@ -1,5 +1,5 @@
 // Some of these are not totally accurate, but for the purpose of what we are doing, its fine
-function getWeatherDescription(code) {
+const getWeatherDescription = (code) => {
 	switch (code) {
 		case 0:
 			return 'Clear'
@@ -40,7 +40,7 @@ function getWeatherDescription(code) {
 		case 99:
 			return 'ThunderstormHail'
 		default:
-			return 'Sunny'
+			return 'Clear'
 	}
 }
 

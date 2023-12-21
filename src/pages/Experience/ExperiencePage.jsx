@@ -66,7 +66,7 @@ const ExperiencePage = () => {
 			) : (
 				experienceOptions.map((item) => (
 					<ExperienceCard
-						key={item}
+						key={item + '' + item.organization}
 						imageSrc={item.imageSrc}
 						organization={item.organization}
 						role={item.role}

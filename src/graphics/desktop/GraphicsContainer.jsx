@@ -4,6 +4,7 @@ import LeftGraphicsSVG from '../LeftGraphicsSVG'
 import RightGraphicsSVG from '../RightGraphicsSVG'
 import { useContext } from 'react'
 import { AppContext } from '../../context'
+import WeatherBox from '../../components/WeatherBox'
 
 const scale = 0.8
 
@@ -47,6 +48,7 @@ const DesktopGraphicsContainer = () => {
 			<PositionedRightGraphic>
 				<RightGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedRightGraphic>
+			<WeatherBox />
 		</StyledGraphicsContainer>
 	)
 }

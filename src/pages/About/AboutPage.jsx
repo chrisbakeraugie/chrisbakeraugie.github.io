@@ -6,7 +6,7 @@ const AboutPage = () => {
 	const { fontColor } = useContext(AppContext)
 	return (
 		<>
-			<Typography variant="h3" fontWeight="light" color={fontColor}>
+			<Typography variant="h3" color={fontColor}>
 				About Me
 			</Typography>
 			<Typography variant="p" color={fontColor}>

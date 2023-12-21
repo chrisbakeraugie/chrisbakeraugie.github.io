@@ -24,7 +24,6 @@ const StyledCardMediaDiv = styled('div')(() => ({
 
 const TitleTypography = styled(Typography)(({ theme }) => ({
 	padding: theme.spacing(1),
-	fontWeight: 'light',
 	marginBottom: theme.spacing(2),
 }))
 

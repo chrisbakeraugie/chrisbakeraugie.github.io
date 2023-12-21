@@ -9,8 +9,8 @@ export const AppContext = createContext({
 	setBackgroundColor: () => {},
 	strokeColor: '',
 	setStrokeColor: () => {},
-	distanceFromNoon: 0,
-	setDistanceFromNoon: () => {},
+	distanceFromMidnight: 0,
+	setDistanceFromMidnight: () => {},
 	weatherData: '',
 	setWeatherData: () => {},
 	fontColor: '',
@@ -21,6 +21,8 @@ export const AppContext = createContext({
 	setIsTablet: () => {},
 	isMobile: false,
 	setIsMobile: () => {},
+	location: '',
+	setLocation: () => {},
 })
 
 export const AppProvider = ({ children }) => {
@@ -28,12 +30,14 @@ export const AppProvider = ({ children }) => {
 	const [isError, setIsError] = useState(false)
 	const [backgroundColor, setBackgroundColor] = useState('rgba(255,255,255,1)')
 	const [strokeColor, setStrokeColor] = useState('rgba(185,180,44,1)')
-	const [distanceFromNoon, setDistanceFromNoon] = useState(0)
+	const [distanceFromMidnight, setDistanceFromMidnight] = useState(0)
 	const [weatherData, setWeatherData] = useState('')
 	const [fontColor, setFontColor] = useState('')
 	const [isDesktop, setIsDesktop] = useState('')
 	const [isMobile, setIsMobile] = useState('')
 	const [isTablet, setIsTablet] = useState('')
+	// Add city selector?
+	const [location, setLocation] = useState('Brooklyn, New York')
 
 	return (
 		<AppContext.Provider
@@ -46,8 +50,8 @@ export const AppProvider = ({ children }) => {
 				setBackgroundColor,
 				strokeColor,
 				setStrokeColor,
-				distanceFromNoon,
-				setDistanceFromNoon,
+				distanceFromMidnight,
+				setDistanceFromMidnight,
 				weatherData,
 				setWeatherData,
 				fontColor,
@@ -58,6 +62,8 @@ export const AppProvider = ({ children }) => {
 				setIsTablet,
 				isMobile,
 				setIsMobile,
+				location,
+				setLocation,
 			}}
 		>
 			{children}
