@@ -40,7 +40,7 @@ const Experience = ({
 }) => {
 	const { fontColor } = useContext(AppContext)
 	return (
-		<StyledCard fontColor={fontColor}>
+		<StyledCard>
 			<StyledCardMediaDiv>
 				<img
 					alt={organization}

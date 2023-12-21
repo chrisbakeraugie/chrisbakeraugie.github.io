@@ -1,8 +1,9 @@
 import { Box, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../context'
 import getWeatherIcon from '../js/getWeatherIcon'
+import getEastCoastTime from '../js/getEastCoastTime'
 
 const StyledWeatherBoxContainer = styled(Box)(({ fontColor }) => ({
 	position: 'absolute',
@@ -30,17 +31,18 @@ const StyledLocationBox = styled(Box)(() => ({
 	border: '2px solid',
 }))
 
-const StyledCurrentWeatherBox = styled(Box)(() => ({
+const StyledCurrentWeatherBox = styled(Box)(({ theme }) => ({
 	gridArea: ' 2 / 1 / 5 / 3',
 	display: 'flex',
 	flexDirection: 'column',
-	justifyContent: 'center',
+	justifyContent: 'space-around',
 	alignItems: 'center',
 	textAlign: 'center',
 	border: '2px solid',
+	gap: theme.spacing(1),
 }))
 
-const StyledTimeBox = styled(Box)(() => ({
+const StyledTimeBox = styled(Box)(({ theme }) => ({
 	gridArea: '2 / 3 / 5 / 5',
 	display: 'flex',
 	flexDirection: 'column',
@@ -48,10 +50,29 @@ const StyledTimeBox = styled(Box)(() => ({
 	alignItems: 'center',
 	textAlign: 'center',
 	border: '2px solid',
+	gap: theme.spacing(1),
 }))
 
 const WeatherBox = () => {
-	const { fontColor, weatherData, location } = useContext(AppContext)
+	const { fontColor, weatherData, location, strokeColor } =
+		useContext(AppContext)
+	const [displayTime, setDisplayTime] = useState(getEastCoastTime())
+
+	useEffect(() => {
+		const updateTime = () => {
+			setDisplayTime(getEastCoastTime())
+		}
+		const now = new Date()
+		const msUntilNextMinute =
+			60000 - (now.getSeconds() * 1000 + now.getMilliseconds())
+		const timeout = setTimeout(updateTime, msUntilNextMinute)
+		const interval = setInterval(updateTime, 60000)
+
+		return () => {
+			clearTimeout(timeout)
+			clearInterval(interval)
+		}
+	}, [])
 	return (
 		<StyledWeatherBoxContainer fontColor={fontColor}>
 			<StyledLocationBox>
@@ -59,12 +80,12 @@ const WeatherBox = () => {
 			</StyledLocationBox>
 			<StyledCurrentWeatherBox>
 				<Typography>Current Weather</Typography>
-				{getWeatherIcon(weatherData.conditions)}
+				{getWeatherIcon(weatherData.conditions, strokeColor)}
 				<Typography>{weatherData.conditions}</Typography>
 			</StyledCurrentWeatherBox>
 			<StyledTimeBox>
 				<Typography>NYC Time</Typography>
-				<Typography>8:00 pm</Typography>
+				<Typography>{displayTime}</Typography>
 				<Typography>Temperature</Typography>
 				<Typography>{weatherData.temperature + '°F'}</Typography>
 			</StyledTimeBox>

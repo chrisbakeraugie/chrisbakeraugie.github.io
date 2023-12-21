@@ -48,7 +48,6 @@ const fetchWeatherAndSetState = async (setWeatherState) => {
 		)
 		currentWeather.temperature =
 			weatherData.hourly.temperature_2m[weatherCodeIndex]
-		console.log('heresky', currentWeather)
 		setWeatherState(currentWeather)
 	} catch (err) {
 		console.error('Weather data failed to load:', JSON.stringify(err))
@@ -101,7 +100,6 @@ function App() {
 
 	const handleHourChange = (event, newValue) => {
 		const distanceFromMidnight = getDistanceFromMidnight(newValue)
-		console.log('distance from noon', distanceFromMidnight)
 		const strokeColor = getIntermediateColor(
 			distanceFromMidnight,
 			theme.customValues,

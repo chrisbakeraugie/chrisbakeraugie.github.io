@@ -5,24 +5,24 @@ import RainSVG from '../graphics/weather/RainSVG'
 import SnowSVG from '../graphics/weather/SnowSVG'
 import ThunderstormSVG from '../graphics/weather/Thunderstorm'
 
-const getWeatherIcon = (weatherString, fill, stroke) => {
+const getWeatherIcon = (weatherString, stroke) => {
 	switch (weatherString) {
 		case 'Clear':
-			return <ClearSVG fill={fill} stroke={stroke} />
+			return <ClearSVG stroke={stroke} />
 		case 'Cloudy':
-			return <CloudySVG fill={fill} stroke={stroke} />
+			return <CloudySVG stroke={stroke} />
 		case 'Foggy':
-			return <FogSVG fill={fill} stroke={stroke} />
+			return <FogSVG stroke={stroke} />
 		case 'Drizzle':
 		case 'Rain':
-			return <RainSVG fill={fill} stroke={stroke} />
+			return <RainSVG stroke={stroke} />
 		case 'Snow':
-			return <SnowSVG fill={fill} stroke={stroke} />
+			return <SnowSVG stroke={stroke} />
 		case 'Thunderstorm':
 		case 'ThunderstormHail':
-			return <ThunderstormSVG fill={fill} stroke={stroke} />
+			return <ThunderstormSVG stroke={stroke} />
 		default:
-			return <ClearSVG fill={fill} stroke={stroke} />
+			return <ClearSVG stroke={stroke} />
 	}
 }
 
