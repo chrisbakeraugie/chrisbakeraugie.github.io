@@ -48,7 +48,11 @@ const Experience = ({
 					style={{ height: '100%', objectFit: 'contain' }}
 				/>
 				<CardActions>
-					<StyledButton fontColor={fontColor} onClick={onButtonClick}>
+					<StyledButton
+						fontColor={fontColor}
+						variant="outlined"
+						onClick={onButtonClick}
+					>
 						Back
 					</StyledButton>
 				</CardActions>

@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 import { useContext } from 'react'
 import { AppContext } from '../context'
 
-const DesktopContainer = styled(Box)(({ theme }) => ({
+const LargeContainer = styled(Box)(({ theme }) => ({
 	position: 'absolute',
 	left: '50%',
 	transform: 'translateX(-50%)',
@@ -17,12 +17,20 @@ const DesktopContainer = styled(Box)(({ theme }) => ({
 	alignItems: 'center',
 	textAlign: 'center',
 	gap: theme.spacing(2),
+	[theme.breakpoints.down('lg')]: {
+		width: '80%',
+	},
 }))
 
 const InformationContainer = ({ children }) => {
 	// eslint-disable-next-line no-unused-vars
 	const { isDesktop, isMobile, isTablet } = useContext(AppContext)
-	return <>{isDesktop && <DesktopContainer>{children}</DesktopContainer>}</>
+	return (
+		<>
+			{(isDesktop || isTablet) && <LargeContainer>{children}</LargeContainer>}
+			{/* {isMobile && <DesktopContainer>{children}</DesktopContainer>} */}
+		</>
+	)
 }
 
 export default InformationContainer

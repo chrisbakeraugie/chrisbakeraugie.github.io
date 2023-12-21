@@ -16,19 +16,23 @@ const StyledNavigationBox = styled(Box)(({ theme }) => ({
 	justifyContent: 'space-evenly',
 }))
 
+const StyledLink = styled(Link)(() => ({
+	textDecoration: 'none',
+}))
+
 const Navigation = () => {
 	const { fontColor } = useContext(AppContext)
 	return (
 		<StyledNavigationBox>
-			<Link to={'/'}>
+			<StyledLink to={'/'}>
 				<StyledButton fontColor={fontColor}>Home</StyledButton>
-			</Link>
-			<Link to={'/about'}>
+			</StyledLink>
+			<StyledLink to={'/about'}>
 				<StyledButton fontColor={fontColor}>About</StyledButton>
-			</Link>
-			<Link to="/experience">
+			</StyledLink>
+			<StyledLink to="/experience">
 				<StyledButton fontColor={fontColor}>Experience</StyledButton>
-			</Link>
+			</StyledLink>
 			<StyledButton fontColor={fontColor}>Contact</StyledButton>
 		</StyledNavigationBox>
 	)

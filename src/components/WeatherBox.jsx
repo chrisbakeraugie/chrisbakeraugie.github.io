@@ -5,7 +5,7 @@ import { AppContext } from '../context'
 import getWeatherIcon from '../js/getWeatherIcon'
 import getEastCoastTime from '../js/getEastCoastTime'
 
-const StyledWeatherBoxContainer = styled(Box)(({ fontColor }) => ({
+const StyledWeatherBoxContainer = styled(Box)(({ fontColor, theme }) => ({
 	position: 'absolute',
 	bottom: 90,
 	left: '63%',
@@ -19,9 +19,16 @@ const StyledWeatherBoxContainer = styled(Box)(({ fontColor }) => ({
 	gridRowGap: '0px',
 	zIndex: 1000,
 	color: fontColor,
+	borderRadius: theme.spacing(1),
+	[theme.breakpoints.between('sm', 'lg')]: {
+		position: 'unset',
+		bottom: 'unset',
+		left: 'unset',
+		alignSelf: 'flex-end',
+	},
 }))
 
-const StyledLocationBox = styled(Box)(() => ({
+const StyledLocationBox = styled(Box)(({ theme }) => ({
 	gridArea: '1 / 1 / 2 / 5',
 	display: 'flex',
 	flexDirection: 'column',
@@ -29,6 +36,8 @@ const StyledLocationBox = styled(Box)(() => ({
 	alignItems: 'center',
 	textAlign: 'center',
 	border: '2px solid',
+	borderTopLeftRadius: theme.spacing(0.5),
+	borderTopRightRadius: theme.spacing(0.5),
 }))
 
 const StyledCurrentWeatherBox = styled(Box)(({ theme }) => ({
@@ -40,6 +49,7 @@ const StyledCurrentWeatherBox = styled(Box)(({ theme }) => ({
 	textAlign: 'center',
 	border: '2px solid',
 	gap: theme.spacing(1),
+	borderBottomLeftRadius: theme.spacing(0.5),
 }))
 
 const StyledTimeBox = styled(Box)(({ theme }) => ({
@@ -51,6 +61,7 @@ const StyledTimeBox = styled(Box)(({ theme }) => ({
 	textAlign: 'center',
 	border: '2px solid',
 	gap: theme.spacing(1),
+	borderBottomRightRadius: theme.spacing(0.5),
 }))
 
 const WeatherBox = () => {

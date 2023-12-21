@@ -1,7 +1,6 @@
 import { Box, CssBaseline } from '@mui/material'
 import ErrorPage from './pages/Error/ErrorPage'
 import HomePage from './pages/Home/HomePage'
-import GraphicsContainer from './graphics/desktop/GraphicsContainer'
 import amountOfDayComplete from './js/amountOfDayComplete'
 import { useContext, useEffect } from 'react'
 import getIntermediateColor from './js/getIntermediateColor'
@@ -17,6 +16,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import InformationContainer from './components/InformationContainer'
 import ExperiencePage from './pages/Experience/ExperiencePage'
 import getDistanceFromMidnight from './js/getDistanceFromMidnight'
+import DesktopGraphicsContainer from './graphics/desktop/DesktopGraphicsContainer'
+import TabletGraphicsContainer from './graphics/tablet/TabletGraphicsContainer'
 
 // eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
@@ -119,10 +120,9 @@ function App() {
 
 	const renderLayout = () => {
 		if (isDesktop) {
-			return <GraphicsContainer />
-			// Make Desktop version
+			return <DesktopGraphicsContainer />
 		} else if (isTablet) {
-			// return <TabletLayout />
+			return <TabletGraphicsContainer />
 		} else if (isMobile) {
 			// return <MobileLayout />
 		}
@@ -143,7 +143,6 @@ function App() {
 						<Route element={<HomePage />} path="/" />
 						<Route element={<AboutPage />} path="/about" />
 						<Route element={<ExperiencePage />} path="/experience" />
-						{/* Assuming you have an ExperiencePage component */}
 						<Route element={<ErrorPage />} path="*" />
 					</Routes>
 				</InformationContainer>
