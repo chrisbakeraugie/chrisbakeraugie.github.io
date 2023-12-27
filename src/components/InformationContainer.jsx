@@ -1,9 +1,7 @@
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import { useContext } from 'react'
-import { AppContext } from '../context'
 
-const LargeContainer = styled(Box)(({ theme }) => ({
+const StyledInformationContainer = styled(Box)(({ theme }) => ({
 	position: 'absolute',
 	left: '50%',
 	transform: 'translateX(-50%)',
@@ -20,17 +18,13 @@ const LargeContainer = styled(Box)(({ theme }) => ({
 	[theme.breakpoints.down('lg')]: {
 		width: '80%',
 	},
+	[theme.breakpoints.down('sm')]: {
+		width: '90%',
+	},
 }))
 
 const InformationContainer = ({ children }) => {
-	// eslint-disable-next-line no-unused-vars
-	const { isDesktop, isMobile, isTablet } = useContext(AppContext)
-	return (
-		<>
-			{(isDesktop || isTablet) && <LargeContainer>{children}</LargeContainer>}
-			{/* {isMobile && <DesktopContainer>{children}</DesktopContainer>} */}
-		</>
-	)
+	return <StyledInformationContainer>{children}</StyledInformationContainer>
 }
 
 export default InformationContainer

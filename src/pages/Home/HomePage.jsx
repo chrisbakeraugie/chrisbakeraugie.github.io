@@ -3,12 +3,23 @@ import { useContext } from 'react'
 import { AppContext } from '../../context'
 
 const HomePage = () => {
-	const { fontColor } = useContext(AppContext)
+	const { fontColor, isMobile } = useContext(AppContext)
 	return (
 		<>
-			<Typography color={fontColor} variant="h2">
-				Chris Baker - Full-stack Developer
-			</Typography>
+			{isMobile ? (
+				<>
+					<Typography color={fontColor} variant="h2">
+						Chris Baker
+					</Typography>
+					<Typography color={fontColor} variant="h2">
+						Full-stack Developer
+					</Typography>
+				</>
+			) : (
+				<Typography color={fontColor} variant="h2">
+					Chris Baker - Full-stack Developer
+				</Typography>
+			)}
 		</>
 	)
 }

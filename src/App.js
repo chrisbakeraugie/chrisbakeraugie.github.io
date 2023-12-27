@@ -12,12 +12,18 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import StyledSlider from './components/StyledSlider'
 import Navigation from './components/Navigation'
 import AboutPage from './pages/About/AboutPage'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	useLocation,
+} from 'react-router-dom'
 import InformationContainer from './components/InformationContainer'
 import ExperiencePage from './pages/Experience/ExperiencePage'
 import getDistanceFromMidnight from './js/getDistanceFromMidnight'
 import DesktopGraphicsContainer from './graphics/desktop/DesktopGraphicsContainer'
 import TabletGraphicsContainer from './graphics/tablet/TabletGraphicsContainer'
+import MobileGraphicsContainer from './graphics/mobile/MobileGraphicsContainer'
 
 // eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
@@ -25,6 +31,9 @@ const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
 	height: '100vh',
 	overflow: 'hidden',
 	backgroundColor,
+	[theme.breakpoints.down('sm')]: {
+		height: '90vh',
+	},
 }))
 
 const fetchWeatherAndSetState = async (setWeatherState) => {
@@ -54,6 +63,21 @@ const fetchWeatherAndSetState = async (setWeatherState) => {
 		console.error('Weather data failed to load:', JSON.stringify(err))
 	}
 }
+const Layout = ({ isMobile, isTablet, isDesktop }) => {
+	const location = useLocation()
+
+	const renderLayout = () => {
+		if (isDesktop) {
+			return <DesktopGraphicsContainer />
+		} else if (isTablet) {
+			return <TabletGraphicsContainer />
+		} else if (isMobile) {
+			if (location.pathname === '/experience') return
+			return <MobileGraphicsContainer />
+		}
+	}
+	return renderLayout()
+}
 
 function App() {
 	const {
@@ -68,9 +92,9 @@ function App() {
 		setIsTablet,
 	} = useContext(AppContext)
 	const theme = useTheme()
-	const isDesktop = useMediaQuery(theme.breakpoints.up('lg')) // Large screens
-	const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'lg')) // Medium screens
-	const isMobile = useMediaQuery(theme.breakpoints.down('sm')) // Small screens
+	const isDesktop = useMediaQuery(theme.breakpoints.up('lg'))
+	const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'lg'))
+	const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
 	useEffect(() => {
 		const calculatedDistanceFromMidnight = getDistanceFromMidnight(
@@ -118,21 +142,11 @@ function App() {
 		setFontColor(strokeColor)
 	}
 
-	const renderLayout = () => {
-		if (isDesktop) {
-			return <DesktopGraphicsContainer />
-		} else if (isTablet) {
-			return <TabletGraphicsContainer />
-		} else if (isMobile) {
-			// return <MobileLayout />
-		}
-	}
-
 	return (
 		<Router>
 			<AppContainer backgroundColor={backgroundColor} className="App">
 				<CssBaseline />
-				{renderLayout()}
+				<Layout isDesktop={isDesktop} isMobile={isMobile} isTablet={isTablet} />
 				<Navigation />
 				<StyledSlider
 					defaultValue={amountOfDayComplete()}

@@ -14,6 +14,10 @@ const MUIStyledSlider = styled(Slider)(({ theme }) => ({
 		bottom: 20,
 		width: '80%',
 	},
+	[theme.breakpoints.down('sm')]: {
+		bottom: 10,
+		width: '70%',
+	},
 }))
 
 const StyledSlider = (props) => {

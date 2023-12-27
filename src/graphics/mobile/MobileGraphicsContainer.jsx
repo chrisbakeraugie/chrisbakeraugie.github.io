@@ -1,16 +1,16 @@
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import LeftGraphicsSVG from '../LeftGraphicsSVG'
 import { useContext } from 'react'
 import { AppContext } from '../../context'
 import WeatherBox from '../../components/WeatherBox'
+import RightGraphicsSVG from '../RightGraphicsSVG'
 
-const scale = 0.7
+const scale = 0.5
 
 const StyledGraphicsContainer = styled(Box)(({ color, theme }) => ({
 	position: 'absolute',
-	bottom: 80,
-	height: 500,
+	bottom: 40,
+	height: 400,
 	width: '100vw',
 	overflow: 'hidden',
 	backgroundColor: color,
@@ -19,25 +19,22 @@ const StyledGraphicsContainer = styled(Box)(({ color, theme }) => ({
 	padding: theme.spacing(2),
 }))
 
-const PositionedLeftGraphic = styled(Box)(({ theme }) => ({
-	width: 400,
+const PositionedRightGraphic = styled(Box)(() => ({
+	width: 150,
 	transform: `scale(${scale})`,
 	transformOrigin: 'bottom left',
-	[theme.breakpoints.down('md')]: {
-		transform: `scale(${0.4})`,
-	},
 }))
 
-const TabletGraphicsContainer = () => {
+const MobileGraphicsContainer = () => {
 	const { backgroundColor, strokeColor } = useContext(AppContext)
 	return (
 		<StyledGraphicsContainer color={backgroundColor}>
-			<PositionedLeftGraphic>
-				<LeftGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
-			</PositionedLeftGraphic>
+			<PositionedRightGraphic>
+				<RightGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
+			</PositionedRightGraphic>
 			<WeatherBox />
 		</StyledGraphicsContainer>
 	)
 }
 
-export default TabletGraphicsContainer
+export default MobileGraphicsContainer

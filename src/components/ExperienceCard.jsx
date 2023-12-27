@@ -33,6 +33,18 @@ const StyledCardContent = styled(CardContent)(() => ({
 	alignContent: 'center',
 }))
 
+const StyledExperienceTitle = styled(Typography)(({ theme }) => ({
+	[theme.breakpoints.down('sm')]: {
+		fontSize: 15,
+	},
+}))
+
+const StyledExperienceDetails = styled(Typography)(({ theme }) => ({
+	[theme.breakpoints.down('sm')]: {
+		fontSize: 12,
+	},
+}))
+
 const ExperienceCard = ({ imageSrc, organization, role, onClick }) => {
 	const { fontColor } = useContext(AppContext)
 
@@ -40,10 +52,10 @@ const ExperienceCard = ({ imageSrc, organization, role, onClick }) => {
 		<StyledExperienceCard fontColor={fontColor} onClick={onClick}>
 			<StyledCardMedia component={'img'} image={imageSrc} />
 			<StyledCardContent>
-				<Typography fontWeight="bold" variant="h5">
+				<StyledExperienceTitle fontWeight="bold" variant="h5">
 					{organization}
-				</Typography>
-				<Typography variant="p">{role}</Typography>
+				</StyledExperienceTitle>
+				<StyledExperienceDetails variant="p">{role}</StyledExperienceDetails>
 			</StyledCardContent>
 		</StyledExperienceCard>
 	)

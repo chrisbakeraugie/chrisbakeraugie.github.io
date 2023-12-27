@@ -20,11 +20,14 @@ const StyledWeatherBoxContainer = styled(Box)(({ fontColor, theme }) => ({
 	zIndex: 1000,
 	color: fontColor,
 	borderRadius: theme.spacing(1),
-	[theme.breakpoints.between('sm', 'lg')]: {
+	[theme.breakpoints.down('lg')]: {
 		position: 'unset',
 		bottom: 'unset',
 		left: 'unset',
 		alignSelf: 'flex-end',
+	},
+	[theme.breakpoints.down('sm')]: {
+		height: 160,
 	},
 }))
 
@@ -64,6 +67,12 @@ const StyledTimeBox = styled(Box)(({ theme }) => ({
 	borderBottomRightRadius: theme.spacing(0.5),
 }))
 
+const StyledFont = styled(Typography)(({ theme }) => ({
+	[theme.breakpoints.down('sm')]: {
+		fontSize: '12px',
+	},
+}))
+
 const WeatherBox = () => {
 	const { fontColor, weatherData, location, strokeColor } =
 		useContext(AppContext)
@@ -87,18 +96,18 @@ const WeatherBox = () => {
 	return (
 		<StyledWeatherBoxContainer fontColor={fontColor}>
 			<StyledLocationBox>
-				<Typography>{location}</Typography>
+				<StyledFont>{location}</StyledFont>
 			</StyledLocationBox>
 			<StyledCurrentWeatherBox>
-				<Typography>Current Weather</Typography>
+				<StyledFont>Current Weather</StyledFont>
 				{getWeatherIcon(weatherData.conditions, strokeColor)}
-				<Typography>{weatherData.conditions}</Typography>
+				<StyledFont>{weatherData.conditions}</StyledFont>
 			</StyledCurrentWeatherBox>
 			<StyledTimeBox>
-				<Typography>NYC Time</Typography>
-				<Typography>{displayTime}</Typography>
-				<Typography>Temperature</Typography>
-				<Typography>{weatherData.temperature + '°F'}</Typography>
+				<StyledFont>NYC Time</StyledFont>
+				<StyledFont>{displayTime}</StyledFont>
+				<StyledFont>Temperature</StyledFont>
+				<StyledFont>{weatherData.temperature + '°F'}</StyledFont>
 			</StyledTimeBox>
 		</StyledWeatherBoxContainer>
 	)
