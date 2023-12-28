@@ -25,7 +25,12 @@
 				"reservedFirst": true
 			}
 		],
-		"quotes": ["warn", "single"],
+		"jsx-quotes": ["error", "prefer-double"],
+		"quotes": [
+			"error",
+			"single",
+			{ "avoidEscape": true, "allowTemplateLiterals": true }
+		],
 		"semi": ["warn", "never"],
 		"no-unused-vars": "warn",
 		"react/react-in-jsx-scope": "off",

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Card, TextField, Button, Typography } from '@mui/material'
+import { Card, TextField, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { AppContext } from '../context'
 import StyledButton from '../components/StyledButton'
@@ -28,7 +28,7 @@ const StyledForm = styled('form')({
 	gap: '20px',
 })
 
-const StyledTextField = styled(TextField)(({ theme, fontColor }) => ({
+const StyledTextField = styled(TextField)(({ fontColor }) => ({
 	'& label.Mui-focused': {
 		color: fontColor,
 	},
