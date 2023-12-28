@@ -5,7 +5,8 @@ import RightGraphicsSVG from './RightGraphicsSVG'
 import { useContext, useMemo } from 'react'
 import { AppContext } from '../context'
 import WeatherBox from '../components/WeatherBox'
-import SnowflakeSVG from './SnowflakeSVG'
+import AnimatedSnowFlake from './weather/animations/AnimatedSnowFlake'
+import AnimatedCloud from './weather/animations/AnimatedCloud'
 
 const scale = 0.8
 
@@ -38,34 +39,34 @@ const PositionedRightGraphic = styled(Box)(() => ({
 	transformOrigin: 'bottom right',
 }))
 
-const StyledSnowFlake = styled(SnowflakeSVG)(() => ({}))
-
 const DesktopGraphicsContainer = () => {
 	const { backgroundColor, strokeColor } = useContext(AppContext)
 
 	const snowflakes = useMemo(() => {
 		const flakes = []
-		for (let i = 0; i < 10; i++) {
-			flakes.push(
-				<StyledSnowFlake
-					key={i}
-					height={'20px'}
-					id={i}
-					stroke={'white'}
-					width={'20px'}
-				/>
-			)
+		for (let i = 0; i < 5; i++) {
+			flakes.push(<AnimatedSnowFlake key={i} id={i} />)
 		}
 		return flakes
-	}, [strokeColor])
+	}, [])
+
+	const clouds = useMemo(() => {
+		const clouds = []
+		for (let i = 0; i < 5; i++) {
+			clouds.push(<AnimatedCloud key={i} id={i} />)
+		}
+		return clouds
+	}, [])
 
 	return (
 		<StyledGraphicsContainer color={backgroundColor}>
 			<PositionedLeftGraphic>
 				{snowflakes}
+				{clouds}
 				<LeftGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedLeftGraphic>
 			<PositionedRightGraphic>
+				{snowflakes}
 				<RightGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedRightGraphic>
 			<WeatherBox />

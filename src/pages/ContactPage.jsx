@@ -122,7 +122,9 @@ const ContactPage = () => {
 						{"Thanks! I'll respond to you soon."}
 					</StyledTypography>
 				) : (
-					<StyledButton type="submit">Submit</StyledButton>
+					<StyledButton fontColor={fontColor} type="submit">
+						Submit
+					</StyledButton>
 				)}
 				{status === 'ERROR' && (
 					<StyledTypography fontColor={fontColor}>

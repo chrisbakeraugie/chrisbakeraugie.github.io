@@ -25,7 +25,7 @@ function getIntermediateColor(percentage, themeColors, fieldName) {
 	let factor =
 		endColorPercentage - startColorPercentage > 0
 			? (percentage - startColorPercentage) / // eslint-disable-next-line no-mixed-spaces-and-tabs
-			  (endColorPercentage - startColorPercentage)
+				(endColorPercentage - startColorPercentage)
 			: 100
 
 	const interpolatedColor = interpolateColor(startColor, endColor, factor)

@@ -47,6 +47,7 @@ const ContentTypography = styled(Typography)(({ theme }) => ({
 const StyledImg = styled('img')(({ theme }) => ({
 	height: '100%',
 	objectFit: 'contain',
+	borderRadius: 8,
 	[theme.breakpoints.down('sm')]: {
 		height: 100,
 	},
