@@ -1,10 +1,11 @@
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import LeftGraphicsSVG from '../LeftGraphicsSVG'
-import RightGraphicsSVG from '../RightGraphicsSVG'
-import { useContext } from 'react'
-import { AppContext } from '../../context'
-import WeatherBox from '../../components/WeatherBox'
+import LeftGraphicsSVG from './LeftGraphicsSVG'
+import RightGraphicsSVG from './RightGraphicsSVG'
+import { useContext, useMemo } from 'react'
+import { AppContext } from '../context'
+import WeatherBox from '../components/WeatherBox'
+import SnowflakeSVG from './SnowflakeSVG'
 
 const scale = 0.8
 
@@ -37,11 +38,31 @@ const PositionedRightGraphic = styled(Box)(() => ({
 	transformOrigin: 'bottom right',
 }))
 
+const StyledSnowFlake = styled(SnowflakeSVG)(() => ({}))
+
 const DesktopGraphicsContainer = () => {
 	const { backgroundColor, strokeColor } = useContext(AppContext)
+
+	const snowflakes = useMemo(() => {
+		const flakes = []
+		for (let i = 0; i < 10; i++) {
+			flakes.push(
+				<StyledSnowFlake
+					key={i}
+					height={'20px'}
+					id={i}
+					stroke={'white'}
+					width={'20px'}
+				/>
+			)
+		}
+		return flakes
+	}, [strokeColor])
+
 	return (
 		<StyledGraphicsContainer color={backgroundColor}>
 			<PositionedLeftGraphic>
+				{snowflakes}
 				<LeftGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedLeftGraphic>
 			<PositionedRightGraphic>

@@ -1,9 +1,9 @@
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import LeftGraphicsSVG from '../LeftGraphicsSVG'
+import LeftGraphicsSVG from './LeftGraphicsSVG'
 import { useContext } from 'react'
-import { AppContext } from '../../context'
-import WeatherBox from '../../components/WeatherBox'
+import { AppContext } from '../context'
+import WeatherBox from '../components/WeatherBox'
 
 const scale = 0.7
 

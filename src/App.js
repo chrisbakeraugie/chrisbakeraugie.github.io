@@ -1,6 +1,4 @@
 import { Box, CssBaseline } from '@mui/material'
-import ErrorPage from './pages/Error/ErrorPage'
-import HomePage from './pages/Home/HomePage'
 import amountOfDayComplete from './js/amountOfDayComplete'
 import { useContext, useEffect } from 'react'
 import getIntermediateColor from './js/getIntermediateColor'
@@ -10,8 +8,6 @@ import { styled } from '@mui/material/styles'
 import getWeatherDescription from './js/getWeatherDescription'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import StyledSlider from './components/StyledSlider'
-import Navigation from './components/Navigation'
-import AboutPage from './pages/About/AboutPage'
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -19,14 +15,17 @@ import {
 	useLocation,
 } from 'react-router-dom'
 import InformationContainer from './components/InformationContainer'
-import ExperiencePage from './pages/Experience/ExperiencePage'
 import getDistanceFromMidnight from './js/getDistanceFromMidnight'
-import DesktopGraphicsContainer from './graphics/desktop/DesktopGraphicsContainer'
-import TabletGraphicsContainer from './graphics/tablet/TabletGraphicsContainer'
-import MobileGraphicsContainer from './graphics/mobile/MobileGraphicsContainer'
+import DesktopGraphicsContainer from './graphics/DesktopGraphicsContainer'
+import TabletGraphicsContainer from './graphics/TabletGraphicsContainer'
+import MobileGraphicsContainer from './graphics/MobileGraphicsContainer'
 import ContactPage from './pages/ContactPage'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ExperiencePage from './pages/ExperiencePage'
+import ErrorPage from './pages/ErrorPage'
+import Navigation from './components/Navigation'
 
-// eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
 	width: '100vw',
 	height: '100vh',

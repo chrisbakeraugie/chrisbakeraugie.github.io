@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ExperienceCard from '../../components/ExperienceCard'
-import Experience from '../../components/Experience'
+import ExperienceCard from '../components/ExperienceCard'
+import Experience from '../components/Experience'
 
 const experienceOptions = [
 	{

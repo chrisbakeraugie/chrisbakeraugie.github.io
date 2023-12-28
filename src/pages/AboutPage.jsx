@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 import { useContext } from 'react'
-import { AppContext } from '../../context'
+import { AppContext } from '../context'
 
 const AboutPage = () => {
 	const { fontColor } = useContext(AppContext)
