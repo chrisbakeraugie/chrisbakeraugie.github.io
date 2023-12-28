@@ -24,6 +24,7 @@ import getDistanceFromMidnight from './js/getDistanceFromMidnight'
 import DesktopGraphicsContainer from './graphics/desktop/DesktopGraphicsContainer'
 import TabletGraphicsContainer from './graphics/tablet/TabletGraphicsContainer'
 import MobileGraphicsContainer from './graphics/mobile/MobileGraphicsContainer'
+import ContactPage from './pages/ContactPage'
 
 // eslint-disable-next-line no-unused-vars
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
@@ -157,6 +158,7 @@ function App() {
 						<Route element={<HomePage />} path="/" />
 						<Route element={<AboutPage />} path="/about" />
 						<Route element={<ExperiencePage />} path="/experience" />
+						<Route element={<ContactPage />} path="/contact" />
 						<Route element={<ErrorPage />} path="*" />
 					</Routes>
 				</InformationContainer>
