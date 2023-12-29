@@ -7,6 +7,7 @@ import { AppContext } from '../context'
 import WeatherBox from '../components/WeatherBox'
 import AnimatedSnowFlake from './weather/animations/AnimatedSnowFlake'
 import AnimatedCloud from './weather/animations/AnimatedCloud'
+import ThunderstormSVG from './weather/animations/ThunderstormSVG'
 
 const scale = 0.8
 
@@ -63,6 +64,7 @@ const DesktopGraphicsContainer = () => {
 			<PositionedLeftGraphic>
 				{snowflakes}
 				{clouds}
+				<ThunderstormSVG />
 				<LeftGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedLeftGraphic>
 			<PositionedRightGraphic>
