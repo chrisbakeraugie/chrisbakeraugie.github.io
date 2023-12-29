@@ -107,7 +107,11 @@ const WeatherBox = () => {
 				<StyledFont>NYC Time</StyledFont>
 				<StyledFont>{displayTime}</StyledFont>
 				<StyledFont>Temperature</StyledFont>
-				<StyledFont>{weatherData.temperature + '°F'}</StyledFont>
+				<StyledFont>
+					{weatherData.temperature
+						? weatherData.temperature + '°F'
+						: `Weather data failed to load`}
+				</StyledFont>
 			</StyledTimeBox>
 		</StyledWeatherBoxContainer>
 	)
