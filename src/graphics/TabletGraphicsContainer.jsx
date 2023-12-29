@@ -4,6 +4,7 @@ import LeftGraphicsSVG from './LeftGraphicsSVG'
 import { useContext } from 'react'
 import { AppContext } from '../context'
 import WeatherBox from '../components/WeatherBox'
+import useWeatherToDisplay from '../components/useWeatherToDisplay'
 
 const scale = 0.7
 
@@ -30,10 +31,12 @@ const PositionedLeftGraphic = styled(Box)(({ theme }) => ({
 
 const TabletGraphicsContainer = () => {
 	const { backgroundColor, strokeColor } = useContext(AppContext)
+	const weatherToDisplay = useWeatherToDisplay()
 	return (
 		<StyledGraphicsContainer color={backgroundColor}>
 			<PositionedLeftGraphic>
 				<LeftGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
+				{weatherToDisplay}
 			</PositionedLeftGraphic>
 			<WeatherBox />
 		</StyledGraphicsContainer>

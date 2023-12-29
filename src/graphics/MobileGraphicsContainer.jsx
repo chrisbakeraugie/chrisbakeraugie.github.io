@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { AppContext } from '../context'
 import WeatherBox from '../components/WeatherBox'
 import RightGraphicsSVG from './RightGraphicsSVG'
+import useWeatherToDisplay from '../components/useWeatherToDisplay'
 
 const scale = 0.5
 
@@ -27,10 +28,12 @@ const PositionedRightGraphic = styled(Box)(() => ({
 
 const MobileGraphicsContainer = () => {
 	const { backgroundColor, strokeColor } = useContext(AppContext)
+	const weatherToDisplay = useWeatherToDisplay()
 	return (
 		<StyledGraphicsContainer color={backgroundColor}>
 			<PositionedRightGraphic>
 				<RightGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
+				{weatherToDisplay}
 			</PositionedRightGraphic>
 			<WeatherBox />
 		</StyledGraphicsContainer>

@@ -18,7 +18,7 @@ const fall = keyframes`
     90% { transform: translateY(90vh) translateX(-20px) rotate(180deg); opacity: 0;}
 `
 
-const StyledSnowFlake = styled(Box)(({ id }) => {
+const StyledSnowFlake = styled(Box)(({ theme }) => {
 	const duration = Math.random() * 15 + 7
 	const delay = Math.random() * 4 + 1
 	const leftPosition = Math.random() * 90 + 5
@@ -33,6 +33,9 @@ const StyledSnowFlake = styled(Box)(({ id }) => {
 		width: '20px',
 		height: '20px',
 		opacity: 0,
+		[theme.breakpoints.down('sm')]: {
+			width: 80,
+		},
 	}
 })
 

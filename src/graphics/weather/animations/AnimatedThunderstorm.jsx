@@ -1,10 +1,18 @@
 import React, { useEffect } from 'react'
 import { styled, keyframes } from '@mui/material/styles'
 import { Box } from '@mui/material'
-const StyledSVG = styled(Box)(() => ({
+const StyledSVG = styled(Box)(({ theme }) => ({
 	position: 'absolute',
 	width: '100%',
 	bottom: '60%',
+	[theme.breakpoints.between('sm', 'lg')]: {
+		left: '50%',
+		width: '150%',
+	},
+	[theme.breakpoints.down('sm')]: {
+		bottom: '90%',
+		width: '200%',
+	},
 }))
 const flash = keyframes`
   0% { opacity: 0;}

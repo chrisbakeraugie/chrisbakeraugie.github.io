@@ -16,7 +16,7 @@ const fall = keyframes`
     100% { transform: translateY(100vh); opacity: 0; }
 `
 
-const StyledRain = styled(Box)(() => {
+const StyledRain = styled(Box)(({ theme }) => {
 	const duration = 4
 	const delay = Math.random() * 4 + 1
 	const leftPosition = Math.random() * 90 + 5
@@ -31,6 +31,9 @@ const StyledRain = styled(Box)(() => {
 		width: '20px',
 		height: '20px',
 		opacity: 0,
+		[theme.breakpoints.between('sm', 'lg')]: {
+			left: `${leftPosition * 2}%`,
+		},
 	}
 })
 

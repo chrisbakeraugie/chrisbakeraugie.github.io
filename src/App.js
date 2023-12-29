@@ -25,6 +25,7 @@ import AboutPage from './pages/AboutPage'
 import ExperiencePage from './pages/ExperiencePage'
 import ErrorPage from './pages/ErrorPage'
 import Navigation from './components/Navigation'
+import getRandomWeatherConditions from './js/getRandomWeatherConditions'
 
 const AppContainer = styled(Box)(({ theme, backgroundColor }) => ({
 	width: '100vw',
@@ -40,9 +41,12 @@ const fetchWeatherAndSetState = async (setWeatherState) => {
 	const currentTime = Math.floor(Date.now() / 1000)
 	let weatherCodeIndex = null
 	try {
-		const weatherResponse = await fetch(
-			'https://api.open-meteo.com/v1/forecast?latitude=40.6782&longitude=-73.9442&hourly=temperature_2m,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timeformat=unixtime&forecast_days=1&timezone=America%2FNew_York'
-		)
+		const weatherResponse =
+			process.env.NODE_ENV !== 'development'
+				? await fetch(
+						'https://api.open-meteo.com/v1/forecast?latitude=40.6782&longitude=-73.9442&hourly=temperature_2m,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timeformat=unixtime&forecast_days=1&timezone=America%2FNew_York'
+					)
+				: null
 		const weatherData = await weatherResponse.json()
 		const timeArray = weatherData.hourly.time
 		for (let i = 0; i < timeArray.length - 1; i++) {
@@ -60,6 +64,9 @@ const fetchWeatherAndSetState = async (setWeatherState) => {
 			weatherData.hourly.temperature_2m[weatherCodeIndex]
 		setWeatherState(currentWeather)
 	} catch (err) {
+		if (process.env.NODE_ENV) {
+			setWeatherState(getRandomWeatherConditions())
+		}
 		console.error('Weather data failed to load:', JSON.stringify(err))
 	}
 }
