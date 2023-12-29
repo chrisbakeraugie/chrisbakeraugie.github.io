@@ -4,11 +4,11 @@ import { AppContext } from '../context'
 import { styled } from '@mui/material/styles'
 import StyledButton from './StyledButton'
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(({ theme, backgroundColor }) => ({
 	width: '80%',
 	height: '80%',
 	display: 'flex',
-	backgroundColor: 'transparent',
+	backgroundColor,
 	boxShadow: 'none',
 	alignItems: 'center',
 	[theme.breakpoints.down('sm')]: {
@@ -60,9 +60,9 @@ const Experience = ({
 	imageSrc,
 	onButtonClick,
 }) => {
-	const { fontColor, isMobile } = useContext(AppContext)
+	const { fontColor, isMobile, backgroundColor } = useContext(AppContext)
 	return (
-		<StyledCard>
+		<StyledCard backgroundColor={backgroundColor}>
 			{!isMobile && (
 				<StyledCardMediaDiv>
 					<StyledImg alt={organization} src={imageSrc} />

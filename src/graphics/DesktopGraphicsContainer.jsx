@@ -2,12 +2,10 @@ import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import LeftGraphicsSVG from './LeftGraphicsSVG'
 import RightGraphicsSVG from './RightGraphicsSVG'
-import { useContext, useMemo } from 'react'
+import { useContext } from 'react'
 import { AppContext } from '../context'
 import WeatherBox from '../components/WeatherBox'
-import AnimatedSnowFlake from './weather/animations/AnimatedSnowFlake'
-import AnimatedCloud from './weather/animations/AnimatedCloud'
-import ThunderstormSVG from './weather/animations/ThunderstormSVG'
+import useWeatherToDisplay from '../components/useWeatherToDisplay'
 
 const scale = 0.8
 
@@ -42,33 +40,15 @@ const PositionedRightGraphic = styled(Box)(() => ({
 
 const DesktopGraphicsContainer = () => {
 	const { backgroundColor, strokeColor } = useContext(AppContext)
-
-	const snowflakes = useMemo(() => {
-		const flakes = []
-		for (let i = 0; i < 5; i++) {
-			flakes.push(<AnimatedSnowFlake key={i} id={i} />)
-		}
-		return flakes
-	}, [])
-
-	const clouds = useMemo(() => {
-		const clouds = []
-		for (let i = 0; i < 5; i++) {
-			clouds.push(<AnimatedCloud key={i} id={i} />)
-		}
-		return clouds
-	}, [])
+	const weatherToDisplay = useWeatherToDisplay()
 
 	return (
 		<StyledGraphicsContainer color={backgroundColor}>
 			<PositionedLeftGraphic>
-				{snowflakes}
-				{clouds}
-				<ThunderstormSVG />
+				{weatherToDisplay}
 				<LeftGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedLeftGraphic>
 			<PositionedRightGraphic>
-				{snowflakes}
 				<RightGraphicsSVG fill={backgroundColor} stroke={strokeColor} />
 			</PositionedRightGraphic>
 			<WeatherBox />

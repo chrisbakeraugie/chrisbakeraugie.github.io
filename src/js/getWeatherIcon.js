@@ -3,7 +3,7 @@ import CloudySVG from '../graphics/weather/CloudySVG'
 import FogSVG from '../graphics/weather/FogSVG'
 import RainSVG from '../graphics/weather/RainSVG'
 import SnowSVG from '../graphics/weather/SnowSVG'
-import ThunderstormSVG from '../graphics/weather/Thunderstorm'
+import ThunderstormSVG from '../graphics/weather/ThunderstormSVG'
 
 const getWeatherIcon = (weatherString, stroke) => {
 	switch (weatherString) {

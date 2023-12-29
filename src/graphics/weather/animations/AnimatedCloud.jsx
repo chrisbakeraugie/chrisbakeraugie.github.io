@@ -11,7 +11,7 @@ const moveClouds = keyframes`
 
 const StyledCloud = styled(Box)(() => {
 	const duration = 30
-	const bottom = `${50 + Math.random() * 30}vh`
+	const bottom = `${30 + Math.random() * 30}vh`
 
 	return {
 		animation: `${moveClouds} linear infinite ${duration}s 0s`,
