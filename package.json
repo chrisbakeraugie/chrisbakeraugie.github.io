@@ -22,7 +22,9 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -46,6 +48,8 @@
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"eslint": "^8.56.0",
 		"eslint-plugin-react": "^7.33.2",
+		"gh-pages": "^6.1.1",
 		"prettier": "3.1.1"
-	}
+	},
+	"homepage": "https://chrisbakeraugie.github.io/"
 }
