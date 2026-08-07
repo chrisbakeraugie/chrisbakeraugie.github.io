@@ -1,9 +1,16 @@
+import { Source_Sans_3 } from 'next/font/google';
 import type { Metadata } from 'next';
+import { SiteShell } from '@/components/site_shell';
 import { AUTHOR, SITE_URL } from '@/lib/site';
 import './globals.css';
 
-// metadataBase lets every page emit ABSOLUTE og:image / og:url values from
-// relative paths — required for LinkedIn and other unfurlers.
+const sourceSans = Source_Sans_3({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -26,8 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={sourceSans.className}>
+      <body>
+        <SiteShell>{children}</SiteShell>
+      </body>
     </html>
   );
 }

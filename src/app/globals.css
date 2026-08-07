@@ -1,26 +1,41 @@
 @import 'tailwindcss';
 
+/* Strata-inspired design tokens (html5up.net/strata, CCA 3.0). */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --strata-bg: #ffffff;
+  --strata-fg: #a2a2a2;
+  --strata-fg-bold: #787878;
+  --strata-fg-light: #b2b2b2;
+  --strata-border: #efefef;
+  --strata-border-bg: #f7f7f7;
+  --strata-accent: #49bf9d;
+  --strata-sidebar-bg: #1f1815;
+  --strata-sidebar-fg: rgba(255, 255, 255, 0.5);
+  --strata-sidebar-fg-bold: #ffffff;
+  --strata-sidebar-fg-light: rgba(255, 255, 255, 0.4);
+  --strata-sidebar-border: rgba(255, 255, 255, 0.25);
+  --strata-header-width: 35%;
+  --strata-pad: 3em;
+  --strata-element-margin: 1.5em;
+  --strata-radius: 0.35em;
+  --strata-transition: 0.2s ease-in-out;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-strata-accent: var(--strata-accent);
+  --color-strata-fg: var(--strata-fg);
+  --color-strata-fg-bold: var(--strata-fg-bold);
+  --color-strata-border: var(--strata-border);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -32,32 +47,367 @@ body {
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--background);
-  color: var(--foreground);
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
-  line-height: 1.5;
+  background: var(--strata-bg);
+  color: var(--strata-fg);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
-a {
-  color: inherit;
+strong,
+b {
+  color: var(--strata-fg-bold);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--strata-fg-bold);
+  font-weight: 400;
+  line-height: 1em;
+  margin: 0 0 calc(var(--strata-element-margin) * 0.5) 0;
+}
+
+h1 {
+  font-size: 1.65em;
+  line-height: 1.4em;
+}
+
+h2 {
+  font-size: 1.25em;
+  line-height: 1.4em;
+}
+
+h3 {
+  font-size: 1.05em;
+  line-height: 1.45em;
+}
+
+p {
+  margin: 0 0 var(--strata-element-margin) 0;
+}
+
+/* Strata-style links: dotted underline, teal accent on hover. */
+a.strata-link {
+  border-bottom: 1px dotted var(--strata-accent);
+  color: var(--strata-accent);
   text-decoration: none;
+  transition:
+    color var(--strata-transition),
+    border-color var(--strata-transition);
 }
 
-/* Styling for build-time-rendered markdown article bodies. Kept as plain CSS
-   because it targets HTML produced by `marked`, which Tailwind utilities can't
-   reach. */
+a.strata-link:hover {
+  border-bottom-color: transparent;
+  color: var(--strata-accent);
+}
+
+/* Outlined button matching Strata .button */
+a.strata-button,
+button.strata-button {
+  appearance: none;
+  background-color: transparent;
+  border: solid 3px var(--strata-border);
+  border-radius: var(--strata-radius);
+  color: var(--strata-fg-bold);
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  font-size: 0.9em;
+  font-weight: 400;
+  height: calc(2.5em + 6px);
+  line-height: 2.5em;
+  min-width: 10em;
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color var(--strata-transition),
+    color var(--strata-transition),
+    border-color var(--strata-transition);
+  white-space: nowrap;
+}
+
+a.strata-button:hover,
+button.strata-button:hover {
+  border-color: var(--strata-accent);
+  color: var(--strata-accent);
+}
+
+a.strata-button.special,
+button.strata-button.special {
+  background-color: var(--strata-accent);
+  border-color: var(--strata-accent);
+  color: #ffffff;
+}
+
+a.strata-button.special:hover,
+button.strata-button.special:hover {
+  background-color: #52c9a6;
+  border-color: #52c9a6;
+  color: #ffffff;
+}
+
+/* Site shell: fixed dark sidebar + scrolling main column. */
+#wrapper {
+  min-height: 100vh;
+}
+
+#header {
+  background-color: var(--strata-sidebar-bg);
+  color: var(--strata-sidebar-fg);
+  height: 100%;
+  left: 0;
+  padding: calc(var(--strata-pad) * 2) var(--strata-pad) 0 0;
+  position: fixed;
+  text-align: right;
+  top: 0;
+  width: var(--strata-header-width);
+  z-index: 10;
+}
+
+#header strong,
+#header b,
+#header h2,
+#header h3 {
+  color: var(--strata-sidebar-fg-bold);
+}
+
+#header h1 {
+  color: var(--strata-sidebar-fg);
+  font-size: 1.1em;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+#header .avatar {
+  border-radius: 100%;
+  display: inline-block;
+  height: 5em;
+  line-height: 5em;
+  margin: 0 0 calc(var(--strata-element-margin) * 0.5) 0;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  width: 5em;
+}
+
+#header .avatar-initials {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--strata-sidebar-fg-bold);
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+#footer {
+  border-top: solid 2px var(--strata-border);
+  margin-top: var(--strata-pad);
+  padding-top: var(--strata-element-margin);
+  text-align: left;
+}
+
+#footer .icons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#footer .icons li {
+  display: inline-block;
+  margin-right: 0.75em;
+  padding-right: 0.75em;
+  border-right: solid 1px var(--strata-border);
+}
+
+#footer .icons li:last-child {
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+#footer .icons a {
+  border-bottom: 0;
+  color: var(--strata-fg-light);
+  font-size: 0.875em;
+  text-decoration: none;
+  transition: color var(--strata-transition);
+}
+
+#footer .icons a:hover {
+  color: var(--strata-accent);
+}
+
+#footer .copyright {
+  color: var(--strata-fg-light);
+  font-size: 0.8em;
+  list-style: none;
+  margin: 0.75em 0 0 0;
+  padding: 0;
+}
+
+#main {
+  margin-left: var(--strata-header-width);
+  max-width: calc(50em + var(--strata-pad));
+  padding: calc(var(--strata-pad) * 2) var(--strata-pad) var(--strata-pad)
+    var(--strata-pad);
+  width: calc(100% - var(--strata-header-width));
+}
+
+#main > section {
+  border-top: solid 2px var(--strata-border);
+  margin: var(--strata-pad) 0 0 0;
+  padding: var(--strata-pad) 0 0 0;
+}
+
+#main > section:first-child {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#main .major h2 {
+  font-size: 1.5em;
+}
+
+/* Experience list — semantic structure for crawlers. */
+.experience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.experience-list > li {
+  margin: 0 0 var(--strata-element-margin) 0;
+}
+
+.experience-list > li:last-child {
+  margin-bottom: 0;
+}
+
+.experience-list header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.35em;
+}
+
+.experience-list h3 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.experience-list time {
+  color: var(--strata-fg-light);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.experience-list p {
+  font-size: 0.95em;
+  margin: 0;
+}
+
+/* Writing grid styled like Strata "Recent Work" work items. */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--strata-element-margin);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.work-item h3 {
+  font-size: 0.95em;
+  margin: 0 0 calc(var(--strata-element-margin) * 0.25) 0;
+}
+
+.work-item p {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.work-item time {
+  color: var(--strata-fg-light);
+  display: block;
+  font-size: 0.75em;
+  margin-top: 0.35em;
+}
+
+.work-item a.strata-link {
+  border-bottom: 0;
+  color: inherit;
+}
+
+.work-item a.strata-link:hover h3 {
+  color: var(--strata-accent);
+}
+
+/* Contact block — labeled fields, no JS form. */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--strata-element-margin);
+  list-style: none;
+  margin: var(--strata-element-margin) 0 0 0;
+  padding: 0;
+}
+
+.contact-grid h3 {
+  font-size: 0.95em;
+  margin: 0 0 0.5em 0;
+}
+
+.contact-grid p,
+.contact-grid address {
+  font-size: 0.9em;
+  font-style: normal;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.actions {
+  margin: var(--strata-element-margin) 0 0 0;
+}
+
+/* Article pages inside the main column. */
+.article-page-back {
+  color: var(--strata-fg-light);
+  display: inline-block;
+  font-size: 0.9em;
+  margin-bottom: var(--strata-element-margin);
+  text-decoration: none;
+  transition: color var(--strata-transition);
+}
+
+.article-page-back:hover {
+  color: var(--strata-accent);
+}
+
+.article-page header time {
+  color: var(--strata-fg-light);
+  display: block;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+/* Build-time-rendered markdown article bodies. */
 .article-content {
   line-height: 1.7;
 }
 
 .article-content h2 {
-  margin-top: 2rem;
+  font-size: 1.2rem;
   margin-bottom: 0.75rem;
-  font-size: 1.4rem;
-  font-weight: 600;
+  margin-top: 2rem;
 }
 
 .article-content p {
@@ -65,9 +415,9 @@ a {
 }
 
 .article-content ul {
+  list-style: disc;
   margin: 1rem 0;
   padding-left: 1.5rem;
-  list-style: disc;
 }
 
 .article-content li {
@@ -75,17 +425,22 @@ a {
 }
 
 .article-content a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  border-bottom: 1px dotted var(--strata-accent);
+  color: var(--strata-accent);
+  text-decoration: none;
+}
+
+.article-content a:hover {
+  border-bottom-color: transparent;
 }
 
 .article-content pre {
-  margin: 1.25rem 0;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  background: rgba(127, 127, 127, 0.12);
+  background: var(--strata-border-bg);
+  border-radius: var(--strata-radius);
   font-size: 0.9rem;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  padding: 1rem;
 }
 
 .article-content code {
@@ -93,8 +448,50 @@ a {
 }
 
 .article-content :not(pre) > code {
-  padding: 0.15rem 0.35rem;
-  border-radius: 0.3rem;
-  background: rgba(127, 127, 127, 0.15);
+  background: var(--strata-border-bg);
+  border-radius: var(--strata-radius);
   font-size: 0.9em;
+  padding: 0.15rem 0.35rem;
+}
+
+/* Tablet / mobile: stack sidebar above content (Strata breakpoint behavior). */
+@media screen and (max-width: 1280px) {
+  :root {
+    --strata-header-width: 100%;
+    --strata-pad: 2.5em;
+  }
+
+  #header {
+    background-attachment: scroll;
+    height: auto;
+    padding: 3em 2.5em 2em 2.5em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  #main {
+    margin-left: 0;
+    max-width: none;
+    padding: 2.5em;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  :root {
+    --strata-pad: 1.75em;
+  }
+
+  body {
+    font-size: 0.875rem;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }

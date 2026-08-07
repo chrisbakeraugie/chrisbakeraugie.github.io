@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getArticle, getArticleSlugs } from '@/lib/articles';
+import { formatDate } from '@/lib/utils';
 
 interface PageParams {
   params: Promise<{ slug: string }>;
 }
 
-// Required for static export: enumerate every article page at build time.
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   const slugs = await getArticleSlugs();
   return slugs.map((slug) => ({ slug }));
@@ -37,16 +37,6 @@ export async function generateMetadata({
   };
 }
 
-function formatDate(iso: string): string {
-  if (!iso) return '';
-  return new Date(iso).toLocaleDateString('en-US', {
-    timeZone: 'UTC',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-}
-
 export default async function ArticlePage({ params }: PageParams) {
   const { slug } = await params;
 
@@ -54,23 +44,17 @@ export default async function ArticlePage({ params }: PageParams) {
   if (!article) notFound();
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16">
-      <Link
-        href="/"
-        className="text-sm text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200"
-      >
-        ← Back
+    <section>
+      <Link href="/" className="article-page-back">
+        &larr; Back
       </Link>
 
-      <article className="mt-8">
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight">{article.title}</h1>
-          <time
-            dateTime={article.date}
-            className="mt-2 block text-sm text-neutral-500"
-          >
-            {formatDate(article.date)}
-          </time>
+      <article className="article-page">
+        <header className="major">
+          <h1>{article.title}</h1>
+          {article.date && (
+            <time dateTime={article.date}>{formatDate(article.date)}</time>
+          )}
         </header>
 
         <div
@@ -78,6 +62,6 @@ export default async function ArticlePage({ params }: PageParams) {
           dangerouslySetInnerHTML={{ __html: article.html }}
         />
       </article>
-    </main>
+    </section>
   );
 }
