@@ -45,3 +45,56 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Styling for build-time-rendered markdown article bodies. Kept as plain CSS
+   because it targets HTML produced by `marked`, which Tailwind utilities can't
+   reach. */
+.article-content {
+  line-height: 1.7;
+}
+
+.article-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.article-content p {
+  margin: 1rem 0;
+}
+
+.article-content ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.article-content li {
+  margin: 0.35rem 0;
+}
+
+.article-content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-content pre {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  background: rgba(127, 127, 127, 0.12);
+  font-size: 0.9rem;
+}
+
+.article-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.article-content :not(pre) > code {
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.3rem;
+  background: rgba(127, 127, 127, 0.15);
+  font-size: 0.9em;
+}
