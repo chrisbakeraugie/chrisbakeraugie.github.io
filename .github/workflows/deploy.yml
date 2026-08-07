@@ -1,0 +1,95 @@
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Daily at 06:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.decide.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Compute content hash
+        id: hash
+        env:
+          GIST_USER: chrisbakeraugie
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gists=$(curl -sf \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "User-Agent: ${GIST_USER}-ci" \
+            "https://api.github.com/users/${GIST_USER}/gists?per_page=100" \
+            | jq -S '[.[] | {id, updated_at, files: (.files | keys)}]')
+          hash=$(printf '%s\n%s' "${{ github.sha }}" "$gists" | sha256sum | cut -d' ' -f1)
+          echo "hash=$hash" >> "$GITHUB_OUTPUT"
+      - name: Look up previous deploy marker
+        id: marker
+        uses: actions/cache@v4
+        with:
+          path: .content-hash
+          key: pages-content-${{ steps.hash.outputs.hash }}
+      - name: Decide whether to build
+        id: decide
+        run: |
+          if [ "${{ steps.marker.outputs.cache-hit }}" = "true" ] && [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "Content unchanged since last deploy; skipping build."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            # Persist the marker so it is cached under this hash at job end.
+            echo "${{ steps.hash.outputs.hash }}" > .content-hash
+          fi
+
+      - name: Setup Node
+        if: steps.decide.outputs.changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.decide.outputs.changed == 'true'
+        run: npm ci
+
+      - name: Build static export
+        if: steps.decide.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run build
+          touch out/.nojekyll
+
+      - name: Upload Pages artifact
+        if: steps.decide.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
