@@ -14,6 +14,6 @@ export const AUTHOR = {
   intro:
     'Fullstack developer with 5+ years shipping production software end to end. Specialized in TypeScript, React, Node.js, and AWS, with a track record spanning rapid proof-of-concept builds through multi-year product ownership.',
   location: 'United States',
-  email: 'hello@chrisjbaker.dev',
+  email: 'chrisbakerdev@gmail.com',
   github: 'https://github.com/chrisbakeraugie',
 } as const;

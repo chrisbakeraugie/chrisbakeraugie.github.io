@@ -515,6 +515,23 @@ button.strata-button.special:hover {
   margin: 0;
 }
 
+.experience-highlights {
+  color: var(--strata-fg);
+  font-size: 0.95em;
+  list-style: disc outside;
+  margin: 0.75em 0 0 0;
+  padding: 0 0 0 1.25em;
+}
+
+.experience-highlights > li {
+  line-height: 1.55;
+  margin: 0.25em 0;
+}
+
+.experience-highlights > li::marker {
+  color: var(--strata-fg-light);
+}
+
 /* Writing grid styled like Strata "Recent Work" work items. */
 .work-grid {
   display: grid;
