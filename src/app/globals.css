@@ -452,23 +452,23 @@ button.strata-button.special:hover {
   font-size: 1.5em;
 }
 
-/* Experience list — semantic structure for crawlers. */
-.experience-list {
+/* Timeline list (experience, education) — semantic structure for crawlers. */
+.timeline-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.experience-list > li {
+.timeline-list > li {
   margin: 0 0 var(--strata-element-margin) 0;
 }
 
-.experience-list > li:last-child {
+.timeline-list > li:last-child {
   margin-bottom: 0;
 }
 
 /* Desktop: give the intro room so the dark sidebar is visible at page load,
-   and give each staged job room so scroll-stage swaps are visible. */
+   and give each staged item room so scroll-stage swaps are visible. */
 @media screen and (min-width: 1281px) {
   .home-intro {
     display: flex;
@@ -477,7 +477,7 @@ button.strata-button.special:hover {
     min-height: 100vh;
   }
 
-  .experience-list > li[data-scroll-stage] {
+  .timeline-list > li[data-scroll-stage] {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -485,12 +485,12 @@ button.strata-button.special:hover {
     min-height: 85vh;
   }
 
-  .experience-list > li[data-scroll-stage]:last-child {
+  .timeline-list > li[data-scroll-stage]:last-child {
     margin-bottom: 0;
   }
 }
 
-.experience-list header {
+.timeline-list header {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -499,23 +499,23 @@ button.strata-button.special:hover {
   margin-bottom: 0.35em;
 }
 
-.experience-list h3 {
+.timeline-list h3 {
   font-size: 1em;
   margin: 0;
 }
 
-.experience-list time {
+.timeline-list time {
   color: var(--strata-fg-light);
   font-size: 0.9em;
   white-space: nowrap;
 }
 
-.experience-list p {
+.timeline-list p {
   font-size: 0.95em;
   margin: 0;
 }
 
-.experience-highlights {
+.timeline-highlights {
   color: var(--strata-fg);
   font-size: 0.95em;
   list-style: disc outside;
@@ -523,12 +523,12 @@ button.strata-button.special:hover {
   padding: 0 0 0 1.25em;
 }
 
-.experience-highlights > li {
+.timeline-highlights > li {
   line-height: 1.55;
   margin: 0.25em 0;
 }
 
-.experience-highlights > li::marker {
+.timeline-highlights > li::marker {
   color: var(--strata-fg-light);
 }
 

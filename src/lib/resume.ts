@@ -4,17 +4,16 @@ import { GIST_USER } from '@/lib/site';
 const RESUME_FILENAME = 'resume.json';
 const GISTS_ENDPOINT = `https://api.github.com/users/${GIST_USER}/gists?per_page=100`;
 
-const LOGO_BY_COMPANY: Readonly<Record<string, string>> = {
+/** Logo lookup shared across work + education (companies and institutions). */
+const LOGO_BY_ORG: Readonly<Record<string, string>> = {
   'monday.com': '/logos/monday_com.svg',
   'orb group (formerly edison inc)': '/logos/orb_group.svg',
   'thrive networking': '/logos/thrive.png',
   cyient: '/logos/cyient.png',
+  'augustana college': '/logos/augustana_college.png',
 };
 
-interface RawWorkEntry {
-  name?: string;
-  position?: string;
-  location?: string;
+interface RawTimelineFields {
   url?: string;
   startDate?: string;
   endDate?: string;
@@ -24,8 +23,21 @@ interface RawWorkEntry {
   portfolioHighlights?: string[];
 }
 
+interface RawWorkEntry extends RawTimelineFields {
+  name?: string;
+  position?: string;
+  location?: string;
+}
+
+interface RawEducationEntry extends RawTimelineFields {
+  institution?: string;
+  area?: string;
+  studyType?: string;
+}
+
 interface RawResume {
   work?: RawWorkEntry[];
+  education?: RawEducationEntry[];
 }
 
 interface GistFile {
@@ -37,10 +49,11 @@ interface Gist {
   files: Record<string, GistFile>;
 }
 
-export interface WorkExperience {
+/** Shared shape for any dated resume item rendered as a scroll-staged timeline. */
+export interface TimelineEntry {
   id: string;
-  company: string;
-  position: string;
+  title: string;
+  subtitle: string;
   period: string;
   startDate?: string;
   url?: string;
@@ -149,40 +162,76 @@ async function fetchResume(): Promise<RawResume> {
   return (await res.json()) as RawResume;
 }
 
-function polishWork(entry: RawWorkEntry): WorkExperience | null {
-  const rawName = entry.name?.trim();
-  if (!rawName) return null;
+interface ToTimelineArgs {
+  orgName: string;
+  title: string;
+  fields: RawTimelineFields;
+}
 
-  const key = rawName.toLowerCase();
-  const summary = entry.portfolioSummary ?? entry.summary ?? '';
-  const highlights = entry.portfolioHighlights ?? entry.highlights ?? [];
-
+function toTimelineEntry({
+  orgName,
+  title,
+  fields,
+}: ToTimelineArgs): TimelineEntry {
+  const trimmed = orgName.trim();
   return {
-    id: slugify(rawName),
-    company: rawName,
-    position: entry.position ?? '',
-    period: formatPeriod(entry.startDate, entry.endDate),
-    startDate: entry.startDate,
-    url: entry.url,
-    summary,
-    highlights,
-    logoSrc: LOGO_BY_COMPANY[key],
-    logoAlt: rawName,
+    id: slugify(trimmed),
+    title,
+    subtitle: trimmed,
+    period: formatPeriod(fields.startDate, fields.endDate),
+    startDate: fields.startDate,
+    url: fields.url,
+    summary: fields.portfolioSummary ?? fields.summary ?? '',
+    highlights: fields.portfolioHighlights ?? fields.highlights ?? [],
+    logoSrc: LOGO_BY_ORG[trimmed.toLowerCase()],
+    logoAlt: trimmed,
   };
+}
+
+function polishWork(entry: RawWorkEntry): TimelineEntry | null {
+  const name = entry.name?.trim();
+  if (!name) return null;
+  return toTimelineEntry({
+    orgName: name,
+    title: entry.position ?? '',
+    fields: entry,
+  });
+}
+
+function polishEducation(entry: RawEducationEntry): TimelineEntry | null {
+  const institution = entry.institution?.trim();
+  if (!institution) return null;
+  const title = [entry.studyType, entry.area].filter(Boolean).join(', ');
+  return toTimelineEntry({
+    orgName: institution,
+    title,
+    fields: entry,
+  });
+}
+
+function byStartDateDesc(a: TimelineEntry, b: TimelineEntry): number {
+  const aStart = a.startDate ?? '';
+  const bStart = b.startDate ?? '';
+  if (aStart === bStart) return 0;
+  return aStart < bStart ? 1 : -1;
 }
 
 const loadResume = cache(fetchResume);
 
-export async function getWorkExperiences(): Promise<WorkExperience[]> {
+/** Work history from the gist resume, sorted newest first. */
+export async function getWorkExperiences(): Promise<TimelineEntry[]> {
   const resume = await loadResume();
-  const entries = (resume.work ?? [])
+  return (resume.work ?? [])
     .map(polishWork)
-    .filter((entry): entry is WorkExperience => entry !== null);
+    .filter((entry): entry is TimelineEntry => entry !== null)
+    .sort(byStartDateDesc);
+}
 
-  return entries.sort((a, b) => {
-    const aStart = a.startDate ?? '';
-    const bStart = b.startDate ?? '';
-    if (aStart === bStart) return 0;
-    return aStart < bStart ? 1 : -1;
-  });
+/** Education entries from the gist resume, sorted newest first. */
+export async function getEducation(): Promise<TimelineEntry[]> {
+  const resume = await loadResume();
+  return (resume.education ?? [])
+    .map(polishEducation)
+    .filter((entry): entry is TimelineEntry => entry !== null)
+    .sort(byStartDateDesc);
 }

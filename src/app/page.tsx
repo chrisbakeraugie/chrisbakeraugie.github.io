@@ -1,20 +1,22 @@
 import Link from 'next/link';
 import { ScrollStage } from '@/components/scroll_stage';
+import { TimelineSection } from '@/components/timeline_section';
 import { getAllArticleMeta } from '@/lib/articles';
-import { getWorkExperiences } from '@/lib/resume';
+import { getEducation, getWorkExperiences } from '@/lib/resume';
 import { AUTHOR } from '@/lib/site';
 import { formatDate } from '@/lib/utils';
 
 export default async function Home() {
-  const [articles, work] = await Promise.all([
+  const [articles, work, education] = await Promise.all([
     getAllArticleMeta(),
     getWorkExperiences(),
+    getEducation(),
   ]);
 
-  const stages = work.map((job) => ({
-    id: job.id,
-    logoSrc: job.logoSrc,
-    logoAlt: job.logoAlt,
+  const stages = work.map((entry) => ({
+    id: entry.id,
+    logoSrc: entry.logoSrc,
+    logoAlt: entry.logoAlt,
   }));
 
   return (
@@ -27,35 +29,18 @@ export default async function Home() {
         <p>{AUTHOR.intro}</p>
       </section>
 
-      <section id="experience" aria-labelledby="experience-heading">
-        <header className="major">
-          <h2 id="experience-heading">Experience</h2>
-        </header>
-        <ol className="experience-list">
-          {work.map((job) => (
-            <li key={job.id} data-scroll-stage={job.id}>
-              <article>
-                <header>
-                  <h3>
-                    {job.position} · <strong>{job.company}</strong>
-                  </h3>
-                  {job.period && (
-                    <time dateTime={job.startDate ?? ''}>{job.period}</time>
-                  )}
-                </header>
-                {job.summary && <p>{job.summary}</p>}
-                {job.highlights.length > 0 && (
-                  <ul className="experience-highlights">
-                    {job.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-                )}
-              </article>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <TimelineSection
+        sectionId="experience"
+        heading="Experience"
+        entries={work}
+      />
+
+      <TimelineSection
+        sectionId="education"
+        heading="Education"
+        entries={education}
+        dense
+      />
 
       {articles.length > 0 && (
         <section aria-labelledby="writing-heading">
