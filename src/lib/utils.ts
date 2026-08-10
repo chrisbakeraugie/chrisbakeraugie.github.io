@@ -16,3 +16,8 @@ export function initials(name: string): string {
     .slice(0, 2)
     .toUpperCase();
 }
+
+/** Strips a leading scheme so URLs read cleanly in UI copy. */
+export function displayUrl(url: string): string {
+  return url.replace(/^https?:\/\//, '');
+}

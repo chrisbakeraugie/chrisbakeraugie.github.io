@@ -10,7 +10,8 @@ export const GIST_USER = process.env.NEXT_PUBLIC_GIST_USER ?? 'chrisbakeraugie';
 export const AUTHOR = {
   name: 'Chris Baker',
   role: 'Fullstack Developer',
-  tagline: 'Fullstack developer building ',
+  tagline:
+    'Fullstack developer, working alongside clients and teams to build solutions',
   intro:
     'Fullstack developer with 5+ years shipping production software end to end. Specialized in TypeScript, React, Node.js, and AWS, with a track record spanning rapid proof-of-concept builds through multi-year product ownership.',
   location: 'United States',

@@ -1,8 +1,14 @@
-import Link from 'next/link';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { CopyToClipboardButton } from '@/components/copy_to_clipboard_button';
+import { IconExternalLink } from '@/components/icon_external_link';
 import { AUTHOR } from '@/lib/site';
-import { initials } from '@/lib/utils';
+import { displayUrl, initials } from '@/lib/utils';
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
+  const githubUrl = displayUrl(AUTHOR.github);
+  const emailCopyLabel = `Copy ${AUTHOR.email} to clipboard`;
+
   return (
     <div id="wrapper">
       <header id="header">
@@ -20,10 +26,19 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <footer id="footer">
           <ul className="icons">
             <li>
-              <Link href={AUTHOR.github}>GitHub</Link>
+              <IconExternalLink
+                href={AUTHOR.github}
+                icon={faGithub}
+                tooltip={`Visit ${githubUrl}`}
+              />
             </li>
             <li>
-              <a href={`mailto:${AUTHOR.email}`}>Email</a>
+              <CopyToClipboardButton
+                value={AUTHOR.email}
+                icon={faEnvelope}
+                label={emailCopyLabel}
+                errorFallbackHref={`mailto:${AUTHOR.email}`}
+              />
             </li>
           </ul>
           <ul className="copyright">

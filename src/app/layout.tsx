@@ -1,5 +1,7 @@
 import { Source_Sans_3 } from 'next/font/google';
 import type { Metadata } from 'next';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import '@/lib/fontawesome';
 import { SiteShell } from '@/components/site_shell';
 import { AUTHOR, SITE_URL } from '@/lib/site';
 import './globals.css';

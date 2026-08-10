@@ -208,10 +208,13 @@ button.strata-button.special:hover {
   border-top: solid 2px var(--strata-border);
   margin-top: var(--strata-pad);
   padding-top: var(--strata-element-margin);
-  text-align: left;
+  text-align: center;
 }
 
 #footer .icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -219,27 +222,75 @@ button.strata-button.special:hover {
 
 #footer .icons li {
   display: inline-block;
-  margin-right: 0.75em;
-  padding-right: 0.75em;
-  border-right: solid 1px var(--strata-border);
-}
-
-#footer .icons li:last-child {
+  margin: 0 0.5em;
+  padding: 0;
   border-right: 0;
-  margin-right: 0;
-  padding-right: 0;
 }
 
-#footer .icons a {
+#footer .icons .icon {
+  align-items: center;
+  background: none;
+  border: 0;
   border-bottom: 0;
   color: var(--strata-fg-light);
-  font-size: 0.875em;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1.15em;
+  height: 2em;
+  justify-content: center;
+  padding: 0;
+  position: relative;
   text-decoration: none;
   transition: color var(--strata-transition);
+  width: 2em;
 }
 
-#footer .icons a:hover {
+#footer .icons .icon:hover,
+#footer .icons .icon:focus-visible {
   color: var(--strata-accent);
+  outline: none;
+}
+
+#footer .icons .icon::after {
+  background: var(--strata-fg-bold);
+  border-radius: var(--strata-radius);
+  color: #ffffff;
+  content: attr(data-tooltip);
+  font-size: 0.65rem;
+  left: 50%;
+  line-height: 1.35;
+  opacity: 0;
+  padding: 0.45em 0.7em;
+  pointer-events: none;
+  position: absolute;
+  bottom: calc(100% + 0.45em);
+  transform: translateX(-50%);
+  transition: opacity var(--strata-transition);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+#footer .icons .icon:hover::after,
+#footer .icons .icon:focus-visible::after {
+  opacity: 1;
+}
+
+#footer .icons .icon svg {
+  pointer-events: none;
+}
+
+/* Full action text in HTML for crawlers and screen readers. */
+.icon-description,
+.icon-live {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 #footer .copyright {
