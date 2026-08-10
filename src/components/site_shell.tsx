@@ -2,6 +2,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { CopyToClipboardButton } from '@/components/copy_to_clipboard_button';
 import { IconExternalLink } from '@/components/icon_external_link';
+import { SCROLL_STAGE_ROOT_ID } from '@/lib/scroll_stage';
 import { AUTHOR } from '@/lib/site';
 import { displayUrl, initials } from '@/lib/utils';
 
@@ -12,6 +13,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div id="wrapper">
       <header id="header">
+        <div id={SCROLL_STAGE_ROOT_ID} aria-hidden="true" />
         <span className="avatar avatar-initials" aria-hidden="true">
           {initials(AUTHOR.name)}
         </span>

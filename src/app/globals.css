@@ -49,7 +49,7 @@ body {
   min-height: 100vh;
   background: var(--strata-bg);
   color: var(--strata-fg);
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.65;
 }
@@ -179,7 +179,7 @@ button.strata-button.special:hover {
 
 #header h1 {
   color: var(--strata-sidebar-fg);
-  font-size: 1.1em;
+  font-size: 1.25em;
   line-height: 1.6em;
   margin: 0;
 }
@@ -202,6 +202,133 @@ button.strata-button.special:hover {
   font-size: 1.5em;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+
+/* Scroll stage: desktop sidebar chrome + logo layer (see scroll_stage.tsx). */
+#header {
+  transition: background-color 0.55s ease-in-out;
+}
+
+#header .avatar,
+#header h1 {
+  position: relative;
+  transition: opacity 0.55s ease-in-out;
+  z-index: 2;
+}
+
+#header[data-scroll-stage-active] {
+  background-color: var(--strata-bg);
+}
+
+#header[data-scroll-stage-active] .avatar,
+#header[data-scroll-stage-active] h1 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#scroll-stage-root {
+  display: none;
+}
+
+@media screen and (min-width: 1281px) {
+  #scroll-stage-root {
+    display: block;
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #header {
+    /* Positioning context for the logo layer. */
+    position: fixed;
+  }
+
+  .scroll-stage-logos {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  .scroll-stage-logo {
+    align-items: center;
+    color: var(--strata-fg-bold);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    opacity: 0;
+    padding: 0 var(--strata-pad);
+    position: absolute;
+    transform: translateY(-1.25rem);
+  }
+
+  .scroll-stage-logo[data-state='idle'] {
+    opacity: 0;
+    transform: translateY(-1.25rem);
+  }
+
+  .scroll-stage-logo[data-state='enter'] {
+    animation: scroll-stage-logo-enter 0.55s ease-out forwards;
+  }
+
+  .scroll-stage-logo[data-state='exit'] {
+    animation: scroll-stage-logo-exit 0.55s ease-in forwards;
+  }
+
+  .scroll-stage-logo-img {
+    display: block;
+    height: auto;
+    max-height: 9rem;
+    max-width: min(22rem, 80%);
+    object-fit: contain;
+    opacity: 0.55;
+    width: auto;
+  }
+
+  .scroll-stage-logo-text {
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    opacity: 0.55;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes scroll-stage-logo-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-1.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-stage-logo-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-1.75rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header,
+  #header .avatar,
+  #header h1 {
+    transition: none;
+  }
+
+  .scroll-stage-logo[data-state='enter'],
+  .scroll-stage-logo[data-state='exit'] {
+    animation: none;
+  }
 }
 
 #footer {
@@ -338,6 +465,29 @@ button.strata-button.special:hover {
 
 .experience-list > li:last-child {
   margin-bottom: 0;
+}
+
+/* Desktop: give the intro room so the dark sidebar is visible at page load,
+   and give each staged job room so scroll-stage swaps are visible. */
+@media screen and (min-width: 1281px) {
+  .home-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .experience-list > li[data-scroll-stage] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20vh;
+    min-height: 85vh;
+  }
+
+  .experience-list > li[data-scroll-stage]:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .experience-list header {

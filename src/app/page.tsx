@@ -1,40 +1,54 @@
 import Link from 'next/link';
+import { ScrollStage } from '@/components/scroll_stage';
 import { getAllArticleMeta } from '@/lib/articles';
-import { formatDate } from '@/lib/utils';
 import { AUTHOR } from '@/lib/site';
+import { formatDate } from '@/lib/utils';
 
 // Dummy work history. In a later pass this can move to a resume.json read at
 // build time so the same data drives both this page and a machine-readable file.
 const WORK = [
   {
+    id: 'acme',
     company: 'Acme Corp',
     role: 'Senior Software Engineer',
     period: '2023 — Present',
     summary:
       'Lead front-end for the billing platform. Cut page load time 40% by moving to a static-first render pipeline.',
+    logoSrc: '/logos/monday_com.svg',
   },
   {
+    id: 'globex',
     company: 'Globex',
     role: 'Fullstack Engineer',
     period: '2020 — 2023',
     summary:
       'Built internal tooling in TypeScript and Node. Owned the design system used across six product teams.',
+    logoSrc: '/logos/orb_group.svg',
   },
   {
+    id: 'initech',
     company: 'Initech',
     role: 'Software Engineer',
     period: '2018 — 2020',
     summary:
       'Shipped customer-facing features on a React/Rails stack and mentored two junior engineers.',
+    logoSrc: '/logos/thrive.png',
   },
 ] as const;
+
+const EXPERIENCE_STAGES = WORK.map((job) => ({
+  id: job.id,
+  logoSrc: job.logoSrc,
+  logoAlt: job.company,
+}));
 
 export default async function Home() {
   const articles = await getAllArticleMeta();
 
   return (
     <>
-      <section aria-labelledby="intro-heading">
+      <ScrollStage stages={EXPERIENCE_STAGES} />
+      <section className="home-intro" aria-labelledby="intro-heading">
         <header className="major">
           <h2 id="intro-heading">{AUTHOR.tagline}</h2>
         </header>
@@ -47,7 +61,7 @@ export default async function Home() {
         </header>
         <ol className="experience-list">
           {WORK.map((job) => (
-            <li key={job.company}>
+            <li key={job.id} data-scroll-stage={job.id}>
               <article>
                 <header>
                   <h3>
