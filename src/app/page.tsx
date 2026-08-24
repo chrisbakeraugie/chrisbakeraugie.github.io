@@ -1,10 +1,26 @@
 import Link from 'next/link';
+import { ScrollCue } from '@/components/scroll_cue';
 import { ScrollStage } from '@/components/scroll_stage';
 import { TimelineSection } from '@/components/timeline_section';
 import { getAllArticleMeta } from '@/lib/articles';
 import { getEducation, getWorkExperiences } from '@/lib/resume';
 import { AUTHOR } from '@/lib/site';
 import { formatDate } from '@/lib/utils';
+
+const TAGLINE_ACCENT_WORD = 'code';
+
+function splitTaglineAroundAccent(
+  tagline: string,
+  accent: string,
+): { before: string; match: string; after: string } {
+  const idx = tagline.toLowerCase().indexOf(accent.toLowerCase());
+  if (idx < 0) return { before: tagline, match: '', after: '' };
+  return {
+    before: tagline.slice(0, idx),
+    match: tagline.slice(idx, idx + accent.length),
+    after: tagline.slice(idx + accent.length),
+  };
+}
 
 export default async function Home() {
   const [articles, work, education] = await Promise.all([
@@ -19,14 +35,25 @@ export default async function Home() {
     logoAlt: entry.logoAlt,
   }));
 
+  const tagline = splitTaglineAroundAccent(AUTHOR.tagline, TAGLINE_ACCENT_WORD);
+
   return (
     <>
       <ScrollStage stages={stages} />
       <section className="home-intro" aria-labelledby="intro-heading">
-        <header className="major">
-          <h2 id="intro-heading">{AUTHOR.tagline}</h2>
-        </header>
-        <p>{AUTHOR.intro}</p>
+        <h2 id="intro-heading" className="home-intro-tagline">
+          {tagline.match ? (
+            <>
+              {tagline.before}
+              <em className="home-intro-tagline-accent">{tagline.match}</em>
+              {tagline.after}
+            </>
+          ) : (
+            AUTHOR.tagline
+          )}
+        </h2>
+        <p className="home-intro-body">{AUTHOR.intro}</p>
+        <ScrollCue />
       </section>
 
       <TimelineSection
@@ -76,8 +103,8 @@ export default async function Home() {
         </header>
         <p>
           Open to conversations about fullstack engineering, static-first
-          architecture, and teams that care about craft. Reach out by email or
-          GitHub.
+          architecture, and teams that care about craft. Reach out by email,
+          GitHub, or LinkedIn.
         </p>
         <ul className="contact-grid">
           <li>
@@ -97,6 +124,14 @@ export default async function Home() {
             <p>
               <a href={AUTHOR.github} className="strata-link">
                 {AUTHOR.github.replace('https://', '')}
+              </a>
+            </p>
+          </li>
+          <li>
+            <h3>LinkedIn</h3>
+            <p>
+              <a href={AUTHOR.linkedin} className="strata-link">
+                {AUTHOR.linkedin.replace('https://www.', '')}
               </a>
             </p>
           </li>

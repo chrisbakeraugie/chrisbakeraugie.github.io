@@ -35,7 +35,12 @@ interface RawEducationEntry extends RawTimelineFields {
   studyType?: string;
 }
 
+interface RawBasics {
+  availability?: unknown;
+}
+
 interface RawResume {
+  basics?: RawBasics;
   work?: RawWorkEntry[];
   education?: RawEducationEntry[];
 }
@@ -61,6 +66,11 @@ export interface TimelineEntry {
   highlights: readonly string[];
   logoSrc?: string;
   logoAlt: string;
+}
+
+/** Site-wide basics sourced from the gist resume's `basics` block. */
+export interface Basics {
+  availability: boolean;
 }
 
 function githubHeaders(): Record<string, string> {
@@ -234,4 +244,18 @@ export async function getEducation(): Promise<TimelineEntry[]> {
     .map(polishEducation)
     .filter((entry): entry is TimelineEntry => entry !== null)
     .sort(byStartDateDesc);
+}
+
+/**
+ * Site-wide basics from the gist resume. Currently exposes only
+ * `availability` — the boolean gate for the "Available for new work" chip.
+ * When the chip UI is revived, import `getBasics()` for the on/off flag and
+ * pair it with the label copy in `AUTHOR.availability` (label is UI copy,
+ * unrelated to this boolean).
+ */
+export async function getBasics(): Promise<Basics> {
+  const resume = await loadResume();
+  return {
+    availability: resume.basics?.availability === true,
+  };
 }

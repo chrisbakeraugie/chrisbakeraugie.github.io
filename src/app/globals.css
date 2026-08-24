@@ -8,8 +8,8 @@
   --strata-fg-light: #b2b2b2;
   --strata-border: #efefef;
   --strata-border-bg: #f7f7f7;
-  --strata-accent: #49bf9d;
-  --strata-sidebar-bg: #1f1815;
+  --strata-accent: #475569;
+  --strata-sidebar-bg: #475569;
   --strata-sidebar-fg: rgba(255, 255, 255, 0.5);
   --strata-sidebar-fg-bold: #ffffff;
   --strata-sidebar-fg-light: rgba(255, 255, 255, 0.4);
@@ -198,10 +198,121 @@ button.strata-button.special:hover {
 
 #header .avatar-initials {
   background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 1px var(--strata-sidebar-border);
   color: var(--strata-sidebar-fg-bold);
   font-size: 1.5em;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+
+/* Decorative headshot; identity is conveyed by AUTHOR.name in the h1 below,
+   so the wrapper stays aria-hidden and no <img> alt-text is needed. */
+#header .avatar-photo {
+  background-color: rgba(255, 255, 255, 0.08);
+  background-image: url('/Profile.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 0 1px var(--strata-sidebar-border);
+}
+
+/* Sidebar author card: location + availability status + contact icons. */
+.header-meta {
+  align-items: flex-end;
+  color: var(--strata-sidebar-fg);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  gap: 0.35em;
+  margin: var(--strata-element-margin) 0 0 0;
+}
+
+.header-meta-availability {
+  align-items: center;
+  color: var(--strata-sidebar-fg-bold);
+  display: inline-flex;
+  font-size: 0.75em;
+  gap: 0.55em;
+  justify-content: flex-end;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.header-meta-availability::before {
+  background: var(--strata-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(73, 191, 157, 0.18);
+  content: '';
+  display: inline-block;
+  flex-shrink: 0;
+  height: 0.5em;
+  width: 0.5em;
+}
+
+.header-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+  justify-content: flex-end;
+  list-style: none;
+  margin: var(--strata-element-margin) 0 0 0;
+  padding: 0;
+}
+
+.header-icons li {
+  margin: 0;
+  padding: 0;
+}
+
+.header-icons .icon {
+  align-items: center;
+  background: none;
+  border: 0;
+  color: var(--strata-sidebar-fg-light);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1.15em;
+  height: 2em;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  transition: color var(--strata-transition);
+  width: 2em;
+}
+
+.header-icons .icon:hover,
+.header-icons .icon:focus-visible {
+  color: var(--strata-accent);
+  outline: none;
+}
+
+.header-icons .icon::after {
+  background: var(--strata-sidebar-fg-bold);
+  border-radius: var(--strata-radius);
+  bottom: calc(100% + 0.45em);
+  color: var(--strata-sidebar-bg);
+  content: attr(data-tooltip);
+  font-size: 0.65rem;
+  left: 50%;
+  line-height: 1.35;
+  opacity: 0;
+  padding: 0.45em 0.7em;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity var(--strata-transition);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.header-icons .icon:hover::after,
+.header-icons .icon:focus-visible::after {
+  opacity: 1;
+}
+
+.header-icons .icon svg {
+  pointer-events: none;
 }
 
 /* Scroll stage: desktop sidebar chrome + logo layer (see scroll_stage.tsx). */
@@ -210,7 +321,9 @@ button.strata-button.special:hover {
 }
 
 #header .avatar,
-#header h1 {
+#header h1,
+#header .header-meta,
+#header .header-icons {
   position: relative;
   transition: opacity 0.55s ease-in-out;
   z-index: 2;
@@ -221,7 +334,9 @@ button.strata-button.special:hover {
 }
 
 #header[data-scroll-stage-active] .avatar,
-#header[data-scroll-stage-active] h1 {
+#header[data-scroll-stage-active] h1,
+#header[data-scroll-stage-active] .header-meta,
+#header[data-scroll-stage-active] .header-icons {
   opacity: 0;
   pointer-events: none;
 }
@@ -321,13 +436,27 @@ button.strata-button.special:hover {
 @media (prefers-reduced-motion: reduce) {
   #header,
   #header .avatar,
-  #header h1 {
+  #header h1,
+  #header .header-meta,
+  #header .header-icons {
     transition: none;
   }
 
   .scroll-stage-logo[data-state='enter'],
   .scroll-stage-logo[data-state='exit'] {
     animation: none;
+  }
+
+  .home-intro-eyebrow,
+  .home-intro-tagline,
+  .home-intro-body,
+  .home-intro-actions,
+  .home-intro-scroll-cue-caret {
+    animation: none;
+  }
+
+  .home-intro-scroll-cue {
+    transition: none;
   }
 }
 
@@ -452,6 +581,89 @@ button.strata-button.special:hover {
   font-size: 1.5em;
 }
 
+/* Hero: dramatic tagline + one accent word + CTAs. Staggered fade-up on load. */
+.home-intro-eyebrow {
+  color: var(--strata-fg-light);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  margin: 0 0 calc(var(--strata-element-margin) * 0.75) 0;
+  text-transform: uppercase;
+}
+
+.home-intro-tagline {
+  color: var(--strata-fg-bold);
+  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0 0 var(--strata-element-margin) 0;
+}
+
+.home-intro-tagline-accent {
+  color: var(--strata-accent);
+  font-style: normal;
+}
+
+.home-intro-body {
+  font-size: 1.05rem;
+  margin: 0 0 calc(var(--strata-element-margin) * 1.5) 0;
+  max-width: 40em;
+}
+
+.home-intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.home-intro-eyebrow,
+.home-intro-tagline,
+.home-intro-body,
+.home-intro-actions {
+  animation: home-intro-fade-up 0.55s ease-out both;
+}
+
+.home-intro-tagline {
+  animation-delay: 0.08s;
+}
+
+.home-intro-body {
+  animation-delay: 0.16s;
+}
+
+.home-intro-actions {
+  animation-delay: 0.24s;
+}
+
+/* Scroll cue is desktop-only; base rule hides it everywhere else. */
+.home-intro-scroll-cue {
+  display: none;
+}
+
+@keyframes home-intro-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes home-intro-scroll-cue-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.3rem);
+  }
+}
+
 /* Timeline list (experience, education) — semantic structure for crawlers. */
 .timeline-list {
   list-style: none;
@@ -475,6 +687,34 @@ button.strata-button.special:hover {
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
+    position: relative;
+  }
+
+  .home-intro-scroll-cue {
+    align-items: center;
+    bottom: var(--strata-pad);
+    color: var(--strata-accent);
+    display: inline-flex;
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    transition:
+      opacity 0.4s ease-out,
+      visibility 0.4s;
+    visibility: visible;
+  }
+
+  .home-intro-scroll-cue[data-hidden] {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .home-intro-scroll-cue-caret {
+    animation: home-intro-scroll-cue-bounce 1.8s ease-in-out infinite;
+    display: block;
+    height: 0.625rem;
+    width: 1rem;
   }
 
   .timeline-list > li[data-scroll-stage] {
@@ -572,7 +812,7 @@ button.strata-button.special:hover {
 /* Contact block — labeled fields, no JS form. */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--strata-element-margin);
   list-style: none;
   margin: var(--strata-element-margin) 0 0 0;
@@ -686,6 +926,12 @@ button.strata-button.special:hover {
     position: relative;
     text-align: center;
     width: 100%;
+  }
+
+  .header-meta,
+  .header-icons {
+    align-items: center;
+    justify-content: center;
   }
 
   #main {

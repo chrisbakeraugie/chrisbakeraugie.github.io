@@ -16,7 +16,7 @@ const sourceSans = Source_Sans_3({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${AUTHOR.name} — ${AUTHOR.role}`,
+    default: `${AUTHOR.name} - ${AUTHOR.role}`,
     template: `%s — ${AUTHOR.name}`,
   },
   description: AUTHOR.tagline,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: AUTHOR.name,
     url: SITE_URL,
-    title: `${AUTHOR.name} — ${AUTHOR.role}`,
+    title: `${AUTHOR.name} - ${AUTHOR.role}`,
     description: AUTHOR.tagline,
   },
 };
