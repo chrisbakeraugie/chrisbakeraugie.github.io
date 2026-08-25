@@ -3,33 +3,55 @@
 import { useSyncExternalStore } from 'react';
 
 /**
- * Desktop-only "scroll for more" cue anchored to the bottom of the hero.
- * Reads `window.scrollY` via `useSyncExternalStore` so the initial mount
- * already reflects the current scroll position (no post-hydration flash if
- * the browser restored a scroll offset). Once past the top, the cue fades
- * out via CSS and stays hidden; desktop-only visibility is a CSS concern
- * (see `.home-intro-scroll-cue` in globals.css).
+ * Scroll cue component for the home page, used to show scroll arrow.
+ * Uses useSyncExternalStore to ensure the scroll position is correctly checked, no flash or hydration failures.
  */
-function subscribeToScroll(onChange: () => void): () => void {
-  window.addEventListener('scroll', onChange, { passive: true });
+
+let hasScrolled = false;
+let listenerAttached = false;
+const listeners = new Set<() => void>();
+
+function attachOnce(): void {
+  if (listenerAttached || typeof window === 'undefined') return;
+  listenerAttached = true;
+
+  if (window.scrollY > 0) {
+    hasScrolled = true;
+    return;
+  }
+
+  function onScroll(): void {
+    if (window.scrollY <= 0) return;
+    hasScrolled = true;
+    window.removeEventListener('scroll', onScroll);
+    listeners.forEach((listener) => {
+      listener();
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+function subscribe(onChange: () => void): () => void {
+  attachOnce();
+  listeners.add(onChange);
   return () => {
-    window.removeEventListener('scroll', onChange);
+    listeners.delete(onChange);
   };
 }
 
-function getScrolled(): boolean {
-  return window.scrollY > 0;
+function getSnapshot(): boolean {
+  return hasScrolled;
 }
 
-function getServerScrolled(): boolean {
+function getServerSnapshot(): boolean {
   return false;
 }
 
 export function ScrollCue() {
   const scrolled = useSyncExternalStore(
-    subscribeToScroll,
-    getScrolled,
-    getServerScrolled,
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
   );
 
   return (

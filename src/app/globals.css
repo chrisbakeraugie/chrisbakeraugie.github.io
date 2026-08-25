@@ -686,7 +686,7 @@ button.strata-button.special:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    min-height: calc(100vh - var(--strata-pad) * 2);
     position: relative;
   }
 
