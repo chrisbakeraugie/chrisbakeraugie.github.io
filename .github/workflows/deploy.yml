@@ -29,10 +29,8 @@ jobs:
         id: hash
         env:
           GIST_USER: chrisbakeraugie
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gists=$(curl -sf \
-            -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             -H "User-Agent: ${GIST_USER}-ci" \
             "https://api.github.com/users/${GIST_USER}/gists?per_page=100" \
@@ -70,8 +68,6 @@ jobs:
 
       - name: Build static export
         if: steps.decide.outputs.changed == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run build
           touch out/.nojekyll

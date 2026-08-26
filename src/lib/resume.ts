@@ -1,4 +1,5 @@
 import { cache } from 'react';
+import { gistGithubHeaders } from '@/lib/github_gist';
 import { GIST_USER } from '@/lib/site';
 
 const RESUME_FILENAME = 'resume.json';
@@ -113,16 +114,6 @@ export interface Basics {
   availability: boolean;
 }
 
-function githubHeaders(): Record<string, string> {
-  const headers: Record<string, string> = {
-    Accept: 'application/vnd.github+json',
-    'User-Agent': `${GIST_USER}-portfolio-build`,
-  };
-  const token = process.env.GITHUB_TOKEN;
-  if (token) headers.Authorization = `Bearer ${token}`;
-  return headers;
-}
-
 function slugify(value: string): string {
   return value
     .toLowerCase()
@@ -183,7 +174,7 @@ function formatPeriod(startDate?: string, endDate?: string): string {
 }
 
 async function fetchResumeFile(): Promise<GistFile> {
-  const res = await fetch(GISTS_ENDPOINT, { headers: githubHeaders() });
+  const res = await fetch(GISTS_ENDPOINT, { headers: gistGithubHeaders() });
   if (!res.ok) {
     throw new Error(
       `Failed to list gists for "${GIST_USER}": ${res.status} ${res.statusText}`,
@@ -203,7 +194,7 @@ async function fetchResumeFile(): Promise<GistFile> {
 
 async function fetchResume(): Promise<RawResume> {
   const file = await fetchResumeFile();
-  const res = await fetch(file.raw_url, { headers: githubHeaders() });
+  const res = await fetch(file.raw_url, { headers: gistGithubHeaders() });
   if (!res.ok) {
     throw new Error(
       `Failed to fetch "${RESUME_FILENAME}": ${res.status} ${res.statusText}`,

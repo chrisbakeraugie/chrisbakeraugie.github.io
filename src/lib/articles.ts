@@ -2,6 +2,7 @@ import { cache } from 'react';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import { GIST_USER } from '@/lib/site';
+import { gistGithubHeaders } from '@/lib/github_gist';
 
 const ARTICLE_PREFIX = 'articles-';
 const GISTS_ENDPOINT = `https://api.github.com/users/${GIST_USER}/gists?per_page=100`;
@@ -36,16 +37,6 @@ interface Gist {
   files: Record<string, GistFile>;
 }
 
-function githubHeaders(): Record<string, string> {
-  const headers: Record<string, string> = {
-    Accept: 'application/vnd.github+json',
-    'User-Agent': `${GIST_USER}-portfolio-build`,
-  };
-  const token = process.env.GITHUB_TOKEN;
-  if (token) headers.Authorization = `Bearer ${token}`;
-  return headers;
-}
-
 function fileToSlug(filename: string): string {
   return filename.slice(ARTICLE_PREFIX.length).replace(/\.md$/, '');
 }
@@ -55,7 +46,7 @@ function isArticleFile(filename: string): boolean {
 }
 
 async function fetchArticleFiles(): Promise<GistFile[]> {
-  const res = await fetch(GISTS_ENDPOINT, { headers: githubHeaders() });
+  const res = await fetch(GISTS_ENDPOINT, { headers: gistGithubHeaders() });
   if (!res.ok) {
     throw new Error(
       `Failed to list gists for "${GIST_USER}": ${res.status} ${res.statusText}`,
@@ -69,7 +60,7 @@ async function fetchArticleFiles(): Promise<GistFile[]> {
 }
 
 async function fetchArticle(file: GistFile): Promise<Article> {
-  const res = await fetch(file.raw_url, { headers: githubHeaders() });
+  const res = await fetch(file.raw_url, { headers: gistGithubHeaders() });
   if (!res.ok) {
     throw new Error(
       `Failed to fetch gist article "${file.filename}": ${res.status} ${res.statusText}`,
