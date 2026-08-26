@@ -7,6 +7,9 @@ import { getEducation, getWorkExperiences } from '@/lib/resume';
 import { AUTHOR } from '@/lib/site';
 import { formatDate } from '@/lib/utils';
 
+/** Flip to true when the Recent Writing section is ready to publish. */
+const SHOW_RECENT_WRITING = false;
+
 const TAGLINE_ACCENT_WORD = 'code';
 
 function splitTaglineAroundAccent(
@@ -23,10 +26,10 @@ function splitTaglineAroundAccent(
 }
 
 export default async function Home() {
-  const [articles, work, education] = await Promise.all([
-    getAllArticleMeta(),
+  const [work, education, articles] = await Promise.all([
     getWorkExperiences(),
     getEducation(),
+    SHOW_RECENT_WRITING ? getAllArticleMeta() : Promise.resolve([]),
   ]);
 
   const stages = work.map((entry) => ({
@@ -69,7 +72,7 @@ export default async function Home() {
         dense
       />
 
-      {articles.length > 0 && (
+      {SHOW_RECENT_WRITING && articles.length > 0 && (
         <section aria-labelledby="writing-heading">
           <header className="major">
             <h2 id="writing-heading">Recent Writing</h2>
