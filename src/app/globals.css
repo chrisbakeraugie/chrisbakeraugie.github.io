@@ -3,9 +3,9 @@
 /* Strata-inspired design tokens (html5up.net/strata, CCA 3.0). */
 :root {
   --strata-bg: #ffffff;
-  --strata-fg: #a2a2a2;
-  --strata-fg-bold: #787878;
-  --strata-fg-light: #b2b2b2;
+  --strata-fg: #8e8e8e;
+  --strata-fg-bold: #686868;
+  --strata-fg-light: #9e9e9e;
   --strata-border: #efefef;
   --strata-border-bg: #f7f7f7;
   --strata-accent: #475569;
@@ -750,9 +750,13 @@ button.strata-button.special:hover {
   white-space: nowrap;
 }
 
-.timeline-list p {
+.timeline-summary p {
   font-size: 0.95em;
   margin: 0;
+}
+
+.timeline-summary p + p {
+  margin-top: 0.75em;
 }
 
 .timeline-highlights {

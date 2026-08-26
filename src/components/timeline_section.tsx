@@ -48,7 +48,13 @@ export function TimelineSection({
                   <time dateTime={entry.startDate ?? ''}>{entry.period}</time>
                 )}
               </header>
-              {entry.summary && <p>{entry.summary}</p>}
+              {entry.summary.length > 0 && (
+                <div className="timeline-summary">
+                  {entry.summary.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              )}
               {entry.highlights.length > 0 && (
                 <ul className="timeline-highlights">
                   {entry.highlights.map((highlight) => (

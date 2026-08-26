@@ -7,26 +7,59 @@ const GISTS_ENDPOINT = `https://api.github.com/users/${GIST_USER}/gists?per_page
 /** Logo lookup shared across work + education (companies and institutions). */
 const LOGO_BY_ORG: Readonly<Record<string, string>> = {
   'monday.com': '/logos/monday_com.svg',
+  'orb group (formerly edisen inc)': '/logos/orb_group.svg',
   'orb group (formerly edison inc)': '/logos/orb_group.svg',
   'thrive networking': '/logos/thrive.png',
   cyient: '/logos/cyient.png',
   'augustana college': '/logos/augustana_college.png',
 };
 
+/** Gist `resume.json` — JSON Resume plus portfolio-specific extensions. */
+interface RawMeta {
+  theme?: string;
+}
+
+interface RawLocation {
+  city?: string;
+  region?: string;
+  countryCode?: string;
+  country?: string;
+}
+
+interface RawProfile {
+  network?: string;
+  username?: string;
+  url?: string;
+}
+
+interface RawBasics {
+  availability?: boolean;
+  name?: string;
+  label?: string;
+  image?: string;
+  email?: string;
+  url?: string;
+  summary?: string;
+  location?: RawLocation;
+  profiles?: RawProfile[];
+}
+
+/** Shared JSON Resume fields for dated timeline items (work, education). */
 interface RawTimelineFields {
   url?: string;
   startDate?: string;
   endDate?: string;
   summary?: string;
   highlights?: string[];
-  portfolioSummary?: string;
-  portfolioHighlights?: string[];
 }
 
 interface RawWorkEntry extends RawTimelineFields {
   name?: string;
   position?: string;
   location?: string;
+  /** Portfolio prose: one string per paragraph. Falls back to `summary` when absent. */
+  portfolioSummary?: string[];
+  portfolioHighlights?: string[];
 }
 
 interface RawEducationEntry extends RawTimelineFields {
@@ -35,14 +68,20 @@ interface RawEducationEntry extends RawTimelineFields {
   studyType?: string;
 }
 
-interface RawBasics {
-  availability?: unknown;
+interface RawSkill {
+  name?: string;
+  level?: string;
+  keywords?: string[];
 }
 
 interface RawResume {
+  meta?: RawMeta;
   basics?: RawBasics;
   work?: RawWorkEntry[];
   education?: RawEducationEntry[];
+  skills?: RawSkill[];
+  volunteer?: unknown[];
+  references?: unknown[];
 }
 
 interface GistFile {
@@ -62,7 +101,8 @@ export interface TimelineEntry {
   period: string;
   startDate?: string;
   url?: string;
-  summary: string;
+  /** One paragraph per element; sourced from `portfolioSummary` or `summary`. */
+  summary: readonly string[];
   highlights: readonly string[];
   logoSrc?: string;
   logoAlt: string;
@@ -172,10 +212,50 @@ async function fetchResume(): Promise<RawResume> {
   return (await res.json()) as RawResume;
 }
 
+/** Work/education fields passed into timeline normalization. */
+type RawTimelineSource = RawTimelineFields &
+  Partial<Pick<RawWorkEntry, 'portfolioSummary' | 'portfolioHighlights'>>;
+
 interface ToTimelineArgs {
   orgName: string;
   title: string;
-  fields: RawTimelineFields;
+  fields: RawTimelineSource;
+}
+
+function normalizeSummary(fields: RawTimelineSource): readonly string[] {
+  const portfolio = fields.portfolioSummary;
+  if (portfolio !== undefined) {
+    if (
+      !Array.isArray(portfolio) ||
+      portfolio.some((paragraph) => typeof paragraph !== 'string')
+    ) {
+      throw new Error(
+        'resume.json: portfolioSummary must be an array of strings when present.',
+      );
+    }
+    return portfolio
+      .map((paragraph) => paragraph.trim())
+      .filter((paragraph) => paragraph.length > 0);
+  }
+
+  const fallback = fields.summary?.trim();
+  return fallback ? [fallback] : [];
+}
+
+function normalizeHighlights(fields: RawTimelineSource): readonly string[] {
+  const portfolio = fields.portfolioHighlights;
+  if (portfolio !== undefined) {
+    if (
+      !Array.isArray(portfolio) ||
+      portfolio.some((item) => typeof item !== 'string')
+    ) {
+      throw new Error(
+        'resume.json: portfolioHighlights must be an array of strings when present.',
+      );
+    }
+    return portfolio;
+  }
+  return fields.highlights ?? [];
 }
 
 function toTimelineEntry({
@@ -191,8 +271,8 @@ function toTimelineEntry({
     period: formatPeriod(fields.startDate, fields.endDate),
     startDate: fields.startDate,
     url: fields.url,
-    summary: fields.portfolioSummary ?? fields.summary ?? '',
-    highlights: fields.portfolioHighlights ?? fields.highlights ?? [],
+    summary: normalizeSummary(fields),
+    highlights: normalizeHighlights(fields),
     logoSrc: LOGO_BY_ORG[trimmed.toLowerCase()],
     logoAlt: trimmed,
   };
