@@ -92,19 +92,12 @@ export default async function Home() {
         >
           See Full Resume
         </a>
-        {variants.length > 0 && (
-          <p className="resume-cta-variants">
-            Or view an audience-tailored version:{' '}
-            {variants.map((v, index) => (
-              <span key={v.slug}>
-                {index > 0 && ' · '}
-                <Link href={`/resume/${v.slug}`} className="strata-link">
-                  {v.title.replace(/^Chris Baker\s*[—-]\s*/i, '')}
-                </Link>
-              </span>
-            ))}
-          </p>
-        )}
+        <p className="resume-cta-llms">
+          For LLMs:{' '}
+          <a href="/llms.txt" className="strata-link">
+            llms.txt
+          </a>
+        </p>
       </div>
 
       <TimelineSection

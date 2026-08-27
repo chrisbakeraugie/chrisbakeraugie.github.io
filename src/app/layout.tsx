@@ -37,6 +37,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={sourceSans.className}>
       <body>
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms.txt"
+          title="LLMs.txt"
+        />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

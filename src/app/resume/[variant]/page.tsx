@@ -81,7 +81,10 @@ export default async function ResumeVariantPage({ params }: PageParams) {
       </header>
       <p>{v.audience.description}</p>
       <p>
-        <a href={`${SITE_URL}/api/resume/${variant}`} className="strata-link">
+        <a
+          href={`${SITE_URL}/api/resume/${variant}.json`}
+          className="strata-link"
+        >
           Machine-readable version (JSON Resume)
         </a>
       </p>

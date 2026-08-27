@@ -41,7 +41,7 @@ export async function GET(): Promise<Response> {
         `- [${v.title}](${SITE_URL}/resume/${v.slug}) — ${v.whenToPrefer}`,
       );
       lines.push(
-        `  - [api/resume/${v.slug}](${SITE_URL}/api/resume/${v.slug}): same variant as machine-readable JSON Resume.`,
+        `  - [api/resume/${v.slug}.json](${SITE_URL}/api/resume/${v.slug}.json): same variant as machine-readable JSON Resume.`,
       );
     }
   }

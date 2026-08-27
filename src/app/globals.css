@@ -789,6 +789,19 @@ button.strata-button.special:hover {
   margin: calc(var(--strata-element-margin) * 0.75) 0 0 0;
 }
 
+.resume-cta-llms {
+  color: var(--strata-fg-light);
+  font-size: 0.75em;
+  margin: calc(var(--strata-element-margin) * 0.35) 0 0 0;
+  opacity: 0.45;
+  transition: opacity var(--strata-transition);
+}
+
+.resume-cta-llms:hover,
+.resume-cta-llms:focus-within {
+  opacity: 1;
+}
+
 /* Writing grid styled like Strata "Recent Work" work items. */
 .work-grid {
   display: grid;
