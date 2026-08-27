@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getArticle, getArticleSlugs } from '@/lib/articles';
+import { buildArticleJsonLd, serializeJsonLd } from '@/lib/json_ld';
 import { formatDate } from '@/lib/utils';
 
 interface PageParams {
@@ -43,8 +44,19 @@ export default async function ArticlePage({ params }: PageParams) {
   const article = await getArticle(slug);
   if (!article) notFound();
 
+  const articleJsonLd = buildArticleJsonLd({
+    title: article.title,
+    description: article.description,
+    slug: article.slug,
+    date: article.date || undefined,
+  });
+
   return (
     <section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }}
+      />
       <Link href="/" className="article-page-back">
         &larr; Back
       </Link>

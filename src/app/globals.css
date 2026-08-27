@@ -776,6 +776,19 @@ button.strata-button.special:hover {
   color: var(--strata-fg-light);
 }
 
+/* CTA row between Experience and Education — links out to the full resume,
+   with a small secondary list of audience-tailored variants when they exist. */
+.resume-cta {
+  margin: var(--strata-element-margin) 0 0 0;
+  text-align: center;
+}
+
+.resume-cta-variants {
+  color: var(--strata-fg-light);
+  font-size: 0.9em;
+  margin: calc(var(--strata-element-margin) * 0.75) 0 0 0;
+}
+
 /* Writing grid styled like Strata "Recent Work" work items. */
 .work-grid {
   display: grid;

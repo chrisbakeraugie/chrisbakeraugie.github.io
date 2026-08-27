@@ -18,4 +18,6 @@ export const AUTHOR = {
   email: 'chrisbakerdev@gmail.com',
   github: 'https://github.com/chrisbakeraugie',
   linkedin: 'https://www.linkedin.com/in/chrisbakerdev/',
+  resumeUrl:
+    'https://registry.jsonresume.org/chrisbakeraugie?theme=executive-slate',
 } as const;

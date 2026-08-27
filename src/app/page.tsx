@@ -1,11 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ScrollCue } from '@/components/scroll_cue';
 import { ScrollStage } from '@/components/scroll_stage';
 import { TimelineSection } from '@/components/timeline_section';
 import { getAllArticleMeta } from '@/lib/articles';
-import { getEducation, getWorkExperiences } from '@/lib/resume';
+import { buildPersonJsonLd, serializeJsonLd } from '@/lib/json_ld';
+import {
+  getEducation,
+  getVariantAudiences,
+  getWorkExperiences,
+} from '@/lib/resume';
 import { AUTHOR } from '@/lib/site';
 import { formatDate } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 /** Flip to true when the Recent Writing section is ready to publish. */
 const SHOW_RECENT_WRITING = false;
@@ -26,10 +36,11 @@ function splitTaglineAroundAccent(
 }
 
 export default async function Home() {
-  const [work, education, articles] = await Promise.all([
+  const [work, education, articles, variants] = await Promise.all([
     getWorkExperiences(),
     getEducation(),
     SHOW_RECENT_WRITING ? getAllArticleMeta() : Promise.resolve([]),
+    getVariantAudiences(),
   ]);
 
   const stages = work.map((entry) => ({
@@ -40,8 +51,14 @@ export default async function Home() {
 
   const tagline = splitTaglineAroundAccent(AUTHOR.tagline, TAGLINE_ACCENT_WORD);
 
+  const personJsonLd = buildPersonJsonLd({ work, education });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(personJsonLd) }}
+      />
       <ScrollStage stages={stages} />
       <section className="home-intro" aria-labelledby="intro-heading">
         <h2 id="intro-heading" className="home-intro-tagline">
@@ -64,6 +81,31 @@ export default async function Home() {
         heading="Experience"
         entries={work}
       />
+
+      <div className="resume-cta">
+        <a
+          href={AUTHOR.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="strata-button special"
+          aria-label="See full resume (opens in a new tab)"
+        >
+          See Full Resume
+        </a>
+        {variants.length > 0 && (
+          <p className="resume-cta-variants">
+            Or view an audience-tailored version:{' '}
+            {variants.map((v, index) => (
+              <span key={v.slug}>
+                {index > 0 && ' · '}
+                <Link href={`/resume/${v.slug}`} className="strata-link">
+                  {v.title.replace(/^Chris Baker\s*[—-]\s*/i, '')}
+                </Link>
+              </span>
+            ))}
+          </p>
+        )}
+      </div>
 
       <TimelineSection
         sectionId="education"

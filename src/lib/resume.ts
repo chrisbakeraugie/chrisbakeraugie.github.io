@@ -3,6 +3,7 @@ import { gistGithubHeaders } from '@/lib/github_gist';
 import { GIST_USER } from '@/lib/site';
 
 const RESUME_FILENAME = 'resume.json';
+const OVERLAY_FILENAME_RE = /^resume-overlay-(.+)\.json$/;
 const GISTS_ENDPOINT = `https://api.github.com/users/${GIST_USER}/gists?per_page=100`;
 
 /** Logo lookup shared across work + education (companies and institutions). */
@@ -299,6 +300,10 @@ function byStartDateDesc(a: TimelineEntry, b: TimelineEntry): number {
 
 const loadResume = cache(fetchResume);
 
+export async function getRawResume(): Promise<unknown> {
+  return loadResume();
+}
+
 /** Work history from the gist resume, sorted newest first. */
 export async function getWorkExperiences(): Promise<TimelineEntry[]> {
   const resume = await loadResume();
@@ -329,4 +334,225 @@ export async function getBasics(): Promise<Basics> {
   return {
     availability: resume.basics?.availability === true,
   };
+}
+
+// -----------------------------------------------------------------------------
+// Audience-tailored resume variants
+//
+// Each variant is a small overlay gist file named `resume-overlay-<slug>.json`
+// that overrides parts of the base `resume.json`: the `basics.summary`, a
+// tailored per-job `portfolioSummary`/`portfolioHighlights`, and audience
+// metadata (title, description, whenToPrefer copy). The overlay approach keeps
+// the base gist as the single source of truth for facts (dates, job names,
+// education) — variants only reshape the framing.
+// -----------------------------------------------------------------------------
+
+/** Audience metadata declared inside every overlay's `audience` block. */
+export interface ResumeOverlayAudience {
+  slug: string;
+  title: string;
+  description: string;
+  whenToPrefer: string;
+  /** Schema.org occupationalCategory, e.g. "Software Developer". Optional. */
+  occupationalCategory?: string;
+}
+
+/** Per-job override map: keyed by work entry `name` (case-insensitive). */
+export type WorkOverrideMap = Readonly<
+  Record<
+    string,
+    {
+      portfolioSummary?: string[];
+      portfolioHighlights?: string[];
+    }
+  >
+>;
+
+/** Parsed overlay JSON. Small on purpose — everything else falls through. */
+export interface ResumeOverlay {
+  audience: ResumeOverlayAudience;
+  basics?: { summary?: string };
+  workOverrides?: WorkOverrideMap;
+}
+
+/** Polished variant: audience block + reordered timeline + merged raw JSON. */
+export interface ResumeVariant {
+  audience: ResumeOverlayAudience;
+  work: TimelineEntry[];
+  education: TimelineEntry[];
+  /** Merged JSON Resume payload, emitted at /resume-<slug>.json. */
+  merged: unknown;
+}
+
+async function fetchOverlayFiles(): Promise<GistFile[]> {
+  const res = await fetch(GISTS_ENDPOINT, { headers: gistGithubHeaders() });
+  if (!res.ok) {
+    throw new Error(
+      `Failed to list gists for "${GIST_USER}": ${res.status} ${res.statusText}`,
+    );
+  }
+  const gists = (await res.json()) as Gist[];
+  return gists
+    .flatMap((gist) => Object.values(gist.files))
+    .filter((file) => OVERLAY_FILENAME_RE.test(file.filename));
+}
+
+function validateAudience(
+  filename: string,
+  audience: unknown,
+): ResumeOverlayAudience {
+  if (!audience || typeof audience !== 'object') {
+    throw new Error(
+      `Resume overlay "${filename}": missing required "audience" object.`,
+    );
+  }
+  const a = audience as Partial<ResumeOverlayAudience>;
+  const required: Array<keyof ResumeOverlayAudience> = [
+    'slug',
+    'title',
+    'description',
+    'whenToPrefer',
+  ];
+  for (const key of required) {
+    if (typeof a[key] !== 'string' || a[key].trim().length === 0) {
+      throw new Error(
+        `Resume overlay "${filename}": audience.${key} must be a non-empty string.`,
+      );
+    }
+  }
+  return {
+    slug: a.slug!,
+    title: a.title!,
+    description: a.description!,
+    whenToPrefer: a.whenToPrefer!,
+    ...(typeof a.occupationalCategory === 'string'
+      ? { occupationalCategory: a.occupationalCategory }
+      : {}),
+  };
+}
+
+async function fetchOverlay(file: GistFile): Promise<ResumeOverlay> {
+  const res = await fetch(file.raw_url, { headers: gistGithubHeaders() });
+  if (!res.ok) {
+    throw new Error(
+      `Failed to fetch resume overlay "${file.filename}": ${res.status} ${res.statusText}`,
+    );
+  }
+  const parsed = (await res.json()) as Partial<ResumeOverlay>;
+  const audience = validateAudience(file.filename, parsed.audience);
+
+  const filenameMatch = OVERLAY_FILENAME_RE.exec(file.filename);
+  const filenameSlug = filenameMatch ? filenameMatch[1] : '';
+  if (filenameSlug && filenameSlug !== audience.slug) {
+    throw new Error(
+      `Resume overlay "${file.filename}": audience.slug "${audience.slug}" must match filename slug "${filenameSlug}".`,
+    );
+  }
+
+  return {
+    audience,
+    ...(parsed.basics ? { basics: parsed.basics } : {}),
+    ...(parsed.workOverrides ? { workOverrides: parsed.workOverrides } : {}),
+  };
+}
+
+const loadOverlays = cache(async (): Promise<ResumeOverlay[]> => {
+  const files = await fetchOverlayFiles();
+  const overlays = await Promise.all(files.map(fetchOverlay));
+  const seen = new Set<string>();
+  for (const overlay of overlays) {
+    if (seen.has(overlay.audience.slug)) {
+      throw new Error(
+        `Duplicate resume overlay audience.slug "${overlay.audience.slug}".`,
+      );
+    }
+    seen.add(overlay.audience.slug);
+  }
+  return overlays;
+});
+
+/** Apply an overlay to the base resume, returning a new RawResume. */
+function applyOverlay(base: RawResume, overlay: ResumeOverlay): RawResume {
+  const overrides = overlay.workOverrides ?? {};
+  const overrideByName = new Map<
+    string,
+    { portfolioSummary?: string[]; portfolioHighlights?: string[] }
+  >();
+  for (const [company, override] of Object.entries(overrides)) {
+    overrideByName.set(company.trim().toLowerCase(), override);
+  }
+
+  const baseWorkNames = new Set(
+    (base.work ?? []).map((w) => (w.name ?? '').trim().toLowerCase()),
+  );
+  for (const key of overrideByName.keys()) {
+    if (!baseWorkNames.has(key)) {
+      throw new Error(
+        `Resume overlay "${overlay.audience.slug}": workOverrides references unknown company "${key}".`,
+      );
+    }
+  }
+
+  const nextWork = (base.work ?? []).map((entry) => {
+    const override = overrideByName.get(
+      (entry.name ?? '').trim().toLowerCase(),
+    );
+    if (!override) return entry;
+    return {
+      ...entry,
+      ...(override.portfolioSummary !== undefined
+        ? { portfolioSummary: override.portfolioSummary }
+        : {}),
+      ...(override.portfolioHighlights !== undefined
+        ? { portfolioHighlights: override.portfolioHighlights }
+        : {}),
+    };
+  });
+
+  return {
+    ...base,
+    meta: { ...base.meta, audience: overlay.audience } as RawMeta & {
+      audience: ResumeOverlayAudience;
+    },
+    basics: {
+      ...base.basics,
+      ...(overlay.basics?.summary !== undefined
+        ? { summary: overlay.basics.summary }
+        : {}),
+    },
+    work: nextWork,
+  };
+}
+
+/** Slugs for every discovered overlay. Empty until overlay gists exist. */
+export async function getVariantSlugs(): Promise<string[]> {
+  const overlays = await loadOverlays();
+  return overlays.map((overlay) => overlay.audience.slug);
+}
+
+/** Audience metadata for every variant, used for cross-linking + llms.txt. */
+export async function getVariantAudiences(): Promise<ResumeOverlayAudience[]> {
+  const overlays = await loadOverlays();
+  return overlays.map((overlay) => overlay.audience);
+}
+
+/** Full variant payload for a slug: audience + reordered timeline + merged JSON. */
+export async function getVariant(
+  slug: string,
+): Promise<ResumeVariant | undefined> {
+  const [base, overlays] = await Promise.all([loadResume(), loadOverlays()]);
+  const overlay = overlays.find((o) => o.audience.slug === slug);
+  if (!overlay) return undefined;
+
+  const merged = applyOverlay(base, overlay);
+  const work = (merged.work ?? [])
+    .map(polishWork)
+    .filter((entry): entry is TimelineEntry => entry !== null)
+    .sort(byStartDateDesc);
+  const education = (merged.education ?? [])
+    .map(polishEducation)
+    .filter((entry): entry is TimelineEntry => entry !== null)
+    .sort(byStartDateDesc);
+
+  return { audience: overlay.audience, work, education, merged };
 }
